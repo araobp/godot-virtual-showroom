@@ -1,11 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://c6i3bkjgn61yv"]
+[gd_scene load_steps=2 format=3 uid="uid://clrxetc2087xr"]
 
-[ext_resource type="Texture2D" uid="uid://88wkpb3dh0hi" path="res://icon.svg" id="1_0e48y"]
-[ext_resource type="Script" uid="uid://dnm2v1hyspft4" path="res://sprite_2d.gd" id="2_epypp"]
+[ext_resource type="PackedScene" uid="uid://bs7a436t7l2wm" path="res://sprite_2d.tscn" id="1_wtcfe"]
 
 [node name="Node2D" type="Node2D"]
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(564, 333)
-texture = ExtResource("1_0e48y")
-script = ExtResource("2_epypp")
+[node name="Sprit2D" parent="." instance=ExtResource("1_wtcfe")]
+
+[node name="Button" type="Button" parent="Sprit2D"]
+offset_left = -81.0
+offset_top = 190.0
+offset_right = 92.0
+offset_bottom = 259.0
+text = "Toggle motion"
