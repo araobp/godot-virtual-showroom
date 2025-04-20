@@ -1,4 +1,6 @@
 # Virtual Showroom with Godot
+
+(Work in progress)
  
 As an MVP developer, I've used Unity for many years, but there have been several challenges, such as the high licensing fees and the need for high-spec PCs.
 
@@ -7,6 +9,10 @@ In MVP development, high functionality isn't required; instead, low cost and qui
 ## Goal of this project
 
 Remake the following project with Godot: https://github.com/araobp/virtual-showroom
+
+## Code
+
+=> [Code](/virtual-showroom)
 
 ## References
 
