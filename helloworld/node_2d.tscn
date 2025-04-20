@@ -6,9 +6,11 @@
 
 [node name="Sprit2D" parent="." instance=ExtResource("1_wtcfe")]
 
-[node name="Button" type="Button" parent="Sprit2D"]
-offset_left = -81.0
-offset_top = 190.0
-offset_right = 92.0
-offset_bottom = 259.0
+[node name="Button" type="Button" parent="."]
+offset_left = 484.0
+offset_top = 523.0
+offset_right = 657.0
+offset_bottom = 592.0
 text = "Toggle motion"
+
+[connection signal="pressed" from="Button" to="Sprit2D" method="_on_button_pressed"]

@@ -1,0 +1,56 @@
+[gd_scene load_steps=3 format=3 uid="uid://dktww7ki3yt73"]
+
+[ext_resource type="PackedScene" uid="uid://dqkaagaewh7un" path="res://vr_theater.glb" id="1_g22v7"]
+[ext_resource type="Script" uid="uid://0q5bhkvxeol0" path="res://camera_3d.gd" id="2_mac0m"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="vr_theater" parent="." instance=ExtResource("1_g22v7")]
+
+[node name="Camera3D" type="Camera3D" parent="vr_theater"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4, 0)
+script = ExtResource("2_mac0m")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="vr_theater"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 3.47043, 0)
+light_color = Color(0.860478, 0.715344, 0.65045, 1)
+light_energy = 13.056
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ButtonForward" type="Button" parent="CanvasLayer"]
+offset_left = 512.0
+offset_top = 536.0
+offset_right = 640.0
+offset_bottom = 568.0
+text = "Forward"
+
+[node name="ButtonBackward" type="Button" parent="CanvasLayer"]
+offset_left = 512.0
+offset_top = 576.0
+offset_right = 640.0
+offset_bottom = 608.0
+text = "Backward"
+
+[node name="ButtonLeft" type="Button" parent="CanvasLayer"]
+offset_left = 368.0
+offset_top = 560.0
+offset_right = 496.0
+offset_bottom = 592.0
+text = "Left"
+
+[node name="ButtonRight" type="Button" parent="CanvasLayer"]
+offset_left = 656.0
+offset_top = 560.0
+offset_right = 784.0
+offset_bottom = 592.0
+text = "Right"
+
+[connection signal="button_down" from="CanvasLayer/ButtonForward" to="vr_theater/Camera3D" method="_on_button_forward_button_down"]
+[connection signal="button_up" from="CanvasLayer/ButtonForward" to="vr_theater/Camera3D" method="_on_button_forward_button_up"]
+[connection signal="button_down" from="CanvasLayer/ButtonBackward" to="vr_theater/Camera3D" method="_on_button_backward_button_down"]
+[connection signal="button_up" from="CanvasLayer/ButtonBackward" to="vr_theater/Camera3D" method="_on_button_backward_button_up"]
+[connection signal="button_down" from="CanvasLayer/ButtonLeft" to="vr_theater/Camera3D" method="_on_button_left_button_down"]
+[connection signal="button_up" from="CanvasLayer/ButtonLeft" to="vr_theater/Camera3D" method="_on_button_left_button_up"]
+[connection signal="button_down" from="CanvasLayer/ButtonRight" to="vr_theater/Camera3D" method="_on_button_right_button_down"]
+[connection signal="button_up" from="CanvasLayer/ButtonRight" to="vr_theater/Camera3D" method="_on_button_right_button_up"]
