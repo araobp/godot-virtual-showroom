@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://dktww7ki3yt73"]
+[gd_scene load_steps=8 format=3 uid="uid://dktww7ki3yt73"]
 
 [ext_resource type="PackedScene" uid="uid://dqkaagaewh7un" path="res://vr_theater.glb" id="1_g22v7"]
 [ext_resource type="Script" uid="uid://yvetrkk2iukm" path="res://vr_theater.gd" id="2_5o3kl"]
@@ -6,6 +6,11 @@
 [ext_resource type="PackedScene" uid="uid://wlxl704lvaqr" path="res://3D models/plant1.fbx" id="4_buu1m"]
 [ext_resource type="PackedScene" uid="uid://1cpxnal3p45u" path="res://3D models/plant2.fbx" id="5_ktnak"]
 [ext_resource type="PackedScene" uid="uid://bfi8qer2jpavt" path="res://3D models/plant3.fbx" id="6_cawg3"]
+
+[sub_resource type="Environment" id="Environment_buu1m"]
+ambient_light_source = 2
+ambient_light_color = Color(0.360949, 0.360949, 0.360949, 1)
+ambient_light_energy = 1.68
 
 [node name="Node3D" type="Node3D"]
 
@@ -133,6 +138,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.66127, 0.581961, 2.66146)
 
 [node name="plant3" parent="." instance=ExtResource("6_cawg3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00705731, 0.56918, 2.84154)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_buu1m")
 
 [connection signal="button_down" from="CanvasLayer/ButtonForward" to="vr_theater/Camera3D" method="_on_button_forward_button_down"]
 [connection signal="button_up" from="CanvasLayer/ButtonForward" to="vr_theater/Camera3D" method="_on_button_forward_button_up"]

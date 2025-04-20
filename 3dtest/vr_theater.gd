@@ -1,12 +1,20 @@
 extends Node3D
 
-var image_resources = [
+const image_resources = [
 	"IMG_0227_level.jpg",
 	"IMG_0230_level.jpg",
 	"IMG_0232_level.jpg",
 	"IMG_0236_level.jpg",
-	"IMG_0238_level.jpg"	
+	"IMG_0238_level.jpg"	,
+	"IMG_0248_level.jpg",
+	"IMG_0254_level.jpg",
+	"IMG_0256_level.jpg",
+	"PolyHaven_DresdenStation.jpg",
+	"PolyHaven_HamburgStation.jpg",
+	"PolyHaven_Hansaplatz.jpg"
 ]
+
+const N = len(image_resources)
 
 var idx = 0
 
@@ -34,7 +42,7 @@ func _on_button_image_backward_button_down() -> void:
 	set_image(idx)		
 	
 func _on_button_image_forward_button_down() -> void:
-	if idx < 4:
+	if idx < N - 1:
 		idx += 1
 
 	set_image(idx)
