@@ -15,6 +15,7 @@ ambient_light_energy = 1.68
 [node name="Node3D" type="Node3D"]
 
 [node name="vr_theater" parent="." instance=ExtResource("1_g22v7")]
+transform = Transform3D(1, 0, 0, 0, 0.998188, 0.0601775, 0, -0.0601775, 0.998188, -0.174077, -0.741213, 0.41237)
 script = ExtResource("2_5o3kl")
 
 [node name="Camera3D" type="Camera3D" parent="vr_theater"]
