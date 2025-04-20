@@ -1,6 +1,8 @@
 # Virtual Showroom with Godot
 
 (Work in progress)
+
+<img src="docs/screenshot1.jpg" width=600>
  
 As an MVP developer, I've used Unity for many years, but there have been several challenges, such as the high licensing fees and the need for high-spec PCs.
 
