@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dktww7ki3yt73"]
+[gd_scene load_steps=8 format=3 uid="uid://d3xps6jjr5lwr"]
 
 [ext_resource type="PackedScene" uid="uid://dqkaagaewh7un" path="res://vr_theater.glb" id="1_g22v7"]
 [ext_resource type="Script" uid="uid://yvetrkk2iukm" path="res://vr_theater.gd" id="2_5o3kl"]
