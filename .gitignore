@@ -14,4 +14,8 @@ export_credentials.cfg
 data_*/
 mono_crash.*.json
 
+# PCK file tends to become large
 *.pck
+
+# Environment variables 
+*_env.txt
