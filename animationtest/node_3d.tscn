@@ -1,0 +1,61 @@
+[gd_scene load_steps=11 format=3 uid="uid://d3kql36uubtpj"]
+
+[ext_resource type="PackedScene" uid="uid://rfghku3bqkg6" path="res://wave_hip_hop_dance.tscn" id="1_a202f"]
+[ext_resource type="Script" uid="uid://ck0cxf2sja3l" path="res://node_3d.gd" id="1_noarx"]
+[ext_resource type="Script" uid="uid://diqhmov0jkp05" path="res://wave_hip_hop_dance.gd" id="3_a0tk4"]
+[ext_resource type="Material" uid="uid://iqpu3aymrrr1" path="res://new_standard_material_3d.tres" id="4_r3fl7"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_a202f"]
+sky_top_color = Color(0.141946, 0.487244, 0.631276, 1)
+sky_horizon_color = Color(0.583123, 0.661698, 0.688706, 1)
+ground_horizon_color = Color(0.583123, 0.661698, 0.688706, 1)
+
+[sub_resource type="Sky" id="Sky_noarx"]
+sky_material = SubResource("ProceduralSkyMaterial_a202f")
+
+[sub_resource type="Environment" id="Environment_a0tk4"]
+background_mode = 2
+sky = SubResource("Sky_noarx")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_jka67"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_r3fl7"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jka67"]
+albedo_color = Color(0.853674, 0.244194, 0.45545, 1)
+metallic = 1.0
+roughness = 0.0
+
+[node name="Node3D" type="Node3D"]
+script = ExtResource("1_noarx")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_a0tk4")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.708668, 0.178444, 0.682604, 0.481097, -0.585464, 0.652517, 0.516077, 0.790816, 0.32905, 0, 3, 0)
+light_color = Color(1, 1, 0.87451, 1)
+shadow_enabled = true
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.582632, 1.50311)
+
+[node name="Wave Hip Hop Dance2" parent="." instance=ExtResource("1_a202f")]
+script = ExtResource("3_a0tk4")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(62.7149, 0, 0, 0, 1, 0, 0, 0, 63.7853, 0, 0, 0)
+material_override = ExtResource("4_r3fl7")
+mesh = SubResource("PlaneMesh_jka67")
+
+[node name="CSGMesh3D" type="CSGMesh3D" parent="."]
+transform = Transform3D(0.42, 0, 0, 0, 1, 0, 0, 0, 0.5, -1, 1, -2)
+mesh = SubResource("CylinderMesh_r3fl7")
+material = SubResource("StandardMaterial3D_jka67")
+
+[node name="CSGMesh3D2" type="CSGMesh3D" parent="."]
+transform = Transform3D(0.42, 0, 0, 0, 1, 0, 0, 0, 0.5, 1, 1, -2)
+mesh = SubResource("CylinderMesh_r3fl7")
+material = SubResource("StandardMaterial3D_jka67")
