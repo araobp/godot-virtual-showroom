@@ -32,6 +32,8 @@ It has been confirmed that models created with MPFB can be imported into Godot. 
 
 ## Virtual Showroom with GenAI (Work in Progress)
 
+I've confirmed that the Gemini API can be used from GDScript.
+
 <img src="docs/screenshot2.jpg" width=400>
 
 => [Code](/virtual-showroom)
