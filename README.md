@@ -14,6 +14,14 @@ Remake the following project with Godot: https://github.com/araobp/virtual-showr
 
 ## Code
 
+## MPFB test
+
+<img src="docs/mpfb_anim.jpg" width=600>
+
+=> [Code](/mpfbtest)
+
+## Virtual Showroom (Work in Progress)
+
 => [Code](/virtual-showroom)
 
 ## References
