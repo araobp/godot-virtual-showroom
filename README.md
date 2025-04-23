@@ -20,7 +20,7 @@ Remake the following project with Godot: https://github.com/araobp/virtual-showr
 
 => [Code](/mpfbtest)
 
-## Virtual Showroom (Work in Progress)
+## Virtual Showroom with GenAI (Work in Progress)
 
 => [Code](/virtual-showroom)
 
