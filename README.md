@@ -16,6 +16,8 @@ Remake the following project with Godot: https://github.com/araobp/virtual-showr
 
 ## MPFB test ([MPFB](https://static.makehumancommunity.org/mpfb.html))
 
+It has been confirmed that models created with MPFB can be imported into Godot. Animation control from GDScript is also easy.
+
 => [Code](/mpfbtest)
 
 ## Virtual Showroom with GenAI (Work in Progress)
