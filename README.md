@@ -14,7 +14,7 @@ Remake the following project with Godot: https://github.com/araobp/virtual-showr
 
 ## Code
 
-## MPFB test
+## MPFB test ([MPFB](https://static.makehumancommunity.org/mpfb.html))
 
 <img src="docs/mpfb_anim.jpg" width=600>
 
