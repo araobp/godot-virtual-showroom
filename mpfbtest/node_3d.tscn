@@ -1,0 +1,74 @@
+[gd_scene load_steps=7 format=3 uid="uid://c408o4ku5k5bp"]
+
+[ext_resource type="PackedScene" uid="uid://cl57u3kq03yra" path="res://pose.tscn" id="1_a202f"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_a202f"]
+sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+ground_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+
+[sub_resource type="Sky" id="Sky_noarx"]
+sky_material = SubResource("ProceduralSkyMaterial_a202f")
+
+[sub_resource type="Environment" id="Environment_a0tk4"]
+background_energy_multiplier = 0.58
+sky = SubResource("Sky_noarx")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_noarx"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a0tk4"]
+albedo_color = Color(0.763887, 0.621445, 0.541506, 1)
+
+[node name="Node3D" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_a0tk4")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.85835, 0.247752, 0.449282, -0.466142, 0.74243, 0.481154, -0.214354, -0.622428, 0.752752, 4.15903, 3.13022, 2.60327)
+light_color = Color(0.732339, 0.702484, 0.62818, 1)
+light_energy = 0.596
+shadow_enabled = true
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.659857, 0, 0.751391, 0, 1, 0, -0.751391, 0, 0.659857, 1.59146, 0.821862, 1.32285)
+fov = 50.0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(20, 0, 0, 0, 1, 0, 0, 0, 20, 0, 0, 0)
+mesh = SubResource("PlaneMesh_noarx")
+skeleton = NodePath("../Camera3D")
+surface_material_override/0 = SubResource("StandardMaterial3D_a0tk4")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+follow_viewport_enabled = true
+
+[node name="ButtonStandUp" type="Button" parent="CanvasLayer"]
+offset_left = 920.0
+offset_top = 40.0
+offset_right = 1104.0
+offset_bottom = 88.0
+text = "Stand Up"
+
+[node name="ButtonSitDown" type="Button" parent="CanvasLayer"]
+offset_left = 920.0
+offset_top = 104.0
+offset_right = 1104.0
+offset_bottom = 152.0
+text = "Sit Down
+"
+
+[node name="ButtonSpeak" type="Button" parent="CanvasLayer"]
+offset_left = 920.0
+offset_top = 168.0
+offset_right = 1104.0
+offset_bottom = 216.0
+text = "Speak
+"
+
+[node name="Pose2" parent="." instance=ExtResource("1_a202f")]
+
+[connection signal="button_down" from="CanvasLayer/ButtonStandUp" to="Pose2" method="_on_button_stand_up_button_down"]
+[connection signal="button_down" from="CanvasLayer/ButtonSitDown" to="Pose2" method="_on_button_sit_down_button_down"]
+[connection signal="button_down" from="CanvasLayer/ButtonSpeak" to="Pose2" method="_on_button_speak_button_down"]
