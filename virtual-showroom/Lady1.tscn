@@ -1,0 +1,67 @@
+[gd_scene load_steps=14 format=3 uid="uid://vrbyrmd7vurf"]
+
+[ext_resource type="PackedScene" uid="uid://dxdetogadupyy" path="res://3D models/Lady.blend" id="1_ifqcw"]
+[ext_resource type="Script" uid="uid://dfomiox7e2fej" path="res://lady_1.gd" id="2_ypkme"]
+
+[sub_resource type="AnimationNodeAdd2" id="AnimationNodeAdd2_hckv4"]
+
+[sub_resource type="AnimationNodeAdd2" id="AnimationNodeAdd2_3sgrr"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_eon8i"]
+animation = &"Blink"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_sieb3"]
+animation = &"Speak"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_1sbkf"]
+animation = &"SitDown"
+
+[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_tp017"]
+nodes/Add2/node = SubResource("AnimationNodeAdd2_3sgrr")
+nodes/Add2/position = Vector2(280, 110)
+"nodes/Add2 2/node" = SubResource("AnimationNodeAdd2_hckv4")
+"nodes/Add2 2/position" = Vector2(540, 220)
+nodes/Animation/node = SubResource("AnimationNodeAnimation_1sbkf")
+nodes/Animation/position = Vector2(30, 80)
+"nodes/Animation 2/node" = SubResource("AnimationNodeAnimation_eon8i")
+"nodes/Animation 2/position" = Vector2(30, 280)
+"nodes/Animation 3/node" = SubResource("AnimationNodeAnimation_sieb3")
+"nodes/Animation 3/position" = Vector2(230, 460)
+nodes/output/position = Vector2(790, 240)
+node_connections = [&"Add2", 0, &"Animation", &"Add2", 1, &"Animation 2", &"Add2 2", 0, &"Add2", &"Add2 2", 1, &"Animation 3", &"output", 0, &"Add2 2"]
+
+[sub_resource type="AnimationNodeAdd2" id="AnimationNodeAdd2_l1xlg"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_hikd6"]
+animation = &"Blink"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_c26yw"]
+animation = &"StandUp"
+
+[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_2eyps"]
+graph_offset = Vector2(-36.8028, -29.361)
+nodes/Add2/node = SubResource("AnimationNodeAdd2_l1xlg")
+nodes/Add2/position = Vector2(310, 120)
+nodes/Animation/node = SubResource("AnimationNodeAnimation_c26yw")
+nodes/Animation/position = Vector2(80, 60)
+"nodes/Animation 2/node" = SubResource("AnimationNodeAnimation_hikd6")
+"nodes/Animation 2/position" = Vector2(80, 250)
+nodes/output/position = Vector2(540, 180)
+node_connections = [&"Add2", 0, &"Animation", &"Add2", 1, &"Animation 2", &"output", 0, &"Add2"]
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_hm4ko"]
+states/SitDown/node = SubResource("AnimationNodeBlendTree_tp017")
+states/SitDown/position = Vector2(282.25, 96.25)
+states/StandUp/node = SubResource("AnimationNodeBlendTree_2eyps")
+states/StandUp/position = Vector2(517.5, 101)
+states/Start/position = Vector2(96.5, 98)
+
+[node name="Pose" instance=ExtResource("1_ifqcw")]
+script = ExtResource("2_ypkme")
+
+[node name="AnimationTree" type="AnimationTree" parent="." index="237"]
+tree_root = SubResource("AnimationNodeStateMachine_hm4ko")
+anim_player = NodePath("../AnimationPlayer")
+parameters/SitDown/Add2/add_amount = 1.0
+"parameters/SitDown/Add2 2/add_amount" = 1.0
+parameters/StandUp/Add2/add_amount = 1.0
