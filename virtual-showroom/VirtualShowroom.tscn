@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://d3xps6jjr5lwr"]
+[gd_scene load_steps=17 format=3 uid="uid://d3xps6jjr5lwr"]
 
 [ext_resource type="PackedScene" uid="uid://dqkaagaewh7un" path="res://vr_theater.glb" id="1_6gv1x"]
 [ext_resource type="Script" uid="uid://yvetrkk2iukm" path="res://vr_theater.gd" id="2_5xsj8"]
@@ -7,11 +7,14 @@
 [ext_resource type="PackedScene" uid="uid://bfi8qer2jpavt" path="res://3D models/Plants/plant3.fbx" id="5_m362y"]
 [ext_resource type="Texture2D" uid="uid://yabsflhhu1iq" path="res://Icons/ArrowLeftButton.png" id="7_kgmfh"]
 [ext_resource type="Texture2D" uid="uid://diu1ss6k5nvff" path="res://Icons/ArrowRightButton.png" id="8_jxqc1"]
+[ext_resource type="PackedScene" uid="uid://d0u6v0e6yc6es" path="res://3D models/Gentleman/gentleman.tscn" id="9_3d07m"]
 [ext_resource type="Texture2D" uid="uid://drrqxgqua1gqf" path="res://Icons/ChatToggleButton.png" id="9_m362y"]
 [ext_resource type="PackedScene" uid="uid://byk0dvj1kddw8" path="res://3D models/Chair.glb" id="10_jxqc1"]
 [ext_resource type="Script" uid="uid://bbkfui0734464" path="res://cameras.gd" id="10_m362y"]
 [ext_resource type="PackedScene" uid="uid://dd2jtnky0drff" path="res://3D models/Furnitures.glb" id="11_m362y"]
 [ext_resource type="PackedScene" uid="uid://bq3bsyq4u8iyu" path="res://3D models/Lady/lady.tscn" id="12_m362y"]
+[ext_resource type="Script" uid="uid://dq2hcucgovix7" path="res://models.gd" id="12_mkmqu"]
+[ext_resource type="PackedScene" uid="uid://c7pvbnxjpaoj5" path="res://3D models/Lady2/lady_2.tscn" id="14_bh4oc"]
 
 [sub_resource type="Environment" id="Environment_buu1m"]
 ambient_light_source = 2
@@ -260,12 +263,12 @@ offset_bottom = 624.0
 placeholder_text = "Ask anything..."
 
 [node name="ReflectionProbe" type="ReflectionProbe" parent="vr_theater"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.77424, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.789351, -0.578589)
 
 [node name="SpotLight3D8" type="SpotLight3D" parent="vr_theater"]
 transform = Transform3D(1, 0, 0, 0, 0.862452, 0.506139, 0, -0.506139, 0.862452, 0, 2.02564, 0.548323)
-light_color = Color(0.832248, 0.652336, 0.700748, 1)
 shadow_enabled = true
+spot_angle = 20.52
 
 [node name="Cameras" type="Node3D" parent="vr_theater"]
 script = ExtResource("10_m362y")
@@ -276,7 +279,7 @@ current = true
 fov = 30.0
 
 [node name="Camera2" type="Camera3D" parent="vr_theater/Cameras"]
-transform = Transform3D(0.535651, 0.0903489, -0.839592, -0.0339389, 0.99576, 0.0855014, 0.843757, -0.0173041, 0.536446, -1.4218, 1.11182, -0.203453)
+transform = Transform3D(0.535651, 0.0903489, -0.839592, -0.0339389, 0.99576, 0.0855014, 0.843757, -0.0173041, 0.536446, -1.41336, 1.20487, -0.20507)
 current = true
 fov = 25.0
 
@@ -298,10 +301,17 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0423015, -1.23236)
 [node name="Table" parent="vr_theater" instance=ExtResource("11_m362y")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0335078, -0.581429)
 
-[node name="Explainers" type="Node3D" parent="vr_theater"]
+[node name="Models" type="Node3D" parent="vr_theater"]
+script = ExtResource("12_mkmqu")
 
-[node name="Lady" parent="vr_theater/Explainers" instance=ExtResource("12_m362y")]
+[node name="Lady" parent="vr_theater/Models" instance=ExtResource("12_m362y")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0313402, -1.13662)
+
+[node name="Lady2" parent="vr_theater/Models" instance=ExtResource("14_bh4oc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.001, 0.0382124, -1.137)
+
+[node name="Gentleman" parent="vr_theater/Models" instance=ExtResource("9_3d07m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0548338, -1.137)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_buu1m")
@@ -310,6 +320,8 @@ environment = SubResource("Environment_buu1m")
 [connection signal="button_down" from="vr_theater/CanvasLayer/Node2D/ControlButtons/TextureButtonRightArrowCamera" to="vr_theater/Cameras" method="_on_texture_button_right_arrow_camera_button_down"]
 [connection signal="button_down" from="vr_theater/CanvasLayer/Node2D/ControlButtons/TextureButtonLeftArrowContent" to="vr_theater" method="_on_button_image_backward_button_down"]
 [connection signal="button_down" from="vr_theater/CanvasLayer/Node2D/ControlButtons/TextureButtonRightArrowContent" to="vr_theater" method="_on_button_image_forward_button_down"]
+[connection signal="button_down" from="vr_theater/CanvasLayer/Node2D/ControlButtons/TextureButtonLeftArrowModel" to="vr_theater/Models" method="prev_model"]
+[connection signal="button_down" from="vr_theater/CanvasLayer/Node2D/ControlButtons/TextureButtonRightArrowModel" to="vr_theater/Models" method="next_model"]
 [connection signal="button_down" from="vr_theater/CanvasLayer/Node2D/ButtonDescribe" to="vr_theater" method="_on_button_describe_button_down"]
 [connection signal="button_down" from="vr_theater/CanvasLayer/Node2D/ButtonResetPosition" to="vr_theater/Cameras/Camera1" method="_on_button_reset_position_button_down"]
 [connection signal="button_down" from="vr_theater/CanvasLayer/Node2D/ButtonForward" to="vr_theater/Cameras/Camera1" method="_on_button_forward_button_down"]

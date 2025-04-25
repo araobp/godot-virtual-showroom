@@ -1,7 +1,7 @@
 [gd_scene load_steps=14 format=3 uid="uid://bq3bsyq4u8iyu"]
 
 [ext_resource type="PackedScene" uid="uid://wwp60snu3o4q" path="res://3D models/Lady/Lady.glb" id="1_bguvi"]
-[ext_resource type="Script" uid="uid://dfomiox7e2fej" path="res://Explainer.gd" id="2_lbn2y"]
+[ext_resource type="Script" uid="uid://dfomiox7e2fej" path="res://model.gd" id="2_lbn2y"]
 
 [sub_resource type="AnimationNodeAdd2" id="AnimationNodeAdd2_lbn2y"]
 
