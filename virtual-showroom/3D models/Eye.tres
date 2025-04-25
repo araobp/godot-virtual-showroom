@@ -1,7 +1,0 @@
-[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://sxsgkjp8ikop"]
-
-[ext_resource type="Texture2D" uid="uid://yct05775a6ax" path="res://3D models/Eyes_diffuse.png" id="1_dy445"]
-
-[resource]
-transparency = 1
-albedo_texture = ExtResource("1_dy445")

@@ -14,9 +14,9 @@ const image_resources = [
 	"PolyHaven_Hansaplatz.jpg"
 ]
 
-const N = len(image_resources)
+const IMG_N = len(image_resources)
 
-var idx = 0
+var img_idx = 0
 
 # Gemini API Key
 var GEMINI_API_KEY_FILE_PATH = "res://gemini_api_key_env.txt"
@@ -38,11 +38,15 @@ func _ready() -> void:
 	
 	GEMINI_API_KEY = get_environment_variable_from_file(GEMINI_API_KEY_FILE_PATH)	
 	# print("Gemini API Key: " + GEMINI_API_KEY)
+	
 
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
 
-func set_image(idx):
+func set_image(img_idx):
 	var material = StandardMaterial3D.new()
-	var image = load("res://Panorama/" + image_resources[idx])
+	var image = load("res://Panorama/" + image_resources[img_idx])
 	material.albedo_texture = image
 	material.emission_texture = image
 	material.emission_enabled = true
@@ -50,17 +54,17 @@ func set_image(idx):
 
 
 func _on_button_image_backward_button_down() -> void:
-	if idx > 0:
-		idx -= 1
+	if img_idx > 0:
+		img_idx -= 1
 
-	set_image(idx)		
+	set_image(img_idx)		
 
 
 func _on_button_image_forward_button_down() -> void:
-	if idx < N - 1:
-		idx += 1
+	if img_idx < IMG_N - 1:
+		img_idx += 1
 
-	set_image(idx)
+	set_image(img_idx)
 
 
 func _on_button_describe_button_down() -> void:
