@@ -1,7 +1,10 @@
-[gd_scene load_steps=15 format=3 uid="uid://c7pvbnxjpaoj5"]
+[gd_scene load_steps=16 format=3 uid="uid://c7pvbnxjpaoj5"]
 
 [ext_resource type="PackedScene" uid="uid://cengavtad7kor" path="res://3D models/Lady2/Lady2.glb" id="1_f5n1t"]
 [ext_resource type="Script" uid="uid://dfomiox7e2fej" path="res://model.gd" id="2_1kebq"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_1kebq"]
+animation = &"RestPose"
 
 [sub_resource type="AnimationNodeAdd2" id="AnimationNodeAdd2_lbn2y"]
 
@@ -49,18 +52,20 @@ nodes/Animation/position = Vector2(140, 40)
 nodes/output/position = Vector2(510, 130)
 node_connections = [&"Add2", 0, &"Animation", &"Add2", 1, &"Animation 2", &"output", 0, &"Add2"]
 
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_1kebq"]
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_mfr0e"]
 switch_mode = 2
 advance_mode = 2
 
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_mfr0e"]
+states/RestPose/node = SubResource("AnimationNodeAnimation_1kebq")
+states/RestPose/position = Vector2(139, 100.25)
 states/SitDown/node = SubResource("AnimationNodeBlendTree_nyxp4")
 states/SitDown/position = Vector2(305.5, 100.5)
 states/StandUp/node = SubResource("AnimationNodeBlendTree_uxemk")
 states/StandUp/position = Vector2(267, 226.5)
-states/Start/position = Vector2(152, 100.25)
-transitions = ["StandUp", "SitDown", SubResource("AnimationNodeStateMachineTransition_1kebq")]
-graph_offset = Vector2(-108, 74)
+states/Start/position = Vector2(-14.5, 118.75)
+transitions = ["RestPose", "SitDown", SubResource("AnimationNodeStateMachineTransition_mfr0e")]
+graph_offset = Vector2(-140, 30)
 
 [node name="Lady2" instance=ExtResource("1_f5n1t")]
 script = ExtResource("2_1kebq")

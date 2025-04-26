@@ -20,7 +20,7 @@ func stand_up():
 
 func sit_down():
 	var playback = $AnimationTree.get("parameters/playback")
-	playback.travel("SitDown")
+	playback.travel("RestPose")
 
 
 func start_speaking():

@@ -10,7 +10,7 @@ func _make_visible(idx_):
 	for i in N:
 		if i == idx_:
 			models[i].visible = true
-			models[i].stand_up()
+			models[i].sit_down()
 			#models[i].sit_down()			
 		else:
 			models[i].visible = false
