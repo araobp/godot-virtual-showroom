@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://d0u6v0e6yc6es"]
+[gd_scene load_steps=15 format=3 uid="uid://d0u6v0e6yc6es"]
 
 [ext_resource type="PackedScene" uid="uid://cgih6q3hbxy8t" path="res://3D models/Gentleman/Gentleman.glb" id="1_jyjof"]
 [ext_resource type="Script" uid="uid://dfomiox7e2fej" path="res://model.gd" id="2_6trfa"]
@@ -49,12 +49,18 @@ nodes/Animation/position = Vector2(140, 40)
 nodes/output/position = Vector2(510, 130)
 node_connections = [&"Add2", 0, &"Animation", &"Add2", 1, &"Animation 2", &"output", 0, &"Add2"]
 
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_6trfa"]
+switch_mode = 2
+advance_mode = 2
+
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_jyjof"]
 states/SitDown/node = SubResource("AnimationNodeBlendTree_nyxp4")
 states/SitDown/position = Vector2(305.5, 100.5)
 states/StandUp/node = SubResource("AnimationNodeBlendTree_uxemk")
 states/StandUp/position = Vector2(267, 226.5)
 states/Start/position = Vector2(152, 100.25)
+transitions = ["StandUp", "SitDown", SubResource("AnimationNodeStateMachineTransition_6trfa")]
+graph_offset = Vector2(-128, 48)
 
 [node name="Gentleman" instance=ExtResource("1_jyjof")]
 script = ExtResource("2_6trfa")

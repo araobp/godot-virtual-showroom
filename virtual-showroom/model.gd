@@ -15,14 +15,10 @@ func _process(delta: float) -> void:
 	
 
 func stand_up():
-	$AnimationPlayer.stop(true)
-	$AnimationPlayer.play("StandUp")	
 	var playback = $AnimationTree.get("parameters/playback")
 	playback.travel("StandUp");
-	
 
 func sit_down():
-	$AnimationPlayer.stop(true)
 	var playback = $AnimationTree.get("parameters/playback")
 	playback.travel("SitDown")
 
