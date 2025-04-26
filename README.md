@@ -14,7 +14,7 @@ Remake the following project with Godot: https://github.com/araobp/virtual-showr
 
 ## Code
 
-## Mixamo test ([Mixamo](https://www.mixamo.com/)}
+## Mixamo test ([Mixamo](https://www.mixamo.com/))
 
 I've confirmed that Mixamo models can be imported into Godot. Controlling animations from GDScript is also easy.
 
