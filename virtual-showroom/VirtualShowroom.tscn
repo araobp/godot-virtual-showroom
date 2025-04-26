@@ -1,10 +1,11 @@
-[gd_scene load_steps=17 format=3 uid="uid://d3xps6jjr5lwr"]
+[gd_scene load_steps=18 format=3 uid="uid://d3xps6jjr5lwr"]
 
 [ext_resource type="PackedScene" uid="uid://dqkaagaewh7un" path="res://vr_theater.glb" id="1_6gv1x"]
 [ext_resource type="Script" uid="uid://yvetrkk2iukm" path="res://vr_theater.gd" id="2_5xsj8"]
 [ext_resource type="PackedScene" uid="uid://wlxl704lvaqr" path="res://3D models/Plants/plant1.fbx" id="3_kgmfh"]
 [ext_resource type="PackedScene" uid="uid://1cpxnal3p45u" path="res://3D models/Plants/plant2.fbx" id="4_jxqc1"]
 [ext_resource type="PackedScene" uid="uid://bfi8qer2jpavt" path="res://3D models/Plants/plant3.fbx" id="5_m362y"]
+[ext_resource type="Script" uid="uid://b01oaxbcw5py1" path="res://canvas_layer.gd" id="6_b67af"]
 [ext_resource type="Texture2D" uid="uid://yabsflhhu1iq" path="res://Icons/ArrowLeftButton.png" id="7_kgmfh"]
 [ext_resource type="Texture2D" uid="uid://diu1ss6k5nvff" path="res://Icons/ArrowRightButton.png" id="8_jxqc1"]
 [ext_resource type="PackedScene" uid="uid://d0u6v0e6yc6es" path="res://3D models/Gentleman/gentleman.tscn" id="9_3d07m"]
@@ -31,6 +32,9 @@ glow_blend_mode = 1
 
 [node name="vr_theater" parent="." instance=ExtResource("1_6gv1x")]
 script = ExtResource("2_5xsj8")
+
+[node name="ReflectionProbe" type="ReflectionProbe" parent="vr_theater"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.789351, -0.578589)
 
 [node name="SpotLight3D" type="SpotLight3D" parent="vr_theater"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 3.35834, 0)
@@ -106,9 +110,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.66127, 0.581961, 2.66146)
 [node name="plant3" parent="vr_theater" instance=ExtResource("5_m362y")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00705731, 0.56918, 2.84154)
 
-[node name="HTTPRequest" type="HTTPRequest" parent="vr_theater"]
-
 [node name="CanvasLayer" type="CanvasLayer" parent="vr_theater"]
+script = ExtResource("6_b67af")
 
 [node name="Node2D" type="Node2D" parent="vr_theater/CanvasLayer"]
 
@@ -195,105 +198,33 @@ texture_normal = ExtResource("8_jxqc1")
 ignore_texture_size = true
 stretch_mode = 0
 
-[node name="ButtonDescribe" type="Button" parent="vr_theater/CanvasLayer/Node2D"]
-visible = false
-offset_left = 512.0
-offset_top = 32.0
-offset_right = 640.0
-offset_bottom = 64.0
-text = "Describe
-"
+[node name="ChatToggleButton" type="TextureButton" parent="vr_theater/CanvasLayer/Node2D/ControlButtons"]
+offset_left = 376.0
+offset_top = 624.0
+offset_right = 776.0
+offset_bottom = 648.0
+texture_normal = ExtResource("9_m362y")
+ignore_texture_size = true
+stretch_mode = 0
 
-[node name="ButtonResetPosition" type="Button" parent="vr_theater/CanvasLayer/Node2D"]
-visible = false
-offset_left = 512.0
-offset_top = 536.0
-offset_right = 640.0
-offset_bottom = 568.0
-text = "Reset"
+[node name="ChatWindow" type="Node2D" parent="vr_theater/CanvasLayer"]
 
-[node name="ButtonForward" type="Button" parent="vr_theater/CanvasLayer/Node2D"]
-visible = false
-offset_left = 512.0
-offset_top = 488.0
-offset_right = 640.0
-offset_bottom = 520.0
-text = "Forward"
-
-[node name="ButtonBackward" type="Button" parent="vr_theater/CanvasLayer/Node2D"]
-visible = false
-offset_left = 512.0
-offset_top = 584.0
-offset_right = 640.0
-offset_bottom = 616.0
-text = "Backward"
-
-[node name="ButtonLeft" type="Button" parent="vr_theater/CanvasLayer/Node2D"]
-visible = false
-offset_left = 368.0
-offset_top = 536.0
-offset_right = 496.0
-offset_bottom = 568.0
-text = "Left"
-
-[node name="ButtonRight" type="Button" parent="vr_theater/CanvasLayer/Node2D"]
-visible = false
-offset_left = 656.0
-offset_top = 536.0
-offset_right = 784.0
-offset_bottom = 568.0
-text = "Right"
-
-[node name="ChatToggleButton" type="Sprite2D" parent="vr_theater/CanvasLayer"]
-position = Vector2(576, 640)
-scale = Vector2(1.5, 0.5)
-texture = ExtResource("9_m362y")
-
-[node name="TextEdit" type="TextEdit" parent="vr_theater/CanvasLayer"]
-offset_left = 128.0
-offset_top = 408.0
-offset_right = 1024.0
-offset_bottom = 632.0
-
-[node name="TextEdit2" type="TextEdit" parent="vr_theater/CanvasLayer"]
+[node name="TextInput" type="TextEdit" parent="vr_theater/CanvasLayer/ChatWindow"]
 offset_left = 136.0
 offset_top = 568.0
 offset_right = 1016.0
 offset_bottom = 624.0
 placeholder_text = "Ask anything..."
+caret_blink = true
 
-[node name="ReflectionProbe" type="ReflectionProbe" parent="vr_theater"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.789351, -0.578589)
+[node name="TextOutput" type="TextEdit" parent="vr_theater/CanvasLayer/ChatWindow"]
+offset_left = 136.0
+offset_top = 384.0
+offset_right = 1016.0
+offset_bottom = 560.0
+wrap_mode = 1
 
-[node name="SpotLight3D8" type="SpotLight3D" parent="vr_theater"]
-transform = Transform3D(1, 0, 0, 0, 0.862452, 0.506139, 0, -0.506139, 0.862452, 0, 2.02564, 0.548323)
-shadow_enabled = true
-spot_angle = 20.52
-
-[node name="Cameras" type="Node3D" parent="vr_theater"]
-script = ExtResource("10_m362y")
-
-[node name="Camera1" type="Camera3D" parent="vr_theater/Cameras"]
-transform = Transform3D(1, 0, 0, 0, 0.998724, 0.0505058, 0, -0.0505058, 0.998724, 0, 1.18767, 0)
-current = true
-fov = 30.0
-
-[node name="Camera2" type="Camera3D" parent="vr_theater/Cameras"]
-transform = Transform3D(0.535651, 0.0903489, -0.839592, -0.0339389, 0.99576, 0.0855014, 0.843757, -0.0173041, 0.536446, -1.41336, 1.20487, -0.20507)
-current = true
-fov = 25.0
-
-[node name="Camera3" type="Camera3D" parent="vr_theater/Cameras"]
-transform = Transform3D(0.71934, 0.223865, -0.657598, 0, 0.946649, 0.322266, 0.694658, -0.231819, 0.680963, -0.770539, 1.64529, 0.28043)
-fov = 45.9
-
-[node name="Camera4" type="Camera3D" parent="vr_theater/Cameras"]
-transform = Transform3D(0.498488, -0.0483915, 0.865545, 0, 0.998441, 0.0558215, -0.866897, -0.0278263, 0.49771, 1.76412, 1.48082, 0.435035)
-fov = 27.0
-
-[node name="Camera5" type="Camera3D" parent="vr_theater/Cameras"]
-transform = Transform3D(0.831954, 0, -0.554844, 0, 1, 0, 0.554844, 0, 0.831954, -2.01547, 1.45934, 5.16891)
-fov = 45.0
+[node name="HTTPRequest" type="HTTPRequest" parent="vr_theater/CanvasLayer"]
 
 [node name="Chair" parent="vr_theater" instance=ExtResource("10_jxqc1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0423015, -1.23236)
@@ -313,22 +244,51 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.001, 0.0382124, -1.137)
 [node name="Gentleman" parent="vr_theater/Models" instance=ExtResource("9_3d07m")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0548338, -1.137)
 
+[node name="SpotLight3D8" type="SpotLight3D" parent="vr_theater"]
+transform = Transform3D(1, 0, 0, 0, 0.862452, 0.506139, 0, -0.506139, 0.862452, 0, 2.02564, 0.548323)
+shadow_enabled = true
+spot_angle = 20.52
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="vr_theater"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="SubViewport" type="SubViewport" parent="vr_theater/SubViewportContainer"]
+size = Vector2i(1152, 648)
+
+[node name="Cameras" type="Node3D" parent="vr_theater/SubViewportContainer/SubViewport"]
+script = ExtResource("10_m362y")
+
+[node name="Camera1" type="Camera3D" parent="vr_theater/SubViewportContainer/SubViewport/Cameras"]
+transform = Transform3D(1, 0, 0, 0, 0.998724, 0.0505058, 0, -0.0505058, 0.998724, 0, 1.18767, 0)
+current = true
+fov = 30.0
+
+[node name="Camera2" type="Camera3D" parent="vr_theater/SubViewportContainer/SubViewport/Cameras"]
+transform = Transform3D(0.535651, 0.0903489, -0.839592, -0.0339389, 0.99576, 0.0855014, 0.843757, -0.0173041, 0.536446, -1.41336, 1.20487, -0.20507)
+current = true
+fov = 25.0
+
+[node name="Camera3" type="Camera3D" parent="vr_theater/SubViewportContainer/SubViewport/Cameras"]
+transform = Transform3D(0.71934, 0.223865, -0.657598, 0, 0.946649, 0.322266, 0.694658, -0.231819, 0.680963, -0.770539, 1.64529, 0.28043)
+fov = 45.9
+
+[node name="Camera4" type="Camera3D" parent="vr_theater/SubViewportContainer/SubViewport/Cameras"]
+transform = Transform3D(0.498488, -0.0483915, 0.865545, 0, 0.998441, 0.0558215, -0.866897, -0.0278263, 0.49771, 1.76412, 1.48082, 0.435035)
+fov = 27.0
+
+[node name="Camera5" type="Camera3D" parent="vr_theater/SubViewportContainer/SubViewport/Cameras"]
+transform = Transform3D(0.831954, 0, -0.554844, 0, 1, 0, 0.554844, 0, 0.831954, -2.01547, 1.45934, 5.16891)
+fov = 45.0
+
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_buu1m")
 
-[connection signal="button_down" from="vr_theater/CanvasLayer/Node2D/ControlButtons/TextureButtonLeftArrowCamera" to="vr_theater/Cameras" method="_on_texture_button_left_arrow_camera_button_down"]
-[connection signal="button_down" from="vr_theater/CanvasLayer/Node2D/ControlButtons/TextureButtonRightArrowCamera" to="vr_theater/Cameras" method="_on_texture_button_right_arrow_camera_button_down"]
+[connection signal="button_down" from="vr_theater/CanvasLayer/Node2D/ControlButtons/TextureButtonLeftArrowCamera" to="vr_theater/SubViewportContainer/SubViewport/Cameras" method="_on_texture_button_left_arrow_camera_button_down"]
+[connection signal="button_down" from="vr_theater/CanvasLayer/Node2D/ControlButtons/TextureButtonRightArrowCamera" to="vr_theater/SubViewportContainer/SubViewport/Cameras" method="_on_texture_button_right_arrow_camera_button_down"]
 [connection signal="button_down" from="vr_theater/CanvasLayer/Node2D/ControlButtons/TextureButtonLeftArrowContent" to="vr_theater" method="_on_button_image_backward_button_down"]
 [connection signal="button_down" from="vr_theater/CanvasLayer/Node2D/ControlButtons/TextureButtonRightArrowContent" to="vr_theater" method="_on_button_image_forward_button_down"]
 [connection signal="button_down" from="vr_theater/CanvasLayer/Node2D/ControlButtons/TextureButtonLeftArrowModel" to="vr_theater/Models" method="prev_model"]
 [connection signal="button_down" from="vr_theater/CanvasLayer/Node2D/ControlButtons/TextureButtonRightArrowModel" to="vr_theater/Models" method="next_model"]
-[connection signal="button_down" from="vr_theater/CanvasLayer/Node2D/ButtonDescribe" to="vr_theater" method="_on_button_describe_button_down"]
-[connection signal="button_down" from="vr_theater/CanvasLayer/Node2D/ButtonResetPosition" to="vr_theater/Cameras/Camera1" method="_on_button_reset_position_button_down"]
-[connection signal="button_down" from="vr_theater/CanvasLayer/Node2D/ButtonForward" to="vr_theater/Cameras/Camera1" method="_on_button_forward_button_down"]
-[connection signal="button_up" from="vr_theater/CanvasLayer/Node2D/ButtonForward" to="vr_theater/Cameras/Camera1" method="_on_button_forward_button_up"]
-[connection signal="button_down" from="vr_theater/CanvasLayer/Node2D/ButtonBackward" to="vr_theater/Cameras/Camera1" method="_on_button_backward_button_down"]
-[connection signal="button_up" from="vr_theater/CanvasLayer/Node2D/ButtonBackward" to="vr_theater/Cameras/Camera1" method="_on_button_backward_button_up"]
-[connection signal="button_down" from="vr_theater/CanvasLayer/Node2D/ButtonLeft" to="vr_theater/Cameras/Camera1" method="_on_button_left_button_down"]
-[connection signal="button_up" from="vr_theater/CanvasLayer/Node2D/ButtonLeft" to="vr_theater/Cameras/Camera1" method="_on_button_left_button_up"]
-[connection signal="button_down" from="vr_theater/CanvasLayer/Node2D/ButtonRight" to="vr_theater/Cameras/Camera1" method="_on_button_right_button_down"]
-[connection signal="button_up" from="vr_theater/CanvasLayer/Node2D/ButtonRight" to="vr_theater/Cameras/Camera1" method="_on_button_right_button_up"]
+[connection signal="button_down" from="vr_theater/CanvasLayer/Node2D/ControlButtons/ChatToggleButton" to="vr_theater/CanvasLayer" method="_on_chat_toggle_button_button_down"]
+[connection signal="text_set" from="vr_theater/CanvasLayer/ChatWindow/TextInput" to="vr_theater/CanvasLayer" method="_on_text_input_text_changed"]
