@@ -43,3 +43,4 @@ Note: "gemini_api_key_env.txt" file (Gemini API key value) is ignored by .gitign
 ## References
 
 - https://docs.godotengine.org/en/stable/
+- https://zenn.dev/submax/articles/30433a77da3cca
