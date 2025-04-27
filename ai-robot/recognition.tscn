@@ -1,11 +1,55 @@
-[gd_scene load_steps=3 format=3 uid="uid://c5h33u2gfmlcu"]
+[gd_scene load_steps=8 format=3 uid="uid://c5h33u2gfmlcu"]
 
 [ext_resource type="PackedScene" uid="uid://botlqcpy5y61v" path="res://robot/robot.tscn" id="1_om0ow"]
 [ext_resource type="PackedScene" uid="uid://haywivn3kl27" path="res://display/large_display.tscn" id="2_woc2y"]
 
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_woc2y"]
+sky_top_color = Color(0.327553, 0.604402, 0.873515, 1)
+sky_horizon_color = Color(0.880939, 0.836771, 0.827839, 1)
+
+[sub_resource type="Sky" id="Sky_ydxjh"]
+sky_material = SubResource("ProceduralSkyMaterial_woc2y")
+
+[sub_resource type="Environment" id="Environment_qftih"]
+background_mode = 2
+sky = SubResource("Sky_ydxjh")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t4817"]
+albedo_color = Color(0.270696, 0.183233, 0.122407, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_fcfh8"]
+
 [node name="Node3D" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
+shadow_enabled = true
 
 [node name="Robot" parent="." instance=ExtResource("1_om0ow")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0, 0)
 
+[node name="ReflectionProbe" type="ReflectionProbe" parent="Robot"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.62625, 0)
+update_mode = 1
+blend_distance = 8.0
+ambient_mode = 0
+
 [node name="LargeDisplay" parent="." instance=ExtResource("2_woc2y")]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_qftih")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(136.852, 0, 0, 0, 45.893, 0, 0, 0, 100, 0, -0.0362293, 0)
+material_override = SubResource("StandardMaterial3D_t4817")
+mesh = SubResource("PlaneMesh_fcfh8")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.977072, 0, 0.212911, 0, 1, 0, -0.212911, 0, 0.977072, 0.876169, 1.28255, 1.35013)
+fov = 40.0
+
+[node name="Camera3D2" type="Camera3D" parent="."]
+transform = Transform3D(-0.762883, 0, -0.646537, 0, 1, 0, 0.646537, 0, -0.762883, -0.586436, 1.58289, -0.659875)
+fov = 40.0
