@@ -224,8 +224,6 @@ offset_right = 1016.0
 offset_bottom = 560.0
 wrap_mode = 1
 
-[node name="HTTPRequest" type="HTTPRequest" parent="vr_theater/CanvasLayer"]
-
 [node name="Chair" parent="vr_theater" instance=ExtResource("10_jxqc1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0423015, -1.23236)
 
@@ -235,14 +233,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0335078, -0.581429)
 [node name="Models" type="Node3D" parent="vr_theater"]
 script = ExtResource("12_mkmqu")
 
+[node name="Gentleman" parent="vr_theater/Models" instance=ExtResource("9_3d07m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0548338, -1.137)
+
 [node name="Lady" parent="vr_theater/Models" instance=ExtResource("12_m362y")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0313402, -1.13662)
 
 [node name="Lady2" parent="vr_theater/Models" instance=ExtResource("14_bh4oc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.001, 0.0382124, -1.137)
-
-[node name="Gentleman" parent="vr_theater/Models" instance=ExtResource("9_3d07m")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0548338, -1.137)
 
 [node name="SpotLight3D8" type="SpotLight3D" parent="vr_theater"]
 transform = Transform3D(1, 0, 0, 0, 0.862452, 0.506139, 0, -0.506139, 0.862452, 0, 2.02564, 0.548323)

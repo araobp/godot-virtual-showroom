@@ -11,7 +11,6 @@ func _make_visible(idx_):
 		if i == idx_:
 			models[i].visible = true
 			models[i].sit_down()
-			#models[i].sit_down()			
 		else:
 			models[i].visible = false
 	
@@ -40,3 +39,6 @@ func prev_model() -> void:
 	if idx > 0:
 		idx -= 1
 	_make_visible(idx)
+	
+func model_idx():
+	return idx

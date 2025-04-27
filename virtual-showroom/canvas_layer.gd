@@ -7,7 +7,11 @@ var GEMINI_API_KEY = ""
 # Chat query
 var query = ""
 
-func get_environment_variable_from_file(filePath):
+# TTS
+var voices
+
+# Get an environment variable in the file
+func _get_environment_variable(filePath):
 	var file = FileAccess.open(filePath, FileAccess.READ)
 	var content = file.get_as_text()
 	content = content.strip_edges()
@@ -16,14 +20,26 @@ func get_environment_variable_from_file(filePath):
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	GEMINI_API_KEY = _get_environment_variable(GEMINI_API_KEY_FILE_PATH)	
 	$ChatWindow.visible = false
 	
-	$HTTPRequest.request_completed.connect(_on_request_completed)
-	GEMINI_API_KEY = get_environment_variable_from_file(GEMINI_API_KEY_FILE_PATH)	
-	# print("Gemini API Key: " + GEMINI_API_KEY)
+	voices = DisplayServer.tts_get_voices_for_language("en")
+	
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	if Input.is_key_pressed(KEY_ENTER) and $ChatWindow/TextInput.text != "":
+		query = $ChatWindow/TextInput.text
+		$ChatWindow/TextInput.text = ""
+		$ChatWindow/TextOutput.text += "Q: {0}".format([query])
+		$ChatWindow/TextOutput.scroll_vertical = 10000
+		
+
+		chat()
 
 
-func _capture_viewport(resize_width=null):
+# Capture image from Camera3D attached to the sub viewport
+func _capture(resize_width=null):
 
 	# Get the image data	 from sub viewport
 	var viewport = get_parent().get_node("SubViewportContainer/SubViewport").get_viewport()
@@ -42,7 +58,7 @@ func _capture_viewport(resize_width=null):
 	
 
 func chat():
-	var b64image = _capture_viewport(640)
+	var b64image = _capture(640)
 	
 	const headers = [
 		"Content-Type: application/json",
@@ -66,32 +82,31 @@ func chat():
 		]
 	}
 		
-	$HTTPRequest.request(
+	var req = HTTPRequest.new()
+	self.add_child(req)
+	
+	var err = req.request(
 		"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=" + GEMINI_API_KEY,
 		headers,
 		HTTPClient.METHOD_POST,
 		JSON.stringify(payload)
 	)
+	
+	if err != OK:
+		return
 
-func _on_request_completed(result, response_code, headers, body):
+	var res = await req.request_completed # request_completed シグナルを待つ
+	var body = res[3]
+	
 	var json = JSON.parse_string(body.get_string_from_utf8())
 	
 	var answer = json["candidates"][0]["content"]["parts"][0]["text"]
-	output_text(answer)
+	_output_text(answer)
 	
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	if Input.is_key_pressed(KEY_ENTER) and $ChatWindow/TextInput.text != "":
-		query = $ChatWindow/TextInput.text
-		$ChatWindow/TextInput.text = ""
-		$ChatWindow/TextOutput.text += "Q: {0}".format([query])
-		$ChatWindow/TextOutput.scroll_vertical = 10000
-		
-
-		chat()
-
+	var model_idx = get_parent().get_node("Models").model_idx()
+	DisplayServer.tts_speak(answer, voices[model_idx])
+	
+	self.remove_child(req)
 
 
 func _on_chat_toggle_button_button_down() -> void:
@@ -102,7 +117,7 @@ func _on_chat_toggle_button_button_down() -> void:
 		$ChatWindow/TextInput.grab_focus()
 
 
-func output_text(answer):
+func _output_text(answer):
 	$ChatWindow/TextOutput.text += "A: {0}\n\n".format([answer])
 	$ChatWindow/TextOutput.scroll_vertical = 10000
 
