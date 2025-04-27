@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://c5h33u2gfmlcu"]
+
+[ext_resource type="PackedScene" uid="uid://botlqcpy5y61v" path="res://robot/robot.tscn" id="1_om0ow"]
+[ext_resource type="PackedScene" uid="uid://haywivn3kl27" path="res://display/large_display.tscn" id="2_woc2y"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Robot" parent="." instance=ExtResource("1_om0ow")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0, 0)
+
+[node name="LargeDisplay" parent="." instance=ExtResource("2_woc2y")]

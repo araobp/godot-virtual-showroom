@@ -1,0 +1,38 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://dtiw3r82p5obf"
+path.s3tc="res://.godot/imported/LargeDisplay_SheetMetal002_1K-JPG_NormalGL.jpg-47c8c32a099cd97c134e84aedb4839f8.s3tc.ctex"
+metadata={
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
+}
+generator_parameters={
+"md5": "54a6a9e1008b2e9bd533fae93fce6308"
+}
+
+[deps]
+
+source_file="res://display/LargeDisplay_SheetMetal002_1K-JPG_NormalGL.jpg"
+dest_files=["res://.godot/imported/LargeDisplay_SheetMetal002_1K-JPG_NormalGL.jpg-47c8c32a099cd97c134e84aedb4839f8.s3tc.ctex"]
+
+[params]
+
+compress/mode=2
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=1
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+roughness/mode=1
+roughness/src_normal="res://display/LargeDisplay_SheetMetal002_1K-JPG_NormalGL.jpg"
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=0
