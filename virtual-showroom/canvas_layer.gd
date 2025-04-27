@@ -34,8 +34,10 @@ func _process(delta: float) -> void:
 		$ChatWindow/TextOutput.text += "Q: {0}".format([query])
 		$ChatWindow/TextOutput.scroll_vertical = 10000
 		
-
 		chat()
+		
+	if not DisplayServer.tts_is_speaking():
+		get_parent().get_node("Models").speak(false)			
 
 
 # Capture image from Camera3D attached to the sub viewport
@@ -58,6 +60,8 @@ func _capture(resize_width=null):
 	
 
 func chat():
+	var place = get_parent().image_place()
+	
 	var b64image = _capture(640)
 	
 	const headers = [
@@ -65,6 +69,13 @@ func chat():
 	]
 	
 	var payload = {
+		"system_instruction": {
+			"parts": [
+				{
+					"text": "The scene on the screen is a picture taken in {0}.".format([place])
+				}
+			]
+		},
 		"contents": [
 			{
 				"parts":[
@@ -96,6 +107,7 @@ func chat():
 		return
 
 	var res = await req.request_completed # request_completed シグナルを待つ
+
 	var body = res[3]
 	
 	var json = JSON.parse_string(body.get_string_from_utf8())
@@ -105,9 +117,10 @@ func chat():
 	
 	var model_idx = get_parent().get_node("Models").model_idx()
 	DisplayServer.tts_speak(answer, voices[model_idx])
-	
-	self.remove_child(req)
 
+	get_parent().get_node("Models").speak(true)
+
+	self.remove_child(req)
 
 func _on_chat_toggle_button_button_down() -> void:
 	if $ChatWindow.visible:

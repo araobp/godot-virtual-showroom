@@ -42,3 +42,9 @@ func prev_model() -> void:
 	
 func model_idx():
 	return idx
+	
+func speak(enabled):
+	if enabled:
+		models[idx].start_speaking()
+	else:
+		models[idx].stop_speaking()

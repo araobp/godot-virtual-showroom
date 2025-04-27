@@ -30,6 +30,9 @@ glow_blend_mode = 1
 
 [node name="Node3D" type="Node3D"]
 
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_buu1m")
+
 [node name="vr_theater" parent="." instance=ExtResource("1_6gv1x")]
 script = ExtResource("2_5xsj8")
 
@@ -110,120 +113,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.66127, 0.581961, 2.66146)
 [node name="plant3" parent="vr_theater" instance=ExtResource("5_m362y")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00705731, 0.56918, 2.84154)
 
-[node name="CanvasLayer" type="CanvasLayer" parent="vr_theater"]
-script = ExtResource("6_b67af")
-
-[node name="Node2D" type="Node2D" parent="vr_theater/CanvasLayer"]
-
-[node name="ControlButtons" type="Node2D" parent="vr_theater/CanvasLayer/Node2D"]
-
-[node name="LabelCamera" type="Label" parent="vr_theater/CanvasLayer/Node2D/ControlButtons"]
-offset_left = 1024.0
-offset_top = 16.0
-offset_right = 1128.0
-offset_bottom = 48.0
-text = "Camera"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="TextureButtonLeftArrowCamera" type="TextureButton" parent="vr_theater/CanvasLayer/Node2D/ControlButtons"]
-offset_left = 1024.0
-offset_top = 48.0
-offset_right = 1072.0
-offset_bottom = 96.0
-texture_normal = ExtResource("7_kgmfh")
-ignore_texture_size = true
-stretch_mode = 0
-
-[node name="TextureButtonRightArrowCamera" type="TextureButton" parent="vr_theater/CanvasLayer/Node2D/ControlButtons"]
-offset_left = 1080.0
-offset_top = 48.0
-offset_right = 1128.0
-offset_bottom = 96.0
-texture_normal = ExtResource("8_jxqc1")
-ignore_texture_size = true
-stretch_mode = 0
-
-[node name="LabelContent" type="Label" parent="vr_theater/CanvasLayer/Node2D/ControlButtons"]
-offset_left = 1024.0
-offset_top = 104.0
-offset_right = 1128.0
-offset_bottom = 136.0
-text = "Content"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="TextureButtonLeftArrowContent" type="TextureButton" parent="vr_theater/CanvasLayer/Node2D/ControlButtons"]
-offset_left = 1024.0
-offset_top = 136.0
-offset_right = 1072.0
-offset_bottom = 184.0
-texture_normal = ExtResource("7_kgmfh")
-ignore_texture_size = true
-stretch_mode = 0
-
-[node name="TextureButtonRightArrowContent" type="TextureButton" parent="vr_theater/CanvasLayer/Node2D/ControlButtons"]
-offset_left = 1080.0
-offset_top = 136.0
-offset_right = 1128.0
-offset_bottom = 184.0
-texture_normal = ExtResource("8_jxqc1")
-ignore_texture_size = true
-stretch_mode = 0
-
-[node name="LabelModel" type="Label" parent="vr_theater/CanvasLayer/Node2D/ControlButtons"]
-offset_left = 1024.0
-offset_top = 192.0
-offset_right = 1128.0
-offset_bottom = 224.0
-text = "Model"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="TextureButtonLeftArrowModel" type="TextureButton" parent="vr_theater/CanvasLayer/Node2D/ControlButtons"]
-offset_left = 1024.0
-offset_top = 224.0
-offset_right = 1072.0
-offset_bottom = 272.0
-texture_normal = ExtResource("7_kgmfh")
-ignore_texture_size = true
-stretch_mode = 0
-
-[node name="TextureButtonRightArrowModel" type="TextureButton" parent="vr_theater/CanvasLayer/Node2D/ControlButtons"]
-offset_left = 1080.0
-offset_top = 224.0
-offset_right = 1128.0
-offset_bottom = 272.0
-texture_normal = ExtResource("8_jxqc1")
-ignore_texture_size = true
-stretch_mode = 0
-
-[node name="ChatToggleButton" type="TextureButton" parent="vr_theater/CanvasLayer/Node2D/ControlButtons"]
-offset_left = 376.0
-offset_top = 624.0
-offset_right = 776.0
-offset_bottom = 648.0
-texture_normal = ExtResource("9_m362y")
-ignore_texture_size = true
-stretch_mode = 0
-
-[node name="ChatWindow" type="Node2D" parent="vr_theater/CanvasLayer"]
-
-[node name="TextInput" type="TextEdit" parent="vr_theater/CanvasLayer/ChatWindow"]
-offset_left = 136.0
-offset_top = 568.0
-offset_right = 1016.0
-offset_bottom = 624.0
-placeholder_text = "Ask anything..."
-caret_blink = true
-
-[node name="TextOutput" type="TextEdit" parent="vr_theater/CanvasLayer/ChatWindow"]
-offset_left = 136.0
-offset_top = 384.0
-offset_right = 1016.0
-offset_bottom = 560.0
-wrap_mode = 1
-
 [node name="Chair" parent="vr_theater" instance=ExtResource("10_jxqc1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0423015, -1.23236)
 
@@ -248,11 +137,17 @@ shadow_enabled = true
 spot_angle = 20.52
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="vr_theater"]
-offset_right = 40.0
-offset_bottom = 40.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch = true
 
 [node name="SubViewport" type="SubViewport" parent="vr_theater/SubViewportContainer"]
-size = Vector2i(1152, 648)
+handle_input_locally = false
+size = Vector2i(1920, 1080)
+render_target_update_mode = 4
 
 [node name="Cameras" type="Node3D" parent="vr_theater/SubViewportContainer/SubViewport"]
 script = ExtResource("10_m362y")
@@ -279,14 +174,130 @@ fov = 27.0
 transform = Transform3D(0.831954, 0, -0.554844, 0, 1, 0, 0.554844, 0, 0.831954, -2.01547, 1.45934, 5.16891)
 fov = 45.0
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_buu1m")
+[node name="CanvasLayer" type="CanvasLayer" parent="vr_theater"]
+script = ExtResource("6_b67af")
 
-[connection signal="button_down" from="vr_theater/CanvasLayer/Node2D/ControlButtons/TextureButtonLeftArrowCamera" to="vr_theater/SubViewportContainer/SubViewport/Cameras" method="_on_texture_button_left_arrow_camera_button_down"]
-[connection signal="button_down" from="vr_theater/CanvasLayer/Node2D/ControlButtons/TextureButtonRightArrowCamera" to="vr_theater/SubViewportContainer/SubViewport/Cameras" method="_on_texture_button_right_arrow_camera_button_down"]
-[connection signal="button_down" from="vr_theater/CanvasLayer/Node2D/ControlButtons/TextureButtonLeftArrowContent" to="vr_theater" method="_on_button_image_backward_button_down"]
-[connection signal="button_down" from="vr_theater/CanvasLayer/Node2D/ControlButtons/TextureButtonRightArrowContent" to="vr_theater" method="_on_button_image_forward_button_down"]
-[connection signal="button_down" from="vr_theater/CanvasLayer/Node2D/ControlButtons/TextureButtonLeftArrowModel" to="vr_theater/Models" method="prev_model"]
-[connection signal="button_down" from="vr_theater/CanvasLayer/Node2D/ControlButtons/TextureButtonRightArrowModel" to="vr_theater/Models" method="next_model"]
-[connection signal="button_down" from="vr_theater/CanvasLayer/Node2D/ControlButtons/ChatToggleButton" to="vr_theater/CanvasLayer" method="_on_chat_toggle_button_button_down"]
+[node name="ChatWindow" type="Node2D" parent="vr_theater/CanvasLayer"]
+
+[node name="TextInput" type="TextEdit" parent="vr_theater/CanvasLayer/ChatWindow"]
+offset_left = 280.0
+offset_top = 944.0
+offset_right = 1640.0
+offset_bottom = 1048.0
+theme_override_font_sizes/font_size = 32
+placeholder_text = "Ask anything..."
+caret_blink = true
+
+[node name="TextOutput" type="TextEdit" parent="vr_theater/CanvasLayer/ChatWindow"]
+offset_left = 280.0
+offset_top = 616.0
+offset_right = 1640.0
+offset_bottom = 936.0
+theme_override_font_sizes/font_size = 32
+wrap_mode = 1
+
+[node name="ControlButtons" type="Node2D" parent="vr_theater/CanvasLayer"]
+
+[node name="LabelCamera" type="Label" parent="vr_theater/CanvasLayer/ControlButtons"]
+offset_left = 1704.0
+offset_top = 40.0
+offset_right = 1896.0
+offset_bottom = 96.0
+theme_override_font_sizes/font_size = 36
+text = "Camera"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureButtonLeftArrowCamera" type="TextureButton" parent="vr_theater/CanvasLayer/ControlButtons"]
+offset_left = 1704.0
+offset_top = 96.0
+offset_right = 1793.0
+offset_bottom = 165.0
+scale = Vector2(0.992424, 1.28)
+texture_normal = ExtResource("7_kgmfh")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="TextureButtonRightArrowCamera" type="TextureButton" parent="vr_theater/CanvasLayer/ControlButtons"]
+offset_left = 1808.0
+offset_top = 96.0
+offset_right = 1897.0
+offset_bottom = 165.0
+scale = Vector2(0.992424, 1.28)
+texture_normal = ExtResource("8_jxqc1")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="LabelContent" type="Label" parent="vr_theater/CanvasLayer/ControlButtons"]
+offset_left = 1704.0
+offset_top = 200.0
+offset_right = 1896.0
+offset_bottom = 256.0
+theme_override_font_sizes/font_size = 36
+text = "Content"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureButtonLeftArrowContent" type="TextureButton" parent="vr_theater/CanvasLayer/ControlButtons"]
+offset_left = 1704.0
+offset_top = 256.0
+offset_right = 1792.0
+offset_bottom = 344.0
+texture_normal = ExtResource("7_kgmfh")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="TextureButtonRightArrowContent" type="TextureButton" parent="vr_theater/CanvasLayer/ControlButtons"]
+offset_left = 1808.0
+offset_top = 256.0
+offset_right = 1896.0
+offset_bottom = 344.0
+texture_normal = ExtResource("8_jxqc1")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="LabelModel" type="Label" parent="vr_theater/CanvasLayer/ControlButtons"]
+offset_left = 1704.0
+offset_top = 360.0
+offset_right = 1896.0
+offset_bottom = 416.0
+theme_override_font_sizes/font_size = 36
+text = "Model"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureButtonLeftArrowModel" type="TextureButton" parent="vr_theater/CanvasLayer/ControlButtons"]
+offset_left = 1704.0
+offset_top = 416.0
+offset_right = 1792.0
+offset_bottom = 504.0
+texture_normal = ExtResource("7_kgmfh")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="TextureButtonRightArrowModel" type="TextureButton" parent="vr_theater/CanvasLayer/ControlButtons"]
+offset_left = 1808.0
+offset_top = 416.0
+offset_right = 1896.0
+offset_bottom = 504.0
+texture_normal = ExtResource("8_jxqc1")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="ChatToggleButton" type="TextureButton" parent="vr_theater/CanvasLayer/ControlButtons"]
+offset_left = 712.0
+offset_top = 1056.0
+offset_right = 1208.0
+offset_bottom = 1080.0
+texture_normal = ExtResource("9_m362y")
+ignore_texture_size = true
+stretch_mode = 0
+
 [connection signal="text_set" from="vr_theater/CanvasLayer/ChatWindow/TextInput" to="vr_theater/CanvasLayer" method="_on_text_input_text_changed"]
+[connection signal="button_down" from="vr_theater/CanvasLayer/ControlButtons/TextureButtonLeftArrowCamera" to="vr_theater/SubViewportContainer/SubViewport/Cameras" method="_on_texture_button_left_arrow_camera_button_down"]
+[connection signal="button_down" from="vr_theater/CanvasLayer/ControlButtons/TextureButtonRightArrowCamera" to="vr_theater/SubViewportContainer/SubViewport/Cameras" method="_on_texture_button_right_arrow_camera_button_down"]
+[connection signal="button_down" from="vr_theater/CanvasLayer/ControlButtons/TextureButtonLeftArrowContent" to="vr_theater" method="_on_button_image_backward_button_down"]
+[connection signal="button_down" from="vr_theater/CanvasLayer/ControlButtons/TextureButtonRightArrowContent" to="vr_theater" method="_on_button_image_forward_button_down"]
+[connection signal="button_down" from="vr_theater/CanvasLayer/ControlButtons/TextureButtonLeftArrowModel" to="vr_theater/Models" method="prev_model"]
+[connection signal="button_down" from="vr_theater/CanvasLayer/ControlButtons/TextureButtonRightArrowModel" to="vr_theater/Models" method="next_model"]
+[connection signal="button_down" from="vr_theater/CanvasLayer/ControlButtons/ChatToggleButton" to="vr_theater/CanvasLayer" method="_on_chat_toggle_button_button_down"]
