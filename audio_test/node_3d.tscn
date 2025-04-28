@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://cn5srv6o2teos"]
+[gd_scene load_steps=8 format=3 uid="uid://cn5srv6o2teos"]
 
 [ext_resource type="Script" uid="uid://ddk0cwompi0ny" path="res://node_3d.gd" id="1_noarx"]
 [ext_resource type="AudioStream" uid="uid://b6toqhqknne5i" path="res://Bach,_BWV_147,_10._Jesus_bleibet_meine_Freude.ogg" id="2_a0tk4"]
-[ext_resource type="Texture2D" uid="uid://fi1bgqokulg6" path="res://spruit_sunrise_1k.hdr" id="2_r3fl7"]
+[ext_resource type="Texture2D" uid="uid://cvdnakvuf1y03" path="res://zwinger_night_4k.hdr" id="2_r3fl7"]
+[ext_resource type="Script" uid="uid://bvqml6uvap5po" path="res://camera_3d.gd" id="4_r3fl7"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_jka67"]
 panorama = ExtResource("2_r3fl7")
@@ -22,10 +23,12 @@ script = ExtResource("1_noarx")
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_wc5p8")
 
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-0.223709, 0, 0.974656, 0, 1, 0, -0.974656, 0, -0.223709, 0, 0, 0)
+script = ExtResource("4_r3fl7")
+
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_a0tk4")
 volume_db = -13.0
 autoplay = true
 parameters/looping = false
-
-[node name="Camera3D" type="Camera3D" parent="."]
