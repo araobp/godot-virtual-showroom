@@ -1,10 +1,12 @@
-[gd_scene load_steps=8 format=3 uid="uid://c5h33u2gfmlcu"]
+[gd_scene load_steps=10 format=3 uid="uid://c5h33u2gfmlcu"]
 
 [ext_resource type="PackedScene" uid="uid://botlqcpy5y61v" path="res://robot/robot.tscn" id="1_om0ow"]
 [ext_resource type="PackedScene" uid="uid://haywivn3kl27" path="res://display/large_display.tscn" id="2_woc2y"]
+[ext_resource type="PackedScene" uid="uid://bklioakps8g7t" path="res://Garden/Garden_Area.glb" id="3_qftih"]
+[ext_resource type="PackedScene" uid="uid://b1qal7lyuentl" path="res://Garden/Garden_Trees.glb" id="4_t4817"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_woc2y"]
-sky_top_color = Color(0.327553, 0.604402, 0.873515, 1)
+sky_top_color = Color(0.261678, 0.571133, 0.908701, 1)
 sky_horizon_color = Color(0.880939, 0.836771, 0.827839, 1)
 ground_horizon_color = Color(0.469467, 0.361399, 0.234734, 1)
 
@@ -25,8 +27,10 @@ albedo_color = Color(0.270696, 0.183233, 0.122407, 1)
 [node name="Node3D" type="Node3D"]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
+transform = Transform3D(-0.802049, -0.238074, -0.547757, -0.597257, 0.3213, 0.734881, 0.00103819, 0.916562, -0.39989, 0, 2.13069, 0)
+light_color = Color(0.89059, 0.89059, 0.89059, 1)
 shadow_enabled = true
+shadow_opacity = 0.72
 
 [node name="Robot" parent="." instance=ExtResource("1_om0ow")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0, 0)
@@ -54,3 +58,12 @@ fov = 40.0
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(0.977072, 0, 0.212911, 0, 1, 0, -0.212911, 0, 0.977072, 0.876169, 1.28255, 1.35013)
 fov = 40.0
+
+[node name="Garden_Area" parent="." instance=ExtResource("3_qftih")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.374603, -0.0241833, -2.11284)
+
+[node name="Garden_Trees" parent="." instance=ExtResource("4_t4817")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.58224)
+
+[node name="Garden_Trees2" parent="." instance=ExtResource("4_t4817")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 10.7324)
