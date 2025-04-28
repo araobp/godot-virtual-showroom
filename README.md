@@ -14,13 +14,21 @@ Remake the following project with Godot: https://github.com/araobp/virtual-showr
 
 ## Code
 
+## Physics test
+
+=> [Code](/physics_test)
+
+## Audio test
+
+=> [Code](/audio_test)
+
 ## Mixamo test ([Mixamo](https://www.mixamo.com/))
 
 I've confirmed that Mixamo models can be imported into Godot. Controlling animations from GDScript is also easy.
 
 <img src="docs/animationtest.jpg" width=400>
 
-=> [Code](/animationtest)
+=> [Code](/animation_test)
 
 ## MPFB test ([MPFB](https://static.makehumancommunity.org/mpfb.html))
 
@@ -28,7 +36,7 @@ It has been confirmed that models created with MPFB can be imported into Godot. 
 
 <img src="docs/mpfbtest.jpg" width=400>
 
-=> [Code](/mpfbtest)
+=> [Code](/mpfb_test)
 
 ## Virtual Showroom with GenAI (Work in Progress)
 
@@ -38,7 +46,7 @@ Note: "gemini_api_key_env.txt" file (Gemini API key value) is ignored by .gitign
 
 <img src="docs/screenshot2.jpg" width=400>
 
-=> [Code](/virtual-showroom)
+=> [Code](/virtual_showroom)
 
 ## Notes on MPFB
 
