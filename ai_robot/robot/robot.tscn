@@ -3,3 +3,10 @@
 [ext_resource type="PackedScene" uid="uid://ti0sqiajilvp" path="res://robot/Robot.glb" id="1_2tdfi"]
 
 [node name="Robot" instance=ExtResource("1_2tdfi")]
+
+[node name="RobotFace" parent="Armature/Skeleton3D" index="1"]
+transform = Transform3D(1, 0.000479549, 0.000148723, -0.00047954, 1, -6.40418e-05, -0.000148752, 6.39754e-05, 1, 0, 0, 0)
+
+[node name="Camera3D" type="Camera3D" parent="Armature/Skeleton3D/RobotFace" index="0"]
+transform = Transform3D(-100, -8.52954e-06, -4.448e-06, 4.38094e-06, 4.65661e-10, -100, 8.74225e-06, -100, 4.94067e-07, 0.0208413, 8.13685, -166.372)
+fov = 60.0

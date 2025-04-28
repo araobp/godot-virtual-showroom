@@ -1,14 +1,18 @@
-[gd_scene load_steps=10 format=3 uid="uid://c5h33u2gfmlcu"]
+[gd_scene load_steps=13 format=3 uid="uid://c5h33u2gfmlcu"]
 
+[ext_resource type="Script" uid="uid://6usbr220nxx6" path="res://recognition.gd" id="1_8r1g0"]
 [ext_resource type="PackedScene" uid="uid://botlqcpy5y61v" path="res://robot/robot.tscn" id="1_om0ow"]
 [ext_resource type="PackedScene" uid="uid://haywivn3kl27" path="res://display/large_display.tscn" id="2_woc2y"]
 [ext_resource type="PackedScene" uid="uid://bklioakps8g7t" path="res://Garden/Garden_Area.glb" id="3_qftih"]
 [ext_resource type="PackedScene" uid="uid://b1qal7lyuentl" path="res://Garden/Garden_Trees.glb" id="4_t4817"]
+[ext_resource type="Texture2D" uid="uid://diu1ss6k5nvff" path="res://Icons/ArrowRightButton.png" id="5_t4817"]
+[ext_resource type="Texture2D" uid="uid://yabsflhhu1iq" path="res://Icons/ArrowLeftButton.png" id="6_fcfh8"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_woc2y"]
 sky_top_color = Color(0.261678, 0.571133, 0.908701, 1)
 sky_horizon_color = Color(0.880939, 0.836771, 0.827839, 1)
 ground_horizon_color = Color(0.469467, 0.361399, 0.234734, 1)
+sun_angle_max = 10.75
 
 [sub_resource type="Sky" id="Sky_ydxjh"]
 sky_material = SubResource("ProceduralSkyMaterial_woc2y")
@@ -16,19 +20,22 @@ sky_material = SubResource("ProceduralSkyMaterial_woc2y")
 [sub_resource type="Environment" id="Environment_qftih"]
 background_mode = 2
 sky = SubResource("Sky_ydxjh")
-tonemap_mode = 2
-glow_enabled = true
+ambient_light_source = 3
+fog_mode = 1
+fog_density = 1.0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t4817"]
 albedo_color = Color(0.270696, 0.183233, 0.122407, 1)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_fcfh8"]
 
-[node name="Node3D" type="Node3D"]
+[node name="Scene" type="Node3D"]
+script = ExtResource("1_8r1g0")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.802049, -0.238074, -0.547757, -0.597257, 0.3213, 0.734881, 0.00103819, 0.916562, -0.39989, 0, 2.13069, 0)
+transform = Transform3D(-0.515031, 0.548746, -0.658499, -0.597257, 0.3213, 0.734881, 0.614839, 0.77178, 0.162263, 0, 2.13069, 0)
 light_color = Color(0.89059, 0.89059, 0.89059, 1)
+light_energy = 3.0
 shadow_enabled = true
 shadow_opacity = 0.72
 
@@ -51,13 +58,19 @@ transform = Transform3D(13685.2, 0, 0, 0, 4589.3, 0, 0, 0, 10000, 0, -0.0362293,
 material_override = SubResource("StandardMaterial3D_t4817")
 mesh = SubResource("PlaneMesh_fcfh8")
 
-[node name="Camera3D2" type="Camera3D" parent="."]
+[node name="Cameras" type="Node3D" parent="."]
+
+[node name="Camera1" type="Camera3D" parent="Cameras"]
+transform = Transform3D(0.987554, 0, 0.157279, 0, 1, 0, -0.157279, 0, 0.987554, 1.04068, 1.28255, 2.41048)
+fov = 25.0
+
+[node name="Camera2" type="Camera3D" parent="Cameras"]
 transform = Transform3D(-0.762883, 0, -0.646537, 0, 1, 0, 0.646537, 0, -0.762883, -0.586436, 1.58289, -0.659875)
 fov = 40.0
 
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(0.977072, 0, 0.212911, 0, 1, 0, -0.212911, 0, 0.977072, 0.876169, 1.28255, 1.35013)
-fov = 40.0
+[node name="Camera3" type="Camera3D" parent="Cameras"]
+transform = Transform3D(-0.889413, 0.147422, -0.43268, 0.0608215, 0.976316, 0.207624, 0.45304, 0.158347, -0.877315, -2.17964, 2.16709, -4.06887)
+fov = 30.0
 
 [node name="Garden_Area" parent="." instance=ExtResource("3_qftih")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.374603, -0.0241833, -2.11284)
@@ -67,3 +80,64 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.58224)
 
 [node name="Garden_Trees2" parent="." instance=ExtResource("4_t4817")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 10.7324)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TextureButtonNextContent" type="TextureButton" parent="CanvasLayer"]
+offset_left = 1800.0
+offset_top = 88.0
+offset_right = 1896.0
+offset_bottom = 184.0
+texture_normal = ExtResource("5_t4817")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="TextureButtonPrevContent2" type="TextureButton" parent="CanvasLayer"]
+offset_left = 1688.0
+offset_top = 88.0
+offset_right = 1784.0
+offset_bottom = 184.0
+texture_normal = ExtResource("6_fcfh8")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+offset_left = 1688.0
+offset_top = 32.0
+offset_right = 1896.0
+offset_bottom = 90.0
+theme_override_font_sizes/font_size = 36
+text = "Content"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureButtonNextCamera" type="TextureButton" parent="CanvasLayer"]
+offset_left = 1800.0
+offset_top = 248.0
+offset_right = 1896.0
+offset_bottom = 344.0
+texture_normal = ExtResource("5_t4817")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="TextureButtonPrevCamera" type="TextureButton" parent="CanvasLayer"]
+offset_left = 1688.0
+offset_top = 248.0
+offset_right = 1784.0
+offset_bottom = 344.0
+texture_normal = ExtResource("6_fcfh8")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label2" type="Label" parent="CanvasLayer"]
+offset_left = 1688.0
+offset_top = 192.0
+offset_right = 1896.0
+offset_bottom = 250.0
+theme_override_font_sizes/font_size = 36
+text = "Camera"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="button_down" from="CanvasLayer/TextureButtonNextContent" to="." method="next_image"]
+[connection signal="button_down" from="CanvasLayer/TextureButtonPrevContent2" to="." method="prev_image"]
