@@ -1,0 +1,117 @@
+[gd_scene load_steps=14 format=3 uid="uid://sbirq1yr5qb8"]
+
+[ext_resource type="Script" uid="uid://bldthrkhqjf1j" path="res://physics_test.gd" id="1_48s3g"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_4gja5"]
+sky_top_color = Color(0.234484, 0.467772, 0.906359, 1)
+sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+ground_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+
+[sub_resource type="Sky" id="Sky_48s3g"]
+sky_material = SubResource("ProceduralSkyMaterial_4gja5")
+
+[sub_resource type="Environment" id="Environment_be7oa"]
+background_mode = 2
+background_energy_multiplier = 0.33
+sky = SubResource("Sky_48s3g")
+ambient_light_color = Color(0.0708272, 0.0708272, 0.0708272, 1)
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_g3hqd"]
+size = Vector2(1000, 1000)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d86h8"]
+albedo_color = Color(0.170244, 0.262345, 0.229179, 1)
+roughness = 0.0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4gja5"]
+size = Vector3(1000, 0.001, 1000)
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_4gja5"]
+bounce = 0.8
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_4gja5"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_rjh52"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f68df"]
+metallic = 1.0
+roughness = 0.0
+emission_enabled = true
+emission = Color(0.547259, 0.149107, 0.155219, 1)
+emission_energy_multiplier = 2.35
+
+[sub_resource type="BoxMesh" id="BoxMesh_4gja5"]
+size = Vector3(5, 0.1, 5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_48s3g"]
+size = Vector3(5, 0.1, 5)
+
+[node name="Node3D" type="Node3D"]
+script = ExtResource("1_48s3g")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_be7oa")
+
+[node name="Floor" type="StaticBody3D" parent="."]
+
+[node name="Ground" type="MeshInstance3D" parent="Floor"]
+mesh = SubResource("PlaneMesh_g3hqd")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_d86h8")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor"]
+shape = SubResource("BoxShape3D_4gja5")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.996551, -0.0829822, 0, 0.0829822, 0.996551, 0, 7.652, 19.2499)
+fov = 65.0
+
+[node name="RigidBody3D" type="RigidBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 20, 0)
+mass = 10.0
+physics_material_override = SubResource("PhysicsMaterial_4gja5")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
+shape = SubResource("SphereShape3D_4gja5")
+
+[node name="Ball" type="MeshInstance3D" parent="RigidBody3D"]
+mesh = SubResource("SphereMesh_rjh52")
+skeleton = NodePath("../../Floor/Ground")
+surface_material_override/0 = SubResource("StandardMaterial3D_f68df")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.743203, -0.669066, 0, 0.669066, 0.743203, 0, 10, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+mesh = SubResource("BoxMesh_4gja5")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("BoxShape3D_48s3g")
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.905176, 0.425037, 0, -0.425037, 0.905176, 0, 5.76829, 9.82753)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D2"]
+transform = Transform3D(1, 0, 0, 0, 0.9293, -0.369325, 0, 0.369325, 0.9293, 0, 0, 0)
+mesh = SubResource("BoxMesh_4gja5")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D2"]
+shape = SubResource("BoxShape3D_48s3g")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Button" type="Button" parent="CanvasLayer"]
+offset_left = 1728.0
+offset_top = 64.0
+offset_right = 1856.0
+offset_bottom = 191.0
+theme_override_font_sizes/font_size = 32
+text = "Start"
+
+[connection signal="button_down" from="CanvasLayer/Button" to="." method="_on_button_button_down"]
