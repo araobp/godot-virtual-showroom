@@ -18,6 +18,10 @@ Remake the following project with Godot: https://github.com/araobp/virtual-showr
 
 => [Code](/physics_test)
 
+## Audio test
+
+=> [Code](/audio_test)
+
 ## Mixamo test ([Mixamo](https://www.mixamo.com/))
 
 I've confirmed that Mixamo models can be imported into Godot. Controlling animations from GDScript is also easy.
