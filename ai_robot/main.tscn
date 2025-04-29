@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://c5h33u2gfmlcu"]
+[gd_scene load_steps=22 format=3 uid="uid://c5h33u2gfmlcu"]
 
 [ext_resource type="Script" uid="uid://6usbr220nxx6" path="res://main.gd" id="1_efxa6"]
 [ext_resource type="Script" uid="uid://eps6uwmygjly" path="res://cameras.gd" id="2_dg77c"]
@@ -11,6 +11,8 @@
 [ext_resource type="PackedScene" uid="uid://cyiusm55u2luo" path="res://Garden/Garden_Wall.glb" id="9_cegan"]
 [ext_resource type="Texture2D" uid="uid://diu1ss6k5nvff" path="res://Icons/ArrowRightButton.png" id="10_82xsv"]
 [ext_resource type="Texture2D" uid="uid://yabsflhhu1iq" path="res://Icons/ArrowLeftButton.png" id="11_getpj"]
+[ext_resource type="AudioStream" uid="uid://chbrg5sgv8vgs" path="res://audio/Bach,_BWV_147,_10._Jesus_bleibet_meine_Freude.ogg" id="12_dg77c"]
+[ext_resource type="Texture2D" uid="uid://drrqxgqua1gqf" path="res://Icons/ChatToggleButton.png" id="12_ycdy4"]
 
 [sub_resource type="Gradient" id="Gradient_efxa6"]
 offsets = PackedFloat32Array(0.265385, 0.826923)
@@ -144,7 +146,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.205)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="TextureButtonNextContent" type="TextureButton" parent="CanvasLayer"]
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureButtonNextContent" type="TextureButton" parent="CanvasLayer/Control"]
 offset_left = 1800.0
 offset_top = 88.0
 offset_right = 1896.0
@@ -153,7 +161,7 @@ texture_normal = ExtResource("10_82xsv")
 ignore_texture_size = true
 stretch_mode = 0
 
-[node name="TextureButtonPrevContent2" type="TextureButton" parent="CanvasLayer"]
+[node name="TextureButtonPrevContent2" type="TextureButton" parent="CanvasLayer/Control"]
 offset_left = 1688.0
 offset_top = 88.0
 offset_right = 1784.0
@@ -162,7 +170,7 @@ texture_normal = ExtResource("11_getpj")
 ignore_texture_size = true
 stretch_mode = 0
 
-[node name="Label" type="Label" parent="CanvasLayer"]
+[node name="Label" type="Label" parent="CanvasLayer/Control"]
 offset_left = 1688.0
 offset_top = 32.0
 offset_right = 1896.0
@@ -172,7 +180,7 @@ text = "Content"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="TextureButtonNextCamera" type="TextureButton" parent="CanvasLayer"]
+[node name="TextureButtonNextCamera" type="TextureButton" parent="CanvasLayer/Control"]
 offset_left = 1800.0
 offset_top = 248.0
 offset_right = 1896.0
@@ -181,7 +189,7 @@ texture_normal = ExtResource("10_82xsv")
 ignore_texture_size = true
 stretch_mode = 0
 
-[node name="TextureButtonPrevCamera" type="TextureButton" parent="CanvasLayer"]
+[node name="TextureButtonPrevCamera" type="TextureButton" parent="CanvasLayer/Control"]
 offset_left = 1688.0
 offset_top = 248.0
 offset_right = 1784.0
@@ -190,7 +198,7 @@ texture_normal = ExtResource("11_getpj")
 ignore_texture_size = true
 stretch_mode = 0
 
-[node name="Label2" type="Label" parent="CanvasLayer"]
+[node name="Label2" type="Label" parent="CanvasLayer/Control"]
 offset_left = 1688.0
 offset_top = 192.0
 offset_right = 1896.0
@@ -200,7 +208,42 @@ text = "Camera"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[connection signal="button_down" from="CanvasLayer/TextureButtonNextContent" to="." method="next_image"]
-[connection signal="button_down" from="CanvasLayer/TextureButtonPrevContent2" to="." method="prev_image"]
-[connection signal="button_down" from="CanvasLayer/TextureButtonNextCamera" to="SubViewportContainer/SubViewport/Cameras" method="next_camera"]
-[connection signal="button_down" from="CanvasLayer/TextureButtonPrevCamera" to="SubViewportContainer/SubViewport/Cameras" method="prev_camera"]
+[node name="TextureButtonStartChat" type="TextureButton" parent="CanvasLayer/Control"]
+offset_left = 704.0
+offset_top = 1056.0
+offset_right = 1216.0
+offset_bottom = 1080.0
+texture_normal = ExtResource("12_ycdy4")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="ChatWindow" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Input" type="TextEdit" parent="CanvasLayer/ChatWindow"]
+layout_mode = 0
+offset_left = 384.0
+offset_top = 968.0
+offset_right = 1536.0
+offset_bottom = 1048.0
+
+[node name="Output" type="TextEdit" parent="CanvasLayer/ChatWindow"]
+layout_mode = 0
+offset_left = 384.0
+offset_top = 712.0
+offset_right = 1536.0
+offset_bottom = 960.0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_dg77c")
+volume_db = -13.0
+autoplay = true
+parameters/looping = false
+
+[connection signal="button_down" from="CanvasLayer/Control/TextureButtonNextContent" to="." method="next_image"]
+[connection signal="button_down" from="CanvasLayer/Control/TextureButtonPrevContent2" to="." method="prev_image"]
+[connection signal="button_down" from="CanvasLayer/Control/TextureButtonNextCamera" to="SubViewportContainer/SubViewport/Cameras" method="next_camera"]
+[connection signal="button_down" from="CanvasLayer/Control/TextureButtonPrevCamera" to="SubViewportContainer/SubViewport/Cameras" method="prev_camera"]
