@@ -1,6 +1,32 @@
-[gd_scene load_steps=2 format=3 uid="uid://botlqcpy5y61v"]
+[gd_scene load_steps=9 format=3 uid="uid://botlqcpy5y61v"]
 
 [ext_resource type="PackedScene" uid="uid://ti0sqiajilvp" path="res://robot/Robot.glb" id="1_2tdfi"]
+[ext_resource type="Script" uid="uid://bd13lc0qen0e2" path="res://robot/animation_tree.gd" id="2_i4eqh"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_2tdfi"]
+animation = &"Armature|mixamo_com|Layer0_001"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_i4eqh"]
+animation = &"Armature|mixamo_com|Layer0"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_dsigu"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_2tdfi"]
+xfade_time = 0.8
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_i4eqh"]
+xfade_time = 0.8
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_abor7"]
+states/Idle/node = SubResource("AnimationNodeAnimation_2tdfi")
+states/Idle/position = Vector2(420.625, 174.25)
+states/Point/node = SubResource("AnimationNodeAnimation_i4eqh")
+states/Point/position = Vector2(421, 65.5)
+transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_dsigu"), "Idle", "Point", SubResource("AnimationNodeStateMachineTransition_2tdfi"), "Point", "Idle", SubResource("AnimationNodeStateMachineTransition_i4eqh")]
+graph_offset = Vector2(102, -4)
 
 [node name="Robot" instance=ExtResource("1_2tdfi")]
 
@@ -8,5 +34,10 @@
 transform = Transform3D(1, 0.000479549, 0.000148723, -0.00047954, 1, -6.40418e-05, -0.000148752, 6.39754e-05, 1, 0, 0, 0)
 
 [node name="Camera3D" type="Camera3D" parent="Armature/Skeleton3D/RobotFace" index="0"]
-transform = Transform3D(-100, -0.00115936, 0.000337444, -0.000365116, 2.39087, -99.9714, 0.00115113, -99.9714, -2.39087, 0.0208413, 8.13685, -166.372)
+transform = Transform3D(-100, -0.00115936, 0.000337441, -0.000365116, 2.39087, -99.9714, 0.00115113, -99.9714, -2.39087, 0.0208413, 8.13685, -166.372)
 fov = 40.0
+
+[node name="AnimationTree" type="AnimationTree" parent="." index="2"]
+tree_root = SubResource("AnimationNodeStateMachine_abor7")
+anim_player = NodePath("../AnimationPlayer")
+script = ExtResource("2_i4eqh")
