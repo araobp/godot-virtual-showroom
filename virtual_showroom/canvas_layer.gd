@@ -62,7 +62,7 @@ func _capture(resize_width=null):
 func chat():
 	var place = get_parent().image_place()
 	
-	var b64image = _capture(640)
+	var b64image = _capture(800)
 	
 	const headers = [
 		"Content-Type: application/json",
@@ -111,7 +111,8 @@ func chat():
 	var body = res[3]
 	
 	var json = JSON.parse_string(body.get_string_from_utf8())
-	
+
+	print(json)
 	var answer = json["candidates"][0]["content"]["parts"][0]["text"]
 	_output_text(answer)
 	

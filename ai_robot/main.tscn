@@ -118,7 +118,11 @@ fov = 30.0
 transform = Transform3D(0.263469, 0, 0.964668, 0, 1, 0, -0.964668, 0, 0.263469, 6.40412, 1.70589, -0.96006)
 fov = 36.0
 
-[node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport/Cameras"]
+[node name="Camera5" type="Camera3D" parent="SubViewportContainer/SubViewport/Cameras"]
+transform = Transform3D(1, 0, 0, 0, 1, -1.49012e-08, 0, 1.49012e-08, 1, 0, 1.45624, -0.470071)
+fov = 45.0
+
+[node name="Camera6" type="Camera3D" parent="SubViewportContainer/SubViewport/Cameras"]
 transform = Transform3D(1, 0, 0, 0, 0.845588, -0.533836, 0, 0.533836, 0.845588, -2.86008, 0.226557, -4.79819)
 fov = 40.0
 
