@@ -12,11 +12,11 @@ Remake the following project with Godot: https://github.com/araobp/virtual-showr
 
 ## Projects
 
+Note: "gemini_api_key_env.txt" file (Gemini API key value) is ignored by .gitignore. You have to add the file.
+
 ### Virtual Showroom with GenAI
 
 I've confirmed that the Gemini API can be used from GDScript.
-
-Note: "gemini_api_key_env.txt" file (Gemini API key value) is ignored by .gitignore.
 
 <img src="docs/screenshot2.jpg" width=400>
 
