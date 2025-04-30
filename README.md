@@ -18,19 +18,35 @@ Note: "gemini_api_key_env.txt" file (Gemini API key value) is ignored by .gitign
 
 I've confirmed that the Gemini API can be used from GDScript.
 
-<img src="docs/virtual_showroom1.jpg" width=400>
+<table>
+ <tr>
+  <td>
+   <img src="docs/virtual_showroom1.jpg" width=400>
+  </td>
+  <td>
+   <img src="docs/virtual_showroom2.jpg" width=400>
+  </td>
+ </tr>
+</table>
 
-<img src="docs/virtual_showroom2.jpg" width=400>
 
 => [Code](/virtual_showroom)
 
 ### AI Robot with GenAI
 
-<img src="docs/ai_robot2.jpg" width=400>
-
-<img src="docs/ai_robot3.jpg" width=400>
-
-<img src="docs/ai_robot4.jpg" width=400>
+<table>
+ <tr>
+  <td>
+   <img src="docs/ai_robot2.jpg" width=400>   
+  </td>
+  <td>
+   <img src="docs/ai_robot3.jpg" width=400>   
+  </td>
+  <td>
+   <img src="docs/ai_robot4.jpg" width=400>
+  </td>
+ </tr>
+</table>
 
 => [Code](/ai_robot)
 
