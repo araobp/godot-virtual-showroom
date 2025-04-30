@@ -6,11 +6,13 @@ As an MVP developer for marketing DX, I've used Unity for many years, but there 
 
 In MVP development, high functionality isn't required; instead, low cost and quick turnaround are essential. I'm looking into Godot and would like to compare its low-cost and rapid development capabilities with Unity.
 
-## Goal of this project
+## First impression
 
-Remake the following project with Godot: https://github.com/araobp/virtual-showroom
+Creating 3D scenes with Godot seems significantly easier compared to Unity. However, this assumes some knowledge of 3D modeling and a certain level of proficiency in Blender. Godot appears to be a useful learning material for physics and generative AI for high school and university students. The fact that it's free is a great advantage, allowing individuals to continue using it as a 3D UI creation tool even after entering the workforce.
 
-## Projects
+## Projects (Proof of the impression)
+
+Remake the following project with Godot: https://github.com/araobp/virtual-showroom, but with neither RaspberryPi nor RAG/sqlite-vec.
 
 Note: "gemini_api_key_env.txt" file (Gemini API key value) is ignored by .gitignore. You have to add the file.
 
