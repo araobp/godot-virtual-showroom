@@ -12,7 +12,7 @@ Creating 3D scenes with Godot seems significantly easier compared to Unity. Howe
 
 ## Projects (Proof of the impression)
 
-Remake the following project with Godot: https://github.com/araobp/virtual-showroom
+Remake the following project with Godot: https://github.com/araobp/virtual-showroom, but with neither RaspberryPi nor RAG/sqlite-vec.
 
 Note: "gemini_api_key_env.txt" file (Gemini API key value) is ignored by .gitignore. You have to add the file.
 
