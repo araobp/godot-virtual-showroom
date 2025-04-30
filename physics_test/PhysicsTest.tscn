@@ -28,6 +28,7 @@ background_energy_multiplier = 0.33
 sky = SubResource("Sky_48s3g")
 ambient_light_color = Color(0.0708272, 0.0708272, 0.0708272, 1)
 tonemap_mode = 2
+sdfgi_enabled = true
 glow_enabled = true
 fog_enabled = true
 fog_density = 0.001
@@ -109,11 +110,6 @@ mesh = SubResource("BoxMesh_4gja5")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
 shape = SubResource("BoxShape3D_48s3g")
-
-[node name="ReflectionProbe" type="ReflectionProbe" parent="StaticBody3D"]
-update_mode = 1
-size = Vector3(10, 1, 10)
-box_projection = true
 
 [node name="StaticBody3D2" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.905176, 0.425037, 0, -0.425037, 0.905176, 0, 5.76829, 9.82753)
