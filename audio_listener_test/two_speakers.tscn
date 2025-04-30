@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://cmsdq0g7udk3v"]
+[gd_scene load_steps=8 format=3 uid="uid://cmsdq0g7udk3v"]
 
 [ext_resource type="PackedScene" uid="uid://by06flfrqkofm" path="res://two_speakers.glb" id="1_r3tid"]
 [ext_resource type="Material" uid="uid://wnxq0t1ur5m8" path="res://floor.tres" id="2_bhq2d"]
 [ext_resource type="AudioStream" uid="uid://dvf6jsyoh0ulh" path="res://audio/Bach_C_Major_Prelude_Equal.ogg" id="2_evl0d"]
+[ext_resource type="Script" uid="uid://dvjprfr0vkket" path="res://camera_3d.gd" id="4_78i8d"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bhq2d"]
 albedo_color = Color(0.31802, 0.31802, 0.31802, 1)
@@ -74,32 +75,29 @@ spot_range = 10.0
 spot_angle = 40.0
 spot_angle_attenuation = 1.23333
 
-[node name="OFF_L" parent="." index="10"]
-visible = false
-
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Speaker_R" index="4"]
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Speaker_R" index="3"]
 stream = ExtResource("2_evl0d")
 volume_db = -13.0
 autoplay = true
 parameters/looping = false
 
-[node name="Circle" parent="." index="14"]
+[node name="Circle" parent="." index="13"]
 surface_material_override/0 = SubResource("StandardMaterial3D_bhq2d")
 
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Speaker_L" index="4"]
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Speaker_L" index="3"]
 stream = ExtResource("2_evl0d")
 volume_db = -13.0
 autoplay = true
-parameters/looping = false
+parameters/looping = true
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="." index="17"]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." index="15"]
 environment = SubResource("Environment_r3tid")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="WorldEnvironment" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.00384545, 0)
 mesh = SubResource("CylinderMesh_evl0d")
 
-[node name="SubViewportContainer" type="SubViewportContainer" parent="." index="18"]
+[node name="SubViewportContainer" type="SubViewportContainer" parent="." index="16"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -108,12 +106,16 @@ grow_vertical = 2
 stretch = true
 
 [node name="SubViewport" type="SubViewport" parent="SubViewportContainer" index="0"]
+handle_input_locally = false
 msaa_3d = 1
 audio_listener_enable_3d = true
 size = Vector2i(1920, 1080)
+render_target_update_mode = 4
 
 [node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.694973, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.17022, 0)
 fov = 40.0
+script = ExtResource("4_78i8d")
 
 [node name="AudioListener3D" type="AudioListener3D" parent="SubViewportContainer/SubViewport/Camera3D" index="0"]
+current = true
