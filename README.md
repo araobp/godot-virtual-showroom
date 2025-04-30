@@ -64,7 +64,11 @@ I've confirmed that the Gemini API can be used from GDScript.
 
 ### Audio Listener test
 
+<img src="docs/audio_listener_test.jpg" width=400>
+
 => [Code](/audio_listener_test)
+
+Use WASD keys to move/rotate the camera.
 
 ### Mixamo test ([Mixamo](https://www.mixamo.com/))
 
