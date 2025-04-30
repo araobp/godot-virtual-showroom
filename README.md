@@ -1,6 +1,6 @@
 # Virtual Showroom with Godot
 
-<img src="docs/screenshot1.jpg" width=600>
+<img src="docs/ai_robot1.jpg" width=600>
  
 As an MVP developer for marketing DX, I've used Unity for many years, but there have been several challenges, such as the high licensing fees and the need for high-spec PCs.
 
@@ -18,13 +18,35 @@ Note: "gemini_api_key_env.txt" file (Gemini API key value) is ignored by .gitign
 
 I've confirmed that the Gemini API can be used from GDScript.
 
-<img src="docs/screenshot2.jpg" width=400>
+<table>
+ <tr>
+  <td>
+   <img src="docs/virtual_showroom1.jpg" width=400>
+  </td>
+  <td>
+   <img src="docs/virtual_showroom2.jpg" width=400>
+  </td>
+ </tr>
+</table>
+
 
 => [Code](/virtual_showroom)
 
 ### AI Robot with GenAI
 
-<img src="docs/screenshot1.jpg" width=400>
+<table>
+ <tr>
+  <td>
+   <img src="docs/ai_robot2.jpg" width=400>   
+  </td>
+  <td>
+   <img src="docs/ai_robot3.jpg" width=400>   
+  </td>
+  <td>
+   <img src="docs/ai_robot4.jpg" width=400>
+  </td>
+ </tr>
+</table>
 
 => [Code](/ai_robot)
 
