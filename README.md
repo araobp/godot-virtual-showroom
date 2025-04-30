@@ -62,6 +62,10 @@ I've confirmed that the Gemini API can be used from GDScript.
 
 => [Code](/audio_test)
 
+### Audio Listener test
+
+=> [Code](/audio_listener_test)
+
 ### Mixamo test ([Mixamo](https://www.mixamo.com/))
 
 I've confirmed that Mixamo models can be imported into Godot. Controlling animations from GDScript is also easy.
