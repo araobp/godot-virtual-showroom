@@ -81,6 +81,9 @@ volume_db = -13.0
 autoplay = true
 parameters/looping = false
 
+[node name="ReflectionProbe" type="ReflectionProbe" parent="Speaker_R" index="4"]
+size = Vector3(200, 200, 200)
+
 [node name="Circle" parent="." index="13"]
 surface_material_override/0 = SubResource("StandardMaterial3D_bhq2d")
 
@@ -89,6 +92,9 @@ stream = ExtResource("2_evl0d")
 volume_db = -13.0
 autoplay = true
 parameters/looping = true
+
+[node name="ReflectionProbe" type="ReflectionProbe" parent="Speaker_L" index="4"]
+size = Vector3(200, 200, 200)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." index="15"]
 environment = SubResource("Environment_r3tid")
