@@ -50,10 +50,16 @@ func set_image(i):
 
 
 func capture_image_from_robot_camera():
-	return $SubViewportContainer_Robot/SubViewport_Robot.get_viewport().get_texture().get_image()
+	var image = $SubViewportContainer_Robot/SubViewport_Robot.get_viewport().get_texture().get_image()
+	# Encode the image to Base64
+	var b64image = Marshalls.raw_to_base64(image.save_jpg_to_buffer())
 
+	return b64image
 
 func set_image_from_robot_camera_to_screen():
 	var image = $SubViewportContainer_Robot/SubViewport_Robot.get_viewport().get_texture().get_image()
 	var image_texture = ImageTexture.create_from_image(image)
 	_set_image_to_screen(image_texture)
+	
+func start_point_animation():
+	$SubViewportContainer_Robot/SubViewport_Robot/Robot.point()
