@@ -1,7 +1,5 @@
 # Virtual Showroom with Godot
 
-(Work in progress)
-
 <img src="docs/screenshot1.jpg" width=600>
  
 As an MVP developer for marketing DX, I've used Unity for many years, but there have been several challenges, such as the high licensing fees and the need for high-spec PCs.
@@ -12,33 +10,9 @@ In MVP development, high functionality isn't required; instead, low cost and qui
 
 Remake the following project with Godot: https://github.com/araobp/virtual-showroom
 
-## Code
+## Projects
 
-## Physics test
-
-=> [Code](/physics_test)
-
-## Audio test
-
-=> [Code](/audio_test)
-
-## Mixamo test ([Mixamo](https://www.mixamo.com/))
-
-I've confirmed that Mixamo models can be imported into Godot. Controlling animations from GDScript is also easy.
-
-<img src="docs/animationtest.jpg" width=400>
-
-=> [Code](/animation_test)
-
-## MPFB test ([MPFB](https://static.makehumancommunity.org/mpfb.html))
-
-It has been confirmed that models created with MPFB can be imported into Godot. Animation control from GDScript is also easy.
-
-<img src="docs/mpfbtest.jpg" width=400>
-
-=> [Code](/mpfb_test)
-
-## Virtual Showroom with GenAI (Work in Progress)
+### Virtual Showroom with GenAI
 
 I've confirmed that the Gemini API can be used from GDScript.
 
@@ -48,11 +22,37 @@ Note: "gemini_api_key_env.txt" file (Gemini API key value) is ignored by .gitign
 
 => [Code](/virtual_showroom)
 
-## AI Robot with GenAI (Work in Progress)
+### AI Robot with GenAI
 
 <img src="docs/screenshot1.jpg" width=400>
 
 => [Code](/ai_robot)
+
+## Other projects
+
+### Physics test
+
+=> [Code](/physics_test)
+
+### Audio test
+
+=> [Code](/audio_test)
+
+### Mixamo test ([Mixamo](https://www.mixamo.com/))
+
+I've confirmed that Mixamo models can be imported into Godot. Controlling animations from GDScript is also easy.
+
+<img src="docs/animationtest.jpg" width=400>
+
+=> [Code](/animation_test)
+
+### MPFB test ([MPFB](https://static.makehumancommunity.org/mpfb.html))
+
+It has been confirmed that models created with MPFB can be imported into Godot. Animation control from GDScript is also easy.
+
+<img src="docs/mpfbtest.jpg" width=400>
+
+=> [Code](/mpfb_test)
 
 ## Notes on MPFB
 
