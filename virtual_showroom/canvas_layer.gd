@@ -2,7 +2,7 @@ extends CanvasLayer
 
 # Gemini API Key
 var GEMINI_API_KEY_FILE_PATH = "res://gemini_api_key_env.txt"
-var GEMINI_API_KEY = ""
+@export var GEMINI_API_KEY : String = ""
 
 # Chat query
 var query = ""
@@ -20,7 +20,8 @@ func _get_environment_variable(filePath):
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	GEMINI_API_KEY = _get_environment_variable(GEMINI_API_KEY_FILE_PATH)	
+	if GEMINI_API_KEY == "":
+		GEMINI_API_KEY = _get_environment_variable(GEMINI_API_KEY_FILE_PATH)	
 	$ChatWindow.visible = false
 	
 	voices = DisplayServer.tts_get_voices_for_language("en")
