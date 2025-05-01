@@ -40,6 +40,7 @@ sky_material = SubResource("ProceduralSkyMaterial_w48qg")
 background_mode = 2
 sky = SubResource("Sky_ydxjh")
 ambient_light_source = 3
+ambient_light_color = Color(0.197937, 0.197937, 0.197937, 1)
 ssao_enabled = true
 ssao_intensity = 2.8
 fog_mode = 1
@@ -72,13 +73,6 @@ render_target_update_mode = 4
 
 [node name="Robot" parent="SubViewportContainer_Robot/SubViewport_Robot" instance=ExtResource("3_ycdy4")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0, 0)
-
-[node name="ReflectionProbe" type="ReflectionProbe" parent="SubViewportContainer_Robot/SubViewport_Robot/Robot"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.62625, 0)
-update_mode = 1
-blend_distance = 8.0
-origin_offset = Vector3(0.3, 0.3, 0.3)
-ambient_mode = 0
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.515031, 0.548746, -0.658499, -0.597257, 0.3213, 0.734881, 0.614839, 0.77178, 0.162263, 0, 2.13069, 0)
