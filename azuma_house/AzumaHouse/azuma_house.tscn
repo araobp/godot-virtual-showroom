@@ -1,0 +1,169 @@
+[gd_scene load_steps=3 format=3 uid="uid://bpjr6w278qkxg"]
+
+[ext_resource type="PackedScene" uid="uid://wrh21oje8y84" path="res://AzumaHouse/AzumaHouse.glb" id="1_xbgqb"]
+[ext_resource type="Material" uid="uid://bvj1cdxte621" path="res://Materials/Glass.tres" id="2_i3x8c"]
+
+[node name="AzumaHouse" instance=ExtResource("1_xbgqb")]
+
+[node name="IfcBuildingElementProxy_Mur-002_004" parent="Cube_008/Empty" index="0"]
+surface_material_override/1 = ExtResource("2_i3x8c")
+
+[node name="IfcBuildingElementProxy_PFB2_011" parent="." index="55"]
+surface_material_override/1 = ExtResource("2_i3x8c")
+
+[node name="IfcBuildingElementProxy_PFB2_012" parent="." index="57"]
+surface_material_override/1 = ExtResource("2_i3x8c")
+
+[node name="IfcBuildingElementProxy_PFB2_013" parent="." index="63"]
+surface_material_override/2 = ExtResource("2_i3x8c")
+
+[node name="IfcBuildingElementProxy_PFB2_014" parent="." index="66"]
+surface_material_override/2 = ExtResource("2_i3x8c")
+
+[node name="IfcBuildingElementProxy_PFB2_001" parent="." index="79"]
+surface_material_override/1 = ExtResource("2_i3x8c")
+
+[node name="IfcBuildingElementProxy_Mur-002_001" parent="." index="80"]
+transform = Transform3D(-1.19209e-07, 0, 1, 0, 1, 0, -1, 0, -1.19209e-07, 14.525, 2.2005, 1.24874)
+surface_material_override/1 = ExtResource("2_i3x8c")
+
+[node name="IfcBuildingElementProxy_Mur-002_002" parent="." index="81"]
+surface_material_override/1 = ExtResource("2_i3x8c")
+
+[node name="IfcBuildingElementProxy_PFB2_018" parent="." index="120"]
+surface_material_override/1 = ExtResource("2_i3x8c")
+
+[node name="IfcBuildingElementProxy_PFB2_019" parent="." index="122"]
+surface_material_override/1 = ExtResource("2_i3x8c")
+
+[node name="IfcBuildingElementProxy_PFB2_021" parent="." index="145"]
+surface_material_override/2 = ExtResource("2_i3x8c")
+
+[node name="Spot" parent="." index="168"]
+light_energy = 1.0
+
+[node name="Spot_001" parent="." index="169"]
+light_energy = 1.0
+
+[node name="Spot_002" parent="." index="170"]
+light_energy = 1.0
+
+[node name="Spot_003" parent="." index="171"]
+light_energy = 1.0
+
+[node name="Spot_004" parent="." index="173"]
+light_energy = 1.0
+
+[node name="Spot_005" parent="." index="179"]
+light_energy = 1.0
+
+[node name="Spot_006" parent="." index="182"]
+light_energy = 1.0
+
+[node name="Spot_007" parent="Cylinder_075/WallLight_007" index="0"]
+light_energy = 1.0
+
+[node name="Point_004" parent="." index="187"]
+light_energy = 1.0
+
+[node name="Point_005" parent="." index="189"]
+light_energy = 1.0
+
+[node name="Point_006" parent="." index="191"]
+light_energy = 1.0
+
+[node name="Point_001" parent="." index="192"]
+light_energy = 1.0
+
+[node name="Point_002" parent="." index="195"]
+light_energy = 1.0
+
+[node name="Point_007" parent="." index="196"]
+light_energy = 1.0
+
+[node name="Window" parent="." index="198"]
+surface_material_override/1 = ExtResource("2_i3x8c")
+
+[node name="Window_001" parent="." index="199"]
+surface_material_override/1 = ExtResource("2_i3x8c")
+
+[node name="Window_002" parent="." index="200"]
+surface_material_override/1 = ExtResource("2_i3x8c")
+
+[node name="Window_003" parent="." index="201"]
+surface_material_override/1 = ExtResource("2_i3x8c")
+
+[node name="Window_004" parent="." index="202"]
+surface_material_override/1 = ExtResource("2_i3x8c")
+
+[node name="Window_005" parent="." index="203"]
+surface_material_override/1 = ExtResource("2_i3x8c")
+
+[node name="Window_006" parent="." index="204"]
+surface_material_override/1 = ExtResource("2_i3x8c")
+
+[node name="Window_007" parent="." index="205"]
+surface_material_override/1 = ExtResource("2_i3x8c")
+
+[node name="Window_008" parent="." index="206"]
+surface_material_override/1 = ExtResource("2_i3x8c")
+
+[node name="Window_009" parent="." index="207"]
+surface_material_override/1 = ExtResource("2_i3x8c")
+
+[node name="Window_010" parent="." index="208"]
+surface_material_override/1 = ExtResource("2_i3x8c")
+
+[node name="Window_011" parent="." index="209"]
+surface_material_override/1 = ExtResource("2_i3x8c")
+
+[node name="Window_012" parent="." index="210"]
+surface_material_override/1 = ExtResource("2_i3x8c")
+
+[node name="Window_013" parent="." index="211"]
+surface_material_override/1 = ExtResource("2_i3x8c")
+
+[node name="Window_014" parent="." index="212"]
+surface_material_override/1 = ExtResource("2_i3x8c")
+
+[node name="Window_015" parent="." index="213"]
+surface_material_override/1 = ExtResource("2_i3x8c")
+
+[node name="Camera1_002" parent="WomanInShirtWithoutSleeves/Skeleton3D" index="0"]
+transform = Transform3D(0.329921, 0.570086, 0.752432, -2.68221e-07, 0.79706, -0.603899, -0.944009, 0.199239, 0.262967, 1.3469, 0.0145722, 0.606032)
+
+[node name="Cylinder_049" parent="TelescopeTripod/Armature_003/Skeleton3D" index="0"]
+transform = Transform3D(-20, -1.72549e-05, -5.36443e-07, 1.25715e-05, -27.4508, -3.00282e-06, -5.36441e-07, -4.12148e-06, 20, -3.43323e-05, 6.45879e-06, -6.55626e-06)
+
+[node name="Cylinder_059" parent="TelescopeTripod/Armature_003/Skeleton3D" index="1"]
+transform = Transform3D(-14.3812, -1.76284, 10.1726, -14.8794, -3.59631, -18.2278, 2.72198, -19.7491, 0.853931, 1.25501, 0.154822, -3.27142)
+
+[node name="Cylinder_061" parent="TelescopeTripod/Armature_003/Skeleton3D" index="2"]
+transform = Transform3D(-0.154599, -0.376014, 0.121531, -0.176178, -0.767094, -0.19483, 0.0308297, -4.21249, 0.00798482, 0.843389, 1.34081, 4.66491)
+
+[node name="Cylinder_060" parent="TelescopeTripod/Armature_003/Skeleton3D" index="3"]
+transform = Transform3D(-0.116257, -0.376014, 0.0913907, -0.132485, -0.767094, -0.146511, 0.0231838, -4.21249, 0.00600455, 1.88423, 3.46426, 16.3256)
+
+[node name="Cylinder_051" parent="TelescopeTripod/Armature_004/Skeleton3D" index="0"]
+transform = Transform3D(20, -1.05441e-05, -3.20375e-07, 7.68222e-06, 27.4508, 2.35299e-06, 3.20375e-07, -3.22957e-06, 20, -1.90735e-06, 4.46058e-05, -5.25466e-06)
+
+[node name="Cylinder_058" parent="TelescopeTripod/Armature_004/Skeleton3D" index="1"]
+transform = Transform3D(-14.3754, 1.76181, 10.1791, -14.8852, 3.59871, -18.2247, -2.72225, -19.749, -0.854765, 1.25498, 0.155393, -3.27138)
+
+[node name="Cylinder_056" parent="TelescopeTripod/Armature_004/Skeleton3D" index="2"]
+transform = Transform3D(-0.154531, 0.375796, 0.1216, -0.176241, 0.767605, -0.194793, -0.0308332, -4.21246, -0.00799397, -0.551208, -1.50599, 4.42102)
+
+[node name="Cylinder_054" parent="TelescopeTripod/Armature_004/Skeleton3D" index="3"]
+transform = Transform3D(-0.116206, 0.375796, 0.0914424, -0.132532, 0.767605, -0.146483, -0.0231865, -4.21246, -0.00601143, -1.59147, -3.63079, 16.0816)
+
+[node name="Cylinder_047" parent="TelescopeTripod/Armature_005/Skeleton3D" index="0"]
+transform = Transform3D(20, 1.92137e-06, -2.80142e-06, -1.39987e-06, 27.4508, 3.51488e-07, 2.80142e-06, -4.8243e-07, 20, -1.90735e-05, 4.55144e-06, -2.63301e-05)
+
+[node name="Cylinder_057" parent="TelescopeTripod/Armature_005/Skeleton3D" index="1"]
+transform = Transform3D(-14.3772, -1.76213, 10.1771, -14.8834, -3.59797, -18.2257, 2.72217, -19.749, 0.854508, 1.25502, 0.15516, -3.27142)
+
+[node name="Cylinder_055" parent="TelescopeTripod/Armature_005/Skeleton3D" index="2"]
+transform = Transform3D(-0.154552, -0.375864, 0.121578, -0.176221, -0.767447, -0.194804, 0.0308321, -4.21247, 0.00799116, 0.843181, 1.34149, 4.66487)
+
+[node name="Cylinder_053" parent="TelescopeTripod/Armature_005/Skeleton3D" index="3"]
+transform = Transform3D(-0.116222, -0.375864, 0.0914263, -0.132518, -0.767447, -0.146492, 0.0231856, -4.21247, 0.00600931, 1.8836, 3.46586, 16.3255)
