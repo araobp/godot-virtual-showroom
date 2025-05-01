@@ -18,7 +18,7 @@ To set your Gemini API key, enter your key in the following property editor:
 
 <img src="docs/gemini_api_key.jpg" width=300>
 
-or create "gemini_api_key_env.txt" file (Gemini API key value) that is ignored by .gitignore.
+or create "gemini_api_key_env.txt" file with your Gemini API key value. The file is ignored by .gitignore.
 
 ### Virtual Showroom with GenAI
 
