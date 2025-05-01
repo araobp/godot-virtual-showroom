@@ -1,0 +1,72 @@
+[gd_scene load_steps=14 format=3 uid="uid://c4uwpg5hq27tm"]
+
+[ext_resource type="Shader" uid="uid://c38jmruyer3jo" path="res://bricks.tres" id="1_0xm2m"]
+[ext_resource type="Shader" uid="uid://lvolx8mls3as" path="res://ground.tres" id="2_h2yge"]
+
+[sub_resource type="Gradient" id="Gradient_1bvp3"]
+colors = PackedColorArray(0, 3.1285e-07, 0.383389, 1, 0.783523, 0.783523, 0.783523, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_lquwl"]
+noise_type = 3
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_7mycd"]
+color_ramp = SubResource("Gradient_1bvp3")
+noise = SubResource("FastNoiseLite_lquwl")
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_272bh"]
+sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+sky_cover = SubResource("NoiseTexture2D_7mycd")
+ground_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+energy_multiplier = 0.2
+
+[sub_resource type="Sky" id="Sky_5vw27"]
+sky_material = SubResource("ProceduralSkyMaterial_272bh")
+
+[sub_resource type="Environment" id="Environment_kek77"]
+background_mode = 2
+sky = SubResource("Sky_5vw27")
+tonemap_mode = 2
+ssao_enabled = true
+glow_enabled = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_4c57u"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_efxa6"]
+render_priority = 0
+shader = ExtResource("1_0xm2m")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dg77c"]
+render_priority = 0
+shader = ExtResource("2_h2yge")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_ycdy4"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_w48qg"]
+render_priority = 0
+shader = ExtResource("2_h2yge")
+
+[node name="Node3D" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_kek77")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.747637, 0.571863, 0.337656, 0.663996, 0.652991, 0.364296, -0.0121585, 0.496564, -0.867915, 0, 1.33526, 0)
+light_color = Color(0.787574, 0.756835, 0.705932, 1)
+shadow_enabled = true
+shadow_bias = 0.05
+
+[node name="Box" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.49865, 0)
+mesh = SubResource("BoxMesh_4c57u")
+surface_material_override/0 = SubResource("ShaderMaterial_efxa6")
+
+[node name="Ground" type="MeshInstance3D" parent="."]
+transform = Transform3D(9.99986, 0.0328899, 0.0402487, -0.0330875, 9.99982, 0.0491156, -0.0400864, -0.0492481, 9.9998, 0, 0, 0)
+material_override = SubResource("ShaderMaterial_dg77c")
+mesh = SubResource("PlaneMesh_ycdy4")
+surface_material_override/0 = SubResource("ShaderMaterial_w48qg")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-0.857383, 0, -0.514679, 0, 1, 0, 0.514679, 0, -0.857383, -1.09571, 0.467748, -1.98117)
+fov = 40.0
