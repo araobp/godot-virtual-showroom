@@ -58,6 +58,12 @@ I've confirmed that the Gemini API can be used from GDScript.
 
 ## Other projects
 
+### Visual Shader Editor test
+
+<img src="docs/visual_shader_editor.jpg" width=400>
+
+=> [Code](/visual_shader_editor_test)
+
 ### Physics test
 
 => [Code](/physics_test)
