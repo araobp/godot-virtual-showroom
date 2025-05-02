@@ -1,4 +1,4 @@
-# Showroom
+# Godot Showroom
 
 As an MVP developer for marketing DX, I've used Unity for many years, but there have been several challenges, such as the high licensing fees and the need for high-spec PCs.
 
@@ -83,6 +83,9 @@ Created based on [a publicly available IFC BIM model](https://openifcmodel.cs.au
   </td>
   <td>
     <img src="docs/AzumaHouse2.jpg" width=600>    
+  </td>
+  <td>
+    <img src="docs/AzumaHouse3.jpg" width=600>    
   </td>
  </tr>
 </table>
