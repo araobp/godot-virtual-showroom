@@ -1,7 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://cgqv184fotthh"]
-
-[ext_resource type="PackedScene" uid="uid://bpjr6w278qkxg" path="res://AzumaHouse/azuma_house.tscn" id="1_ig7tw"]
-
-[node name="Node3D" type="Node3D"]
-
-[node name="AzumaHouse" parent="." instance=ExtResource("1_ig7tw")]
