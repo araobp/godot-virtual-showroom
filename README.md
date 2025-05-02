@@ -1,4 +1,4 @@
-# Virtual Showroom with Godot
+# Showroom
 
 As an MVP developer for marketing DX, I've used Unity for many years, but there have been several challenges, such as the high licensing fees and the need for high-spec PCs.
 
@@ -52,6 +52,8 @@ I've confirmed that the Gemini API can be used from GDScript.
 
 ### AI Robot with Gemini
 
+I modified the robot from [Unity Starter Assets](https://assetstore.unity.com/packages/essentials/starter-assets-thirdperson-updates-in-new-charactercontroller-pa-196526) in Blender and added Mixamo animations.
+
 <table>
  <tr>
   <td>
@@ -70,11 +72,20 @@ I've confirmed that the Gemini API can be used from GDScript.
 
 ## Azuma House
 
-[Azuma House](https://en.wikipedia.org/wiki/Row_House_in_Sumiyoshi)
+[Azuma House](https://www.metalocus.es/en/news/row-house-sumiyoshi-azuma-house-tadao-ando)
 
-Created based on a publicly available IFC BIM model. Characters were created with MPFB. The background is a NASA star map.
+Created based on [a publicly available IFC BIM model](https://openifcmodel.cs.auckland.ac.nz/). Characters were created with MPFB. The background is a NASA star map.
 
-<img src="docs/AzumaHouse1.jpg" width=600>
+<table>
+ <tr>
+  <td>
+    <img src="docs/AzumaHouse1.jpg" width=600>   
+  </td>
+  <td>
+    <img src="docs/AzumaHouse2.jpg" width=600>    
+  </td>
+ </tr>
+</table>
 
 => [Code](/azuma_house)
 
