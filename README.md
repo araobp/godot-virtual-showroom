@@ -70,6 +70,8 @@ I've confirmed that the Gemini API can be used from GDScript.
 
 ## Azuma House
 
+[Azuma House](https://en.wikipedia.org/wiki/Row_House_in_Sumiyoshi)
+
 <img src="docs/AzumaHouse1.jpg" width=600>
 
 => [Code](/azuma_house)
