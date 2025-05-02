@@ -16,11 +16,6 @@ func _process(delta: float) -> void:
 	elif Input.is_key_pressed(KEY_S):
 		position += transform.basis.z * speed * delta;
 
-	if Input.is_key_pressed(KEY_L):
-		position += transform.basis.x * speed * delta * 0.5;
-	elif Input.is_key_pressed(KEY_J):
-		position -= transform.basis.x * speed * delta * 0.5;
-	
 	if Input.is_key_pressed(KEY_D):
 		rotate(Vector3.UP, -delta * angular_speed)
 	elif Input.is_key_pressed(KEY_A):
@@ -30,3 +25,14 @@ func _process(delta: float) -> void:
 		position += transform.basis.y * speed * delta * 0.5
 	elif Input.is_key_pressed(KEY_K):
 		position -= transform.basis.y * speed * delta * 0.5
+
+	if Input.is_key_pressed(KEY_L):
+		position += transform.basis.x * speed * delta * 0.5;
+	elif Input.is_key_pressed(KEY_J):
+		position -= transform.basis.x * speed * delta * 0.5;
+		
+	if Input.is_key_pressed(KEY_UP):
+		rotate(transform.basis.x, delta * angular_speed)
+	elif Input.is_key_pressed(KEY_DOWN):
+		rotate(transform.basis.x, -delta * angular_speed)
+	
