@@ -18,7 +18,7 @@ In MVP development, high functionality isn't required; instead, low cost and qui
  </tr>
 </table>
 
-## First impression having used Godot for a week
+## First impression having used Godot for a couple of weeks
 
 Creating 3D scenes with Godot seems significantly easier compared to Unity. However, this assumes some knowledge of 3D modeling and a certain level of proficiency in Blender. Godot appears to be a useful learning material for physics and generative AI for high school and university students. The fact that it's free is a great advantage, allowing individuals to continue using it as a 3D UI creation tool even after entering the workforce.
 
