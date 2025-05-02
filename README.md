@@ -74,7 +74,16 @@ I've confirmed that the Gemini API can be used from GDScript.
 
 Created based on a publicly available IFC BIM model. Characters were created with MPFB. The background is a NASA star map.
 
-<img src="docs/AzumaHouse1.jpg" width=600>
+<table>
+ <tr>
+  <td>
+    <img src="docs/AzumaHouse1.jpg" width=600>   
+  </td>
+  <td>
+    <img src="docs/AzumaHouse2.jpg" width=600>    
+  </td>
+ </tr>
+</table>
 
 => [Code](/azuma_house)
 
