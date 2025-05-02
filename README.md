@@ -72,7 +72,7 @@ I've confirmed that the Gemini API can be used from GDScript.
 
 [Azuma House](https://en.wikipedia.org/wiki/Row_House_in_Sumiyoshi)
 
-Created based on a publicly available IFC BIM model. Characters were created with MPFB. The background is a NASA star map.
+Created based on [a publicly available IFC BIM model](https://openifcmodel.cs.auckland.ac.nz/). Characters were created with MPFB. The background is a NASA star map.
 
 <table>
  <tr>
