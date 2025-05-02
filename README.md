@@ -1,6 +1,19 @@
 # Virtual Showroom with Godot
 
-<img src="docs/ai_robot1.jpg" width=600>
+<table>
+ <tr>
+  <td>
+    <img src="docs/ai_robot1.jpg">   
+  </td>
+  <td>
+    <img src="docs/virtual_showroom2.jpg">   
+  </td>
+  <td>
+    <img src="docs/AzumaHouse1.jpg">      
+  </td>
+ </tr>
+</table>
+
  
 As an MVP developer for marketing DX, I've used Unity for many years, but there have been several challenges, such as the high licensing fees and the need for high-spec PCs.
 
