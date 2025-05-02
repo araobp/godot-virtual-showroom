@@ -92,6 +92,8 @@ Created based on [a publicly available IFC BIM model](https://openifcmodel.cs.au
 
 => [Code](/azuma_house)
 
+Use WASD and IJKL keys to move or rotate the camera in the scene.
+
 ## Other projects
 
 ### Visual Shader Editor test
