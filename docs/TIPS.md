@@ -6,7 +6,7 @@ The shadow on the closet door is strange depending on its distance from the came
 
 <img src="tips/LOD_1.jpg" width=300>
 
-Disable LOD:
+Disable LODs:
 
 <img src="tips/LOD_2.jpg" width=300>
 
