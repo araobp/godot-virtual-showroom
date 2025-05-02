@@ -7240,6 +7240,16 @@ _subresources={
 "use_external/enabled": true,
 "use_external/path": "uid://b8un7ww15dihw"
 }
+},
+"meshes": {
+"AzumaHouse_Cube_002": {
+"generate/lightmap_uv": 0,
+"generate/lods": 2,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"save_to_file/enabled": false,
+"save_to_file/path": ""
+}
 }
 }
 gltf/naming_version=1
