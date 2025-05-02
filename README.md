@@ -97,7 +97,7 @@ Created based on [a publicly available IFC BIM model](https://openifcmodel.cs.au
 
 => [Code](/azuma_house)
 
-Use WASD and IJKL keys to move or rotate the camera in the scene.
+Use W/A/S/D, I/J/K/L and UP/DOWN keys to move or rotate the camera in the scene.
 
 ## Other projects
 
