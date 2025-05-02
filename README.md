@@ -72,7 +72,7 @@ I modified the robot from [Unity Starter Assets](https://assetstore.unity.com/pa
 
 ## Azuma House
 
-[Azuma House](https://en.wikipedia.org/wiki/Row_House_in_Sumiyoshi)
+[Azuma House](https://www.metalocus.es/en/news/row-house-sumiyoshi-azuma-house-tadao-ando)
 
 Created based on [a publicly available IFC BIM model](https://openifcmodel.cs.auckland.ac.nz/). Characters were created with MPFB. The background is a NASA star map.
 
