@@ -1,4 +1,4 @@
-# Virtual Showroom with Godot
+# Virtual Showroom
 
 As an MVP developer for marketing DX, I've used Unity for many years, but there have been several challenges, such as the high licensing fees and the need for high-spec PCs.
 
