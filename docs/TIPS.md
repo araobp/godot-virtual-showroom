@@ -8,7 +8,7 @@ The shadow on the closet door is strange depending on its distance from the came
 
 Disable LODs:
 
-<img src="tips/LOD_2.jpg" width=300>
+<img src="tips/LOD_2.jpg" width=400>
 
 The shadow becomes OK:
 
