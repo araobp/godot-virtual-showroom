@@ -84,9 +84,14 @@ Created based on [a publicly available IFC BIM model](https://openifcmodel.cs.au
   <td>
     <img src="docs/AzumaHouse2.jpg" width=600>    
   </td>
+  <tr>
   <td>
     <img src="docs/AzumaHouse3.jpg" width=600>    
   </td>
+  <td>
+    <img src="docs/AzumaHouse4.jpg" width=600>    
+  </td>   
+  </tr>
  </tr>
 </table>
 
