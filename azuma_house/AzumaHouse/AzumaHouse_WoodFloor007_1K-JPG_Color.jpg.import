@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://b7ff3pln4rx6g"
 path.s3tc="res://.godot/imported/AzumaHouse_WoodFloor007_1K-JPG_Color.jpg-e2bd3b08ab81e8bbd37e88382c3635df.s3tc.ctex"
+path.etc2="res://.godot/imported/AzumaHouse_WoodFloor007_1K-JPG_Color.jpg-e2bd3b08ab81e8bbd37e88382c3635df.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://AzumaHouse/AzumaHouse_WoodFloor007_1K-JPG_Color.jpg"
-dest_files=["res://.godot/imported/AzumaHouse_WoodFloor007_1K-JPG_Color.jpg-e2bd3b08ab81e8bbd37e88382c3635df.s3tc.ctex"]
+dest_files=["res://.godot/imported/AzumaHouse_WoodFloor007_1K-JPG_Color.jpg-e2bd3b08ab81e8bbd37e88382c3635df.s3tc.ctex", "res://.godot/imported/AzumaHouse_WoodFloor007_1K-JPG_Color.jpg-e2bd3b08ab81e8bbd37e88382c3635df.etc2.ctex"]
 
 [params]
 

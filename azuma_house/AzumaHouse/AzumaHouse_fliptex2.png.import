@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://i2b2qtrnd732"
 path.s3tc="res://.godot/imported/AzumaHouse_fliptex2.png-1aadac6190e9c29e2e91c45f6c2bbd2c.s3tc.ctex"
+path.etc2="res://.godot/imported/AzumaHouse_fliptex2.png-1aadac6190e9c29e2e91c45f6c2bbd2c.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://AzumaHouse/AzumaHouse_fliptex2.png"
-dest_files=["res://.godot/imported/AzumaHouse_fliptex2.png-1aadac6190e9c29e2e91c45f6c2bbd2c.s3tc.ctex"]
+dest_files=["res://.godot/imported/AzumaHouse_fliptex2.png-1aadac6190e9c29e2e91c45f6c2bbd2c.s3tc.ctex", "res://.godot/imported/AzumaHouse_fliptex2.png-1aadac6190e9c29e2e91c45f6c2bbd2c.etc2.ctex"]
 
 [params]
 

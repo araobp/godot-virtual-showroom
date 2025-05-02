@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://b2lnl0315p3gq"
 path.bptc="res://.godot/imported/starmap_2020_4k.exr-424281581c808fb700e1359bcfd1ef9a.bptc.ctex"
+path.astc="res://.godot/imported/starmap_2020_4k.exr-424281581c808fb700e1359bcfd1ef9a.astc.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://AzumaHouse/starmap_2020_4k.exr"
-dest_files=["res://.godot/imported/starmap_2020_4k.exr-424281581c808fb700e1359bcfd1ef9a.bptc.ctex"]
+dest_files=["res://.godot/imported/starmap_2020_4k.exr-424281581c808fb700e1359bcfd1ef9a.bptc.ctex", "res://.godot/imported/starmap_2020_4k.exr-424281581c808fb700e1359bcfd1ef9a.astc.ctex"]
 
 [params]
 

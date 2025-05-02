@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://dkkv07mt2sf31"
 path.s3tc="res://.godot/imported/AzumaHouse_Fabric061_1K-JPG_NormalGL.jpg-078eac620729f71dd2fa4400a6163402.s3tc.ctex"
+path.etc2="res://.godot/imported/AzumaHouse_Fabric061_1K-JPG_NormalGL.jpg-078eac620729f71dd2fa4400a6163402.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://AzumaHouse/AzumaHouse_Fabric061_1K-JPG_NormalGL.jpg"
-dest_files=["res://.godot/imported/AzumaHouse_Fabric061_1K-JPG_NormalGL.jpg-078eac620729f71dd2fa4400a6163402.s3tc.ctex"]
+dest_files=["res://.godot/imported/AzumaHouse_Fabric061_1K-JPG_NormalGL.jpg-078eac620729f71dd2fa4400a6163402.s3tc.ctex", "res://.godot/imported/AzumaHouse_Fabric061_1K-JPG_NormalGL.jpg-078eac620729f71dd2fa4400a6163402.etc2.ctex"]
 
 [params]
 

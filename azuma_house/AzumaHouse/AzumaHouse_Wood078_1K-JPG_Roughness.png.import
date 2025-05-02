@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://7nsmm2tj8pia"
 path.s3tc="res://.godot/imported/AzumaHouse_Wood078_1K-JPG_Roughness.png-a74781ce3f66566f0069522ea77dc367.s3tc.ctex"
+path.etc2="res://.godot/imported/AzumaHouse_Wood078_1K-JPG_Roughness.png-a74781ce3f66566f0069522ea77dc367.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://AzumaHouse/AzumaHouse_Wood078_1K-JPG_Roughness.png"
-dest_files=["res://.godot/imported/AzumaHouse_Wood078_1K-JPG_Roughness.png-a74781ce3f66566f0069522ea77dc367.s3tc.ctex"]
+dest_files=["res://.godot/imported/AzumaHouse_Wood078_1K-JPG_Roughness.png-a74781ce3f66566f0069522ea77dc367.s3tc.ctex", "res://.godot/imported/AzumaHouse_Wood078_1K-JPG_Roughness.png-a74781ce3f66566f0069522ea77dc367.etc2.ctex"]
 
 [params]
 

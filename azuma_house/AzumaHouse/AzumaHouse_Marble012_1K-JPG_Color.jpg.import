@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://v831hgcwvhg8"
 path.s3tc="res://.godot/imported/AzumaHouse_Marble012_1K-JPG_Color.jpg-d378b6d713c3f591333bd93f81d04e53.s3tc.ctex"
+path.etc2="res://.godot/imported/AzumaHouse_Marble012_1K-JPG_Color.jpg-d378b6d713c3f591333bd93f81d04e53.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://AzumaHouse/AzumaHouse_Marble012_1K-JPG_Color.jpg"
-dest_files=["res://.godot/imported/AzumaHouse_Marble012_1K-JPG_Color.jpg-d378b6d713c3f591333bd93f81d04e53.s3tc.ctex"]
+dest_files=["res://.godot/imported/AzumaHouse_Marble012_1K-JPG_Color.jpg-d378b6d713c3f591333bd93f81d04e53.s3tc.ctex", "res://.godot/imported/AzumaHouse_Marble012_1K-JPG_Color.jpg-d378b6d713c3f591333bd93f81d04e53.etc2.ctex"]
 
 [params]
 

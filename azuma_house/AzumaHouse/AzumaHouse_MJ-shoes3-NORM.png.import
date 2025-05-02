@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://y1fl7v86jweh"
 path.s3tc="res://.godot/imported/AzumaHouse_MJ-shoes3-NORM.png-520c3aae6e92549fdc29f516957cdd8c.s3tc.ctex"
+path.etc2="res://.godot/imported/AzumaHouse_MJ-shoes3-NORM.png-520c3aae6e92549fdc29f516957cdd8c.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://AzumaHouse/AzumaHouse_MJ-shoes3-NORM.png"
-dest_files=["res://.godot/imported/AzumaHouse_MJ-shoes3-NORM.png-520c3aae6e92549fdc29f516957cdd8c.s3tc.ctex"]
+dest_files=["res://.godot/imported/AzumaHouse_MJ-shoes3-NORM.png-520c3aae6e92549fdc29f516957cdd8c.s3tc.ctex", "res://.godot/imported/AzumaHouse_MJ-shoes3-NORM.png-520c3aae6e92549fdc29f516957cdd8c.etc2.ctex"]
 
 [params]
 

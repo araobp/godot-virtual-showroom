@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://d03mx2p2yf82s"
 path.s3tc="res://.godot/imported/AzumaHouse_Knitted_Sweater_01_NRM.png-ae9c4d249fa582e6311ac2e389a64ecf.s3tc.ctex"
+path.etc2="res://.godot/imported/AzumaHouse_Knitted_Sweater_01_NRM.png-ae9c4d249fa582e6311ac2e389a64ecf.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://AzumaHouse/AzumaHouse_Knitted_Sweater_01_NRM.png"
-dest_files=["res://.godot/imported/AzumaHouse_Knitted_Sweater_01_NRM.png-ae9c4d249fa582e6311ac2e389a64ecf.s3tc.ctex"]
+dest_files=["res://.godot/imported/AzumaHouse_Knitted_Sweater_01_NRM.png-ae9c4d249fa582e6311ac2e389a64ecf.s3tc.ctex", "res://.godot/imported/AzumaHouse_Knitted_Sweater_01_NRM.png-ae9c4d249fa582e6311ac2e389a64ecf.etc2.ctex"]
 
 [params]
 

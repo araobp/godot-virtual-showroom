@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://t512e7c8ptpg"
 path.s3tc="res://.godot/imported/AzumaHouse_tightjeans_normals.png-87f65104a4e44e8a4d125f001dd8dbf2.s3tc.ctex"
+path.etc2="res://.godot/imported/AzumaHouse_tightjeans_normals.png-87f65104a4e44e8a4d125f001dd8dbf2.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://AzumaHouse/AzumaHouse_tightjeans_normals.png"
-dest_files=["res://.godot/imported/AzumaHouse_tightjeans_normals.png-87f65104a4e44e8a4d125f001dd8dbf2.s3tc.ctex"]
+dest_files=["res://.godot/imported/AzumaHouse_tightjeans_normals.png-87f65104a4e44e8a4d125f001dd8dbf2.s3tc.ctex", "res://.godot/imported/AzumaHouse_tightjeans_normals.png-87f65104a4e44e8a4d125f001dd8dbf2.etc2.ctex"]
 
 [params]
 

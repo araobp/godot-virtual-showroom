@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://00m5dsj30ovu"
 path.s3tc="res://.godot/imported/AzumaHouse_tongue01_diffuse.png-d12d41dfe95f58ddf4b81676671e581b.s3tc.ctex"
+path.etc2="res://.godot/imported/AzumaHouse_tongue01_diffuse.png-d12d41dfe95f58ddf4b81676671e581b.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://AzumaHouse/AzumaHouse_tongue01_diffuse.png"
-dest_files=["res://.godot/imported/AzumaHouse_tongue01_diffuse.png-d12d41dfe95f58ddf4b81676671e581b.s3tc.ctex"]
+dest_files=["res://.godot/imported/AzumaHouse_tongue01_diffuse.png-d12d41dfe95f58ddf4b81676671e581b.s3tc.ctex", "res://.godot/imported/AzumaHouse_tongue01_diffuse.png-d12d41dfe95f58ddf4b81676671e581b.etc2.ctex"]
 
 [params]
 
