@@ -20,7 +20,7 @@ Godot appears to be a useful learning material for physics and generative AI for
 
 ## Virtual Showroom
 
-Remake the following project with Godot: https://github.com/araobp/virtual-showroom, but with neither RaspberryPi nor RAG/sqlite-vec.
+I remade the following project with Godot: https://github.com/araobp/virtual-showroom, but this time is a pure standalone app with neither RaspberryPi nor RAG/sqlite-vec.
 
 To set your Gemini API key, enter your key in the following property editor:
 
