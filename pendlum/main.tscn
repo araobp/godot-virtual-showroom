@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=3 uid="uid://b7pe1yirvrt5d"]
+
+[ext_resource type="PackedScene" uid="uid://b7hx10p77ek1c" path="res://PendlumSnake/pendulum_snake.glb" id="1_ig7tw"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ig7tw"]
+sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+ground_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+
+[sub_resource type="Sky" id="Sky_0xm2m"]
+sky_material = SubResource("ProceduralSkyMaterial_ig7tw")
+
+[sub_resource type="Environment" id="Environment_h2yge"]
+background_mode = 1
+background_color = Color(0.194349, 0.194349, 0.194349, 1)
+background_energy_multiplier = 0.59
+sky = SubResource("Sky_0xm2m")
+tonemap_mode = 2
+ssr_enabled = true
+ssao_enabled = true
+
+[node name="Node3D" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_h2yge")
+
+[node name="pendulum_snake" parent="." instance=ExtResource("1_ig7tw")]
+
+[node name="ReflectionProbe" type="ReflectionProbe" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.223531, 0)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(0.244871, 0.620576, -0.744932, -0.090065, 0.77956, 0.619818, 0.965364, -0.0846832, 0.246784, -2.24863, 2.13139, 0.72188)
+light_color = Color(0.836886, 0.769922, 0.612264, 1)
+light_energy = 7.0
+light_size = 1.0
+light_specular = 2.0
+shadow_enabled = true
+shadow_blur = 0.04
+spot_range = 5.00711
