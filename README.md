@@ -99,6 +99,10 @@ Created based on [a publicly available IFC BIM model](https://openifcmodel.cs.au
 
 Use W/A/S/D, I/J/K/L and UP/DOWN keys to move or rotate the camera in the scene.
 
+## Pendlum Snake (Work in Progress)
+
+=> [Code](pendlum_snake)
+
 ## Other projects
 
 ### Visual Shader Editor test
