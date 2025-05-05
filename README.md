@@ -102,6 +102,8 @@ Use W/A/S/D, I/J/K/L and UP/DOWN keys to move or rotate the camera in the scene.
 
 => [Code](pendulum_snake)
 
+=> [YouTube](https://youtu.be/sQtlIRY0ktM)
+
 ## Other projects
 
 ### Visual Shader Editor test
