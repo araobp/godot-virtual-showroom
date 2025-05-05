@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://dixeajduuttbv"
-path="res://.godot/imported/pendulum_snake_body.glb-4287623e2029afbda987b881b3667bad.scn"
+uid="uid://c2cvonv67kyt3"
+path="res://.godot/imported/pendulum_snake_p11.glb-777bc54ab459f35e39484bc77024740e.scn"
 
 [deps]
 
-source_file="res://pendlum_snake/pendulum_snake_body.glb"
-dest_files=["res://.godot/imported/pendulum_snake_body.glb-4287623e2029afbda987b881b3667bad.scn"]
+source_file="res://pendulum_snake/pendulum_snake_p11.glb"
+dest_files=["res://.godot/imported/pendulum_snake_p11.glb-777bc54ab459f35e39484bc77024740e.scn"]
 
 [params]
 
@@ -32,6 +32,13 @@ animation/trimming=false
 animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
-_subresources={}
+_subresources={
+"materials": {
+"Sphere": {
+"use_external/enabled": true,
+"use_external/path": "uid://rn5ta7y6mub1"
+}
+}
+}
 gltf/naming_version=1
 gltf/embedded_image_handling=1

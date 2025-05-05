@@ -5,21 +5,21 @@ var rigid_bodies
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	rigid_bodies = [
-	$Pendlums/RigidBody3D_P1,
-	$Pendlums/RigidBody3D_P2,
-	$Pendlums/RigidBody3D_P3,
-	$Pendlums/RigidBody3D_P4,
-	$Pendlums/RigidBody3D_P5,
-	$Pendlums/RigidBody3D_P6,
-	$Pendlums/RigidBody3D_P7,
-	$Pendlums/RigidBody3D_P8,
-	$Pendlums/RigidBody3D_P9,
-	$Pendlums/RigidBody3D_P10,
-	$Pendlums/RigidBody3D_P11,
-	$Pendlums/RigidBody3D_P12,
-	$Pendlums/RigidBody3D_P13,
-	$Pendlums/RigidBody3D_P14,
-	$Pendlums/RigidBody3D_P15
+	$Pendulums/RigidBody3D_P1,
+	$Pendulums/RigidBody3D_P2,
+	$Pendulums/RigidBody3D_P3,
+	$Pendulums/RigidBody3D_P4,
+	$Pendulums/RigidBody3D_P5,
+	$Pendulums/RigidBody3D_P6,
+	$Pendulums/RigidBody3D_P7,
+	$Pendulums/RigidBody3D_P8,
+	$Pendulums/RigidBody3D_P9,
+	$Pendulums/RigidBody3D_P10,
+	$Pendulums/RigidBody3D_P11,
+	$Pendulums/RigidBody3D_P12,
+	$Pendulums/RigidBody3D_P13,
+	$Pendulums/RigidBody3D_P14,
+	$Pendulums/RigidBody3D_P15
 	]
 	
 	for rb in rigid_bodies:

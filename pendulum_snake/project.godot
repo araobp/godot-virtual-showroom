@@ -10,8 +10,8 @@ config_version=5
 
 [application]
 
-config/name="PendlumSnake"
-run/main_scene="res://pendlum_snake.tscn"
+config/name="PendulumSnake"
+run/main_scene="res://pendulum_snake.tscn"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 

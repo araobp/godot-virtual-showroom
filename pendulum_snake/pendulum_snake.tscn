@@ -1,23 +1,23 @@
 [gd_scene load_steps=21 format=3 uid="uid://dcumqqrwwwyka"]
 
-[ext_resource type="PackedScene" uid="uid://dixeajduuttbv" path="res://pendlum_snake/pendulum_snake_body.glb" id="1_5vdne"]
-[ext_resource type="Script" uid="uid://bv3co4b1itevy" path="res://pendlum_snake.gd" id="1_207ru"]
-[ext_resource type="PackedScene" uid="uid://c4radq1dse01g" path="res://pendlum_snake/pendulum_snake_p15.glb" id="2_ty2xf"]
-[ext_resource type="PackedScene" uid="uid://bg7g8yhodcaim" path="res://pendlum_snake/pendulum_snake_p14.glb" id="3_6ipsd"]
-[ext_resource type="PackedScene" uid="uid://c5p72qanh5lxl" path="res://pendlum_snake/pendulum_snake_body_rod.glb" id="3_ty2xf"]
-[ext_resource type="PackedScene" uid="uid://b8hltg27cm3f0" path="res://pendlum_snake/pendulum_snake_p13.glb" id="4_xdn1t"]
-[ext_resource type="PackedScene" uid="uid://do1wvwrdabrq7" path="res://pendlum_snake/pendulum_snake_p12.glb" id="5_1pces"]
-[ext_resource type="PackedScene" uid="uid://c2cvonv67kyt3" path="res://pendlum_snake/pendulum_snake_p11.glb" id="6_3a7nf"]
-[ext_resource type="PackedScene" uid="uid://b54q0h40pb1pb" path="res://pendlum_snake/pendulum_snake_p10.glb" id="7_6xhl5"]
-[ext_resource type="PackedScene" uid="uid://de55tioxaro6y" path="res://pendlum_snake/pendulum_snake_p9.glb" id="8_f8rbi"]
-[ext_resource type="PackedScene" uid="uid://b4lf14hf7q1i7" path="res://pendlum_snake/pendulum_snake_p8.glb" id="9_gl533"]
-[ext_resource type="PackedScene" uid="uid://bd3nwnfjix8hw" path="res://pendlum_snake/pendulum_snake_p7.glb" id="10_o867j"]
-[ext_resource type="PackedScene" uid="uid://f2pl2plutmo6" path="res://pendlum_snake/pendulum_snake_p6.glb" id="11_00t56"]
-[ext_resource type="PackedScene" uid="uid://cqacfba6e6ryl" path="res://pendlum_snake/pendulum_snake_p5.glb" id="11_uyio2"]
-[ext_resource type="PackedScene" uid="uid://bfjopko75e7ut" path="res://pendlum_snake/pendulum_snake_p4.glb" id="12_rsn24"]
-[ext_resource type="PackedScene" uid="uid://ckbef8a41nxxw" path="res://pendlum_snake/pendulum_snake_p3.glb" id="13_6hgbc"]
-[ext_resource type="PackedScene" uid="uid://8hnblvwoyhfn" path="res://pendlum_snake/pendulum_snake_p2.glb" id="15_2tcgp"]
-[ext_resource type="PackedScene" uid="uid://bgmjf85ldiagg" path="res://pendlum_snake/pendulum_snake_p1.glb" id="16_207ru"]
+[ext_resource type="Script" uid="uid://bv3co4b1itevy" path="res://pendulum_snake.gd" id="1_u7uwg"]
+[ext_resource type="PackedScene" uid="uid://dixeajduuttbv" path="res://pendulum_snake/pendulum_snake_body.glb" id="2_3kixp"]
+[ext_resource type="PackedScene" uid="uid://c4radq1dse01g" path="res://pendulum_snake/pendulum_snake_p15.glb" id="3_ngcpf"]
+[ext_resource type="PackedScene" uid="uid://bg7g8yhodcaim" path="res://pendulum_snake/pendulum_snake_p14.glb" id="4_h63oo"]
+[ext_resource type="PackedScene" uid="uid://b8hltg27cm3f0" path="res://pendulum_snake/pendulum_snake_p13.glb" id="5_qqdo1"]
+[ext_resource type="PackedScene" uid="uid://do1wvwrdabrq7" path="res://pendulum_snake/pendulum_snake_p12.glb" id="6_0tjrh"]
+[ext_resource type="PackedScene" uid="uid://c2cvonv67kyt3" path="res://pendulum_snake/pendulum_snake_p11.glb" id="7_5dlxv"]
+[ext_resource type="PackedScene" uid="uid://b54q0h40pb1pb" path="res://pendulum_snake/pendulum_snake_p10.glb" id="8_tdcl2"]
+[ext_resource type="PackedScene" uid="uid://de55tioxaro6y" path="res://pendulum_snake/pendulum_snake_p9.glb" id="9_8vgor"]
+[ext_resource type="PackedScene" uid="uid://b4lf14hf7q1i7" path="res://pendulum_snake/pendulum_snake_p8.glb" id="10_k0s7b"]
+[ext_resource type="PackedScene" uid="uid://bd3nwnfjix8hw" path="res://pendulum_snake/pendulum_snake_p7.glb" id="11_o5ma0"]
+[ext_resource type="PackedScene" uid="uid://f2pl2plutmo6" path="res://pendulum_snake/pendulum_snake_p6.glb" id="12_e8q5m"]
+[ext_resource type="PackedScene" uid="uid://cqacfba6e6ryl" path="res://pendulum_snake/pendulum_snake_p5.glb" id="13_hj42h"]
+[ext_resource type="PackedScene" uid="uid://bfjopko75e7ut" path="res://pendulum_snake/pendulum_snake_p4.glb" id="14_ns8nj"]
+[ext_resource type="PackedScene" uid="uid://ckbef8a41nxxw" path="res://pendulum_snake/pendulum_snake_p3.glb" id="15_wsbr1"]
+[ext_resource type="PackedScene" uid="uid://8hnblvwoyhfn" path="res://pendulum_snake/pendulum_snake_p2.glb" id="16_65dqs"]
+[ext_resource type="PackedScene" uid="uid://bgmjf85ldiagg" path="res://pendulum_snake/pendulum_snake_p1.glb" id="17_2u70n"]
+[ext_resource type="PackedScene" uid="uid://c5p72qanh5lxl" path="res://pendulum_snake/pendulum_snake_body_rod.glb" id="18_704ih"]
 
 [sub_resource type="Sky" id="Sky_ty2xf"]
 
@@ -28,7 +28,7 @@ sky = SubResource("Sky_ty2xf")
 
 [node name="Node3D" type="Node3D"]
 process_mode = 1
-script = ExtResource("1_207ru")
+script = ExtResource("1_u7uwg")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_6ipsd")
@@ -45,189 +45,189 @@ fov = 45.0
 
 [node name="HingeJoint3D_P15" type="HingeJoint3D" parent="Hinges"]
 node_a = NodePath("../../StaticBody3D")
-node_b = NodePath("../../Pendlums/RigidBody3D_P15")
+node_b = NodePath("../../Pendulums/RigidBody3D_P15")
 
 [node name="HingeJoint3D_P14" type="HingeJoint3D" parent="Hinges"]
 node_a = NodePath("../../StaticBody3D")
-node_b = NodePath("../../Pendlums/RigidBody3D_P14")
+node_b = NodePath("../../Pendulums/RigidBody3D_P14")
 
 [node name="HingeJoint3D_P13" type="HingeJoint3D" parent="Hinges"]
 node_a = NodePath("../../StaticBody3D")
-node_b = NodePath("../../Pendlums/RigidBody3D_P13")
+node_b = NodePath("../../Pendulums/RigidBody3D_P13")
 
 [node name="HingeJoint3D_P12" type="HingeJoint3D" parent="Hinges"]
 node_a = NodePath("../../StaticBody3D")
-node_b = NodePath("../../Pendlums/RigidBody3D_P12")
+node_b = NodePath("../../Pendulums/RigidBody3D_P12")
 
 [node name="HingeJoint3D_P11" type="HingeJoint3D" parent="Hinges"]
 node_a = NodePath("../../StaticBody3D")
-node_b = NodePath("../../Pendlums/RigidBody3D_P11")
+node_b = NodePath("../../Pendulums/RigidBody3D_P11")
 
 [node name="HingeJoint3D_P10" type="HingeJoint3D" parent="Hinges"]
 node_a = NodePath("../../StaticBody3D")
-node_b = NodePath("../../Pendlums/RigidBody3D_P10")
+node_b = NodePath("../../Pendulums/RigidBody3D_P10")
 
 [node name="HingeJoint3D_P9" type="HingeJoint3D" parent="Hinges"]
 node_a = NodePath("../../StaticBody3D")
-node_b = NodePath("../../Pendlums/RigidBody3D_P9")
+node_b = NodePath("../../Pendulums/RigidBody3D_P9")
 
 [node name="HingeJoint3D_P8" type="HingeJoint3D" parent="Hinges"]
 node_a = NodePath("../../StaticBody3D")
-node_b = NodePath("../../Pendlums/RigidBody3D_P8")
+node_b = NodePath("../../Pendulums/RigidBody3D_P8")
 
 [node name="HingeJoint3D_P7" type="HingeJoint3D" parent="Hinges"]
 node_a = NodePath("../../StaticBody3D")
-node_b = NodePath("../../Pendlums/RigidBody3D_P7")
+node_b = NodePath("../../Pendulums/RigidBody3D_P7")
 
 [node name="HingeJoint3D_P6" type="HingeJoint3D" parent="Hinges"]
 node_a = NodePath("../../StaticBody3D")
-node_b = NodePath("../../Pendlums/RigidBody3D_P6")
+node_b = NodePath("../../Pendulums/RigidBody3D_P6")
 
 [node name="HingeJoint3D_P5" type="HingeJoint3D" parent="Hinges"]
 node_a = NodePath("../../StaticBody3D")
-node_b = NodePath("../../Pendlums/RigidBody3D_P5")
+node_b = NodePath("../../Pendulums/RigidBody3D_P5")
 
 [node name="HingeJoint3D_P4" type="HingeJoint3D" parent="Hinges"]
 node_a = NodePath("../../StaticBody3D")
-node_b = NodePath("../../Pendlums/RigidBody3D_P4")
+node_b = NodePath("../../Pendulums/RigidBody3D_P4")
 
 [node name="HingeJoint3D_P3" type="HingeJoint3D" parent="Hinges"]
 node_a = NodePath("../../StaticBody3D")
-node_b = NodePath("../../Pendlums/RigidBody3D_P3")
+node_b = NodePath("../../Pendulums/RigidBody3D_P3")
 
 [node name="HingeJoint3D_P2" type="HingeJoint3D" parent="Hinges"]
 node_a = NodePath("../../StaticBody3D")
-node_b = NodePath("../../Pendlums/RigidBody3D_P2")
+node_b = NodePath("../../Pendulums/RigidBody3D_P2")
 
 [node name="HingeJoint3D_P1" type="HingeJoint3D" parent="Hinges"]
 node_a = NodePath("../../StaticBody3D")
-node_b = NodePath("../../Pendlums/RigidBody3D_P1")
+node_b = NodePath("../../Pendulums/RigidBody3D_P1")
 
-[node name="Pendlums" parent="." instance=ExtResource("1_5vdne")]
+[node name="Pendulums" parent="." instance=ExtResource("2_3kixp")]
 
-[node name="RigidBody3D_P15" type="RigidBody3D" parent="Pendlums"]
+[node name="RigidBody3D_P15" type="RigidBody3D" parent="Pendulums"]
 transform = Transform3D(0.939692, 0.34202, 0, -0.34202, 0.939692, 0, 0, 0, 1, 0, 0, 0)
 gravity_scale = 10.0
 center_of_mass_mode = 1
 center_of_mass = Vector3(0, -6.02, 0)
 
-[node name="P15" parent="Pendlums/RigidBody3D_P15" instance=ExtResource("2_ty2xf")]
+[node name="P15" parent="Pendulums/RigidBody3D_P15" instance=ExtResource("3_ngcpf")]
 
-[node name="RigidBody3D_P14" type="RigidBody3D" parent="Pendlums"]
+[node name="RigidBody3D_P14" type="RigidBody3D" parent="Pendulums"]
 transform = Transform3D(0.939692, 0.34202, 0, -0.34202, 0.939692, 0, 0, 0, 1, 0, 0, 0)
 gravity_scale = 10.0
 center_of_mass_mode = 1
 center_of_mass = Vector3(0, -5.79, 0)
 
-[node name="P14" parent="Pendlums/RigidBody3D_P14" instance=ExtResource("3_6ipsd")]
+[node name="P14" parent="Pendulums/RigidBody3D_P14" instance=ExtResource("4_h63oo")]
 
-[node name="RigidBody3D_P13" type="RigidBody3D" parent="Pendlums"]
+[node name="RigidBody3D_P13" type="RigidBody3D" parent="Pendulums"]
 transform = Transform3D(0.939692, 0.34202, 0, -0.34202, 0.939692, 0, 0, 0, 1, 0, 0, 0)
 gravity_scale = 10.0
 center_of_mass_mode = 1
 center_of_mass = Vector3(0, -5.58, 0)
 
-[node name="P13" parent="Pendlums/RigidBody3D_P13" instance=ExtResource("4_xdn1t")]
+[node name="P13" parent="Pendulums/RigidBody3D_P13" instance=ExtResource("5_qqdo1")]
 
-[node name="RigidBody3D_P12" type="RigidBody3D" parent="Pendlums"]
+[node name="RigidBody3D_P12" type="RigidBody3D" parent="Pendulums"]
 transform = Transform3D(0.939692, 0.34202, 0, -0.34202, 0.939692, 0, 0, 0, 1, 0, 0, 0)
 gravity_scale = 10.0
 center_of_mass_mode = 1
 center_of_mass = Vector3(0, -5.37, 0)
 
-[node name="P12" parent="Pendlums/RigidBody3D_P12" instance=ExtResource("5_1pces")]
+[node name="P12" parent="Pendulums/RigidBody3D_P12" instance=ExtResource("6_0tjrh")]
 
-[node name="RigidBody3D_P11" type="RigidBody3D" parent="Pendlums"]
+[node name="RigidBody3D_P11" type="RigidBody3D" parent="Pendulums"]
 transform = Transform3D(0.939692, 0.34202, 0, -0.34202, 0.939692, 0, 0, 0, 1, 0, 0, 0)
 gravity_scale = 10.0
 center_of_mass_mode = 1
 center_of_mass = Vector3(0, -5.18, 0)
 
-[node name="P11" parent="Pendlums/RigidBody3D_P11" instance=ExtResource("6_3a7nf")]
+[node name="P11" parent="Pendulums/RigidBody3D_P11" instance=ExtResource("7_5dlxv")]
 
-[node name="RigidBody3D_P10" type="RigidBody3D" parent="Pendlums"]
+[node name="RigidBody3D_P10" type="RigidBody3D" parent="Pendulums"]
 transform = Transform3D(0.939692, 0.34202, 0, -0.34202, 0.939692, 0, 0, 0, 1, 0, 0, 0)
 gravity_scale = 10.0
 center_of_mass_mode = 1
 center_of_mass = Vector3(0, -4.99, 0)
 
-[node name="P10" parent="Pendlums/RigidBody3D_P10" instance=ExtResource("7_6xhl5")]
+[node name="P10" parent="Pendulums/RigidBody3D_P10" instance=ExtResource("8_tdcl2")]
 
-[node name="RigidBody3D_P9" type="RigidBody3D" parent="Pendlums"]
+[node name="RigidBody3D_P9" type="RigidBody3D" parent="Pendulums"]
 transform = Transform3D(0.939693, 0.34202, 0, -0.34202, 0.939693, 0, 0, 0, 1, 0, 0, 0)
 gravity_scale = 10.0
 center_of_mass_mode = 1
 center_of_mass = Vector3(0, -4.82, 0)
 
-[node name="P9" parent="Pendlums/RigidBody3D_P9" instance=ExtResource("8_f8rbi")]
+[node name="P9" parent="Pendulums/RigidBody3D_P9" instance=ExtResource("9_8vgor")]
 
-[node name="RigidBody3D_P8" type="RigidBody3D" parent="Pendlums"]
+[node name="RigidBody3D_P8" type="RigidBody3D" parent="Pendulums"]
 transform = Transform3D(0.939693, 0.34202, 0, -0.34202, 0.939693, 0, 0, 0, 1, 0, 0, 0)
 gravity_scale = 10.0
 center_of_mass_mode = 1
 center_of_mass = Vector3(0, -4.66, 0)
 
-[node name="P8" parent="Pendlums/RigidBody3D_P8" instance=ExtResource("9_gl533")]
+[node name="P8" parent="Pendulums/RigidBody3D_P8" instance=ExtResource("10_k0s7b")]
 
-[node name="RigidBody3D_P7" type="RigidBody3D" parent="Pendlums"]
+[node name="RigidBody3D_P7" type="RigidBody3D" parent="Pendulums"]
 transform = Transform3D(0.939693, 0.34202, 0, -0.34202, 0.939693, 0, 0, 0, 1, 0, 0, 0)
 gravity_scale = 10.0
 center_of_mass_mode = 1
 center_of_mass = Vector3(0, -4.5, 0)
 
-[node name="P7" parent="Pendlums/RigidBody3D_P7" instance=ExtResource("10_o867j")]
+[node name="P7" parent="Pendulums/RigidBody3D_P7" instance=ExtResource("11_o5ma0")]
 
-[node name="RigidBody3D_P6" type="RigidBody3D" parent="Pendlums"]
+[node name="RigidBody3D_P6" type="RigidBody3D" parent="Pendulums"]
 transform = Transform3D(0.939693, 0.34202, 0, -0.34202, 0.939693, 0, 0, 0, 1, 0, 0, 0)
 gravity_scale = 10.0
 center_of_mass_mode = 1
 center_of_mass = Vector3(0, -4.35, 0)
 
-[node name="P6" parent="Pendlums/RigidBody3D_P6" instance=ExtResource("11_00t56")]
+[node name="P6" parent="Pendulums/RigidBody3D_P6" instance=ExtResource("12_e8q5m")]
 
-[node name="RigidBody3D_P5" type="RigidBody3D" parent="Pendlums"]
+[node name="RigidBody3D_P5" type="RigidBody3D" parent="Pendulums"]
 transform = Transform3D(0.939693, 0.34202, 0, -0.34202, 0.939693, 0, 0, 0, 1, 0, 0, 0)
 gravity_scale = 10.0
 center_of_mass_mode = 1
 center_of_mass = Vector3(0, -4.21, 0)
 
-[node name="P5" parent="Pendlums/RigidBody3D_P5" instance=ExtResource("11_uyio2")]
+[node name="P5" parent="Pendulums/RigidBody3D_P5" instance=ExtResource("13_hj42h")]
 
-[node name="RigidBody3D_P4" type="RigidBody3D" parent="Pendlums"]
+[node name="RigidBody3D_P4" type="RigidBody3D" parent="Pendulums"]
 transform = Transform3D(0.939693, 0.34202, 0, -0.34202, 0.939693, 0, 0, 0, 1, 0, 0, 0)
 gravity_scale = 10.0
 center_of_mass_mode = 1
 center_of_mass = Vector3(0, -4.07, 0)
 
-[node name="P4" parent="Pendlums/RigidBody3D_P4" instance=ExtResource("12_rsn24")]
+[node name="P4" parent="Pendulums/RigidBody3D_P4" instance=ExtResource("14_ns8nj")]
 
-[node name="RigidBody3D_P3" type="RigidBody3D" parent="Pendlums"]
+[node name="RigidBody3D_P3" type="RigidBody3D" parent="Pendulums"]
 transform = Transform3D(0.939693, 0.34202, 0, -0.34202, 0.939693, 0, 0, 0, 1, 0, 0, 0)
 gravity_scale = 10.0
 center_of_mass_mode = 1
 center_of_mass = Vector3(0, -3.95, 0)
 
-[node name="P3" parent="Pendlums/RigidBody3D_P3" instance=ExtResource("13_6hgbc")]
+[node name="P3" parent="Pendulums/RigidBody3D_P3" instance=ExtResource("15_wsbr1")]
 
-[node name="RigidBody3D_P2" type="RigidBody3D" parent="Pendlums"]
+[node name="RigidBody3D_P2" type="RigidBody3D" parent="Pendulums"]
 transform = Transform3D(0.939693, 0.34202, 0, -0.34202, 0.939693, 0, 0, 0, 1, 0, 0, 0)
 gravity_scale = 10.0
 center_of_mass_mode = 1
 center_of_mass = Vector3(0, -3.82, 0)
 
-[node name="P2" parent="Pendlums/RigidBody3D_P2" instance=ExtResource("15_2tcgp")]
+[node name="P2" parent="Pendulums/RigidBody3D_P2" instance=ExtResource("16_65dqs")]
 
-[node name="RigidBody3D_P1" type="RigidBody3D" parent="Pendlums"]
+[node name="RigidBody3D_P1" type="RigidBody3D" parent="Pendulums"]
 transform = Transform3D(0.939693, 0.34202, 0, -0.34202, 0.939693, 0, 0, 0, 1, 0, 0, 0)
 gravity_scale = 10.0
 center_of_mass_mode = 1
 center_of_mass = Vector3(0, -3.71, 0)
 
-[node name="P1" parent="Pendlums/RigidBody3D_P1" instance=ExtResource("16_207ru")]
+[node name="P1" parent="Pendulums/RigidBody3D_P1" instance=ExtResource("17_2u70n")]
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 
-[node name="Rod" parent="StaticBody3D" instance=ExtResource("3_ty2xf")]
+[node name="Rod" parent="StaticBody3D" instance=ExtResource("18_704ih")]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
