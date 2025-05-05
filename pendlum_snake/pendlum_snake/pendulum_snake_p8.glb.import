@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://c2cvonv67kyt3"
-path="res://.godot/imported/pendulum_snake_p11.glb-469b5989625a707dcb3855170574bffb.scn"
+uid="uid://b4lf14hf7q1i7"
+path="res://.godot/imported/pendulum_snake_p8.glb-ab0c9931ea347cf1f58ad24dcd4a272f.scn"
 
 [deps]
 
-source_file="res://pendlum_snake/pendulum_snake_p11.glb"
-dest_files=["res://.godot/imported/pendulum_snake_p11.glb-469b5989625a707dcb3855170574bffb.scn"]
+source_file="res://pendlum_snake/pendulum_snake_p8.glb"
+dest_files=["res://.godot/imported/pendulum_snake_p8.glb-ab0c9931ea347cf1f58ad24dcd4a272f.scn"]
 
 [params]
 
