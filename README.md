@@ -1,8 +1,8 @@
 # Godot Showroom
 
-As an MVP developer for marketing DX, I've used Unity for many years, but there have been several challenges, such as the high licensing fees and the need for high-spec PCs.
+Creating 3D scenes with Godot seems significantly easier compared to Unity. However, this assumes some knowledge of 3D modeling and a certain level of proficiency in Blender. 
 
-In MVP development, high functionality isn't required; instead, low cost and quick turnaround are essential. I'm looking into Godot and would like to compare its low-cost and rapid development capabilities with Unity.
+Godot appears to be a useful learning material for physics and generative AI for high school and university students. The fact that it's free is a great advantage, allowing individuals to continue using it as a 3D UI creation tool even after entering the workforce.
 
 <table>
  <tr>
@@ -18,13 +18,9 @@ In MVP development, high functionality isn't required; instead, low cost and qui
  </tr>
 </table>
 
-## First impression having used Godot for a couple of weeks
-
-Creating 3D scenes with Godot seems significantly easier compared to Unity. However, this assumes some knowledge of 3D modeling and a certain level of proficiency in Blender. Godot appears to be a useful learning material for physics and generative AI for high school and university students. The fact that it's free is a great advantage, allowing individuals to continue using it as a 3D UI creation tool even after entering the workforce.
-
 ## Virtual Showroom
 
-Remake the following project with Godot: https://github.com/araobp/virtual-showroom, but with neither RaspberryPi nor RAG/sqlite-vec.
+I remade the following project with Godot: https://github.com/araobp/virtual-showroom, but this time is a pure standalone app with neither RaspberryPi nor RAG/sqlite-vec.
 
 To set your Gemini API key, enter your key in the following property editor:
 
