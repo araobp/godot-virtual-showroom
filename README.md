@@ -78,17 +78,17 @@ Created based on [a publicly available IFC BIM model](https://openifcmodel.cs.au
 <table>
  <tr>
   <td>
-    <img src="docs/AzumaHouse1.jpg" width=600>   
+    <img src="docs/AzumaHouse1.jpg">   
   </td>
   <td>
-    <img src="docs/AzumaHouse2.jpg" width=600>    
+    <img src="docs/AzumaHouse2.jpg">    
   </td>
   <tr>
   <td>
-    <img src="docs/AzumaHouse3.jpg" width=600>    
+    <img src="docs/AzumaHouse3.jpg">    
   </td>
   <td>
-    <img src="docs/AzumaHouse4.jpg" width=600>    
+    <img src="docs/AzumaHouse4.jpg">    
   </td>   
   </tr>
  </tr>
@@ -100,7 +100,7 @@ Use W/A/S/D, I/J/K/L and UP/DOWN keys to move or rotate the camera in the scene.
 
 ## Pendlum Snake simulation in Physics 3D
 
-<img src="docs/pendlum_snake.jpg" width=600>
+<img src="docs/pendlum_snake.jpg" width=500>
 
 => [Code](pendlum_snake)
 
