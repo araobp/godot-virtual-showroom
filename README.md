@@ -15,6 +15,9 @@ Godot appears to be a useful learning material for physics and generative AI for
   <td>
     <img src="docs/AzumaHouse1.jpg">      
   </td>
+    <td>
+    <img src="docs/pendlum_snake.jpg">      
+   </td>
  </tr>
 </table>
 
@@ -95,7 +98,7 @@ Created based on [a publicly available IFC BIM model](https://openifcmodel.cs.au
 
 Use W/A/S/D, I/J/K/L and UP/DOWN keys to move or rotate the camera in the scene.
 
-## Pendlum Snake (Work in Progress)
+## Pendlum Snake simulation in Physics 3D
 
 => [Code](pendlum_snake)
 
