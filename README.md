@@ -96,7 +96,7 @@ Created based on [a publicly available IFC BIM model](https://openifcmodel.cs.au
 
 Use W/A/S/D, I/J/K/L and UP/DOWN keys to move or rotate the camera in the scene.
 
-## Pendlum Snake simulation in Physics 3D
+## Pendulum Snake simulation in Physics 3D
 
 <img src="docs/pendlum_snake.jpg" width=500>
 
