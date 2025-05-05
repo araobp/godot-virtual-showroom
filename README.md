@@ -1,7 +1,5 @@
 # Godot Showroom
 
-Godot appears to be a useful learning material for physics and generative AI for high school and university students. The fact that it's free is a great advantage, allowing individuals to continue using it as a 3D UI creation tool even after entering the workforce.
-
 <table>
  <tr>
   <td>
