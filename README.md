@@ -14,7 +14,7 @@ Started learning Godot. Compared to Unity, it feels easier to get started with 3
     <img src="docs/AzumaHouse1.jpg">      
   </td>
     <td>
-    <img src="docs/pendlum_snake.jpg">      
+    <img src="docs/pendulum_snake.jpg">      
    </td>
  </tr>
 </table>
@@ -98,9 +98,9 @@ Use W/A/S/D, I/J/K/L and UP/DOWN keys to move or rotate the camera in the scene.
 
 ## Pendulum Snake simulation in Physics 3D
 
-<img src="docs/pendlum_snake.jpg" width=500>
+<img src="docs/pendulum_snake.jpg" width=500>
 
-=> [Code](pendlum_snake)
+=> [Code](pendulum_snake)
 
 ## Other projects
 
