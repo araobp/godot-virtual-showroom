@@ -100,6 +100,8 @@ Use W/A/S/D, I/J/K/L and UP/DOWN keys to move or rotate the camera in the scene.
 
 ## Pendlum Snake simulation in Physics 3D
 
+<img src="docs/pendlum_snake.jpg" width=600>
+
 => [Code](pendlum_snake)
 
 ## Other projects
