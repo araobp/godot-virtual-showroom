@@ -243,14 +243,14 @@ text = "Start"
 [node name="ButtonReset" type="Button" parent="CanvasLayer"]
 process_mode = 3
 offset_left = 1664.0
-offset_top = 304.0
+offset_top = 224.0
 offset_right = 1856.0
-offset_bottom = 368.0
+offset_bottom = 288.0
 theme_override_font_sizes/font_size = 36
 text = "Reset
 "
 
-[node name="ButtonPause" type="Button" parent="CanvasLayer"]
+[node name="ButtonTogglePause" type="Button" parent="CanvasLayer"]
 process_mode = 3
 offset_left = 1664.0
 offset_top = 144.0
@@ -260,17 +260,6 @@ theme_override_font_sizes/font_size = 36
 text = "Pause
 "
 
-[node name="ButtonResume" type="Button" parent="CanvasLayer"]
-process_mode = 3
-offset_left = 1664.0
-offset_top = 224.0
-offset_right = 1856.0
-offset_bottom = 288.0
-theme_override_font_sizes/font_size = 36
-text = "Resume
-"
-
 [connection signal="button_down" from="CanvasLayer/ButtonStart" to="." method="start"]
 [connection signal="button_down" from="CanvasLayer/ButtonReset" to="." method="reset"]
-[connection signal="button_down" from="CanvasLayer/ButtonPause" to="." method="pause"]
-[connection signal="button_down" from="CanvasLayer/ButtonResume" to="." method="resume"]
+[connection signal="button_down" from="CanvasLayer/ButtonTogglePause" to="." method="toggle_pause"]

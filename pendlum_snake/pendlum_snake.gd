@@ -24,7 +24,7 @@ func _ready() -> void:
 	
 	for rb in rigid_bodies:
 		rb.freeze = true
-		print(rb.rotation.z)
+
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -36,11 +36,16 @@ func start():
 		rb.freeze = false
 	get_tree().paused = false
 
-func pause():
-	get_tree().paused = true
 
-func resume():
-	get_tree().paused = false
+func toggle_pause():
+	var tree = get_tree()
+	if !tree.paused:
+		tree.paused = true
+		$CanvasLayer/ButtonTogglePause.text = "Resume"
+	else:
+		tree.paused = false
+		$CanvasLayer/ButtonTogglePause.text = "Pause"
+
 
 func reset():
 	get_tree().reload_current_scene()
