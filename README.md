@@ -1,5 +1,7 @@
 # Godot Showroom
 
+Started learning Godot. Compared to Unity, it feels easier to get started with 3D app development. Since there are no licensing fees, I can freely use it for work as well.
+
 <table>
  <tr>
   <td>
