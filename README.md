@@ -1,8 +1,6 @@
 # Godot Showroom
 
-Creating 3D scenes with Godot seems significantly easier compared to Unity. However, this assumes some knowledge of 3D modeling and a certain level of proficiency in Blender. 
-
-Godot appears to be a useful learning material for physics and generative AI for high school and university students. The fact that it's free is a great advantage, allowing individuals to continue using it as a 3D UI creation tool even after entering the workforce.
+Started learning Godot. Compared to Unity, it feels easier to get started with 3D app development. Since there are no licensing fees, I can freely use it for work as well.
 
 <table>
  <tr>
@@ -78,17 +76,17 @@ Created based on [a publicly available IFC BIM model](https://openifcmodel.cs.au
 <table>
  <tr>
   <td>
-    <img src="docs/AzumaHouse1.jpg" width=600>   
+    <img src="docs/AzumaHouse1.jpg">   
   </td>
   <td>
-    <img src="docs/AzumaHouse2.jpg" width=600>    
+    <img src="docs/AzumaHouse2.jpg">    
   </td>
   <tr>
   <td>
-    <img src="docs/AzumaHouse3.jpg" width=600>    
+    <img src="docs/AzumaHouse3.jpg">    
   </td>
   <td>
-    <img src="docs/AzumaHouse4.jpg" width=600>    
+    <img src="docs/AzumaHouse4.jpg">    
   </td>   
   </tr>
  </tr>
@@ -98,7 +96,9 @@ Created based on [a publicly available IFC BIM model](https://openifcmodel.cs.au
 
 Use W/A/S/D, I/J/K/L and UP/DOWN keys to move or rotate the camera in the scene.
 
-## Pendlum Snake simulation in Physics 3D
+## Pendulum Snake simulation in Physics 3D
+
+<img src="docs/pendlum_snake.jpg" width=500>
 
 => [Code](pendlum_snake)
 
