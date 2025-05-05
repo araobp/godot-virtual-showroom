@@ -1,0 +1,116 @@
+[gd_scene load_steps=12 format=3 uid="uid://dcumqqrwwwyka"]
+
+[ext_resource type="PackedScene" uid="uid://dixeajduuttbv" path="res://pendlum_snake/pendulum_snake_body.glb" id="1_5vdne"]
+[ext_resource type="PackedScene" uid="uid://c4radq1dse01g" path="res://pendlum_snake/pendulum_snake_p15.glb" id="2_ty2xf"]
+[ext_resource type="PackedScene" uid="uid://bg7g8yhodcaim" path="res://pendlum_snake/pendulum_snake_p14.glb" id="3_6ipsd"]
+[ext_resource type="PackedScene" uid="uid://c5p72qanh5lxl" path="res://pendlum_snake/pendulum_snake_body_rod.glb" id="3_ty2xf"]
+[ext_resource type="PackedScene" uid="uid://b8hltg27cm3f0" path="res://pendlum_snake/pendulum_snake_p13.glb" id="4_xdn1t"]
+[ext_resource type="PackedScene" uid="uid://do1wvwrdabrq7" path="res://pendlum_snake/pendulum_snake_p12.glb" id="5_1pces"]
+[ext_resource type="PackedScene" uid="uid://c2cvonv67kyt3" path="res://pendlum_snake/pendulum_snake_p11.glb" id="6_3a7nf"]
+[ext_resource type="PackedScene" uid="uid://b54q0h40pb1pb" path="res://pendlum_snake/pendulum_snake_p10.glb" id="7_6xhl5"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_5vdne"]
+sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+ground_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+
+[sub_resource type="Sky" id="Sky_ty2xf"]
+sky_material = SubResource("ProceduralSkyMaterial_5vdne")
+
+[sub_resource type="Environment" id="Environment_6ipsd"]
+background_mode = 2
+sky = SubResource("Sky_ty2xf")
+tonemap_mode = 2
+glow_enabled = true
+
+[node name="Node3D" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_6ipsd")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
+shadow_enabled = true
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.347408, 1.56832)
+fov = 40.0
+
+[node name="Hinges" type="Node3D" parent="."]
+
+[node name="HingeJoint3D_P15" type="HingeJoint3D" parent="Hinges"]
+node_a = NodePath("../../StaticBody3D")
+node_b = NodePath("../../Pendlums/RigidBody3D_P15")
+
+[node name="HingeJoint3D_P14" type="HingeJoint3D" parent="Hinges"]
+node_a = NodePath("../../StaticBody3D")
+node_b = NodePath("../../Pendlums/RigidBody3D_P14")
+
+[node name="HingeJoint3D_P13" type="HingeJoint3D" parent="Hinges"]
+node_a = NodePath("../../StaticBody3D")
+node_b = NodePath("../../Pendlums/RigidBody3D_P13")
+
+[node name="HingeJoint3D_P12" type="HingeJoint3D" parent="Hinges"]
+node_a = NodePath("../../StaticBody3D")
+node_b = NodePath("../../Pendlums/RigidBody3D_P12")
+
+[node name="HingeJoint3D_P11" type="HingeJoint3D" parent="Hinges"]
+node_a = NodePath("../../StaticBody3D")
+node_b = NodePath("../../Pendlums/RigidBody3D_P11")
+
+[node name="HingeJoint3D_P10" type="HingeJoint3D" parent="Hinges"]
+node_a = NodePath("../../StaticBody3D")
+node_b = NodePath("../../Pendlums/RigidBody3D_P10")
+
+[node name="Pendlums" parent="." instance=ExtResource("1_5vdne")]
+
+[node name="RigidBody3D_P15" type="RigidBody3D" parent="Pendlums"]
+transform = Transform3D(0.866025, 0.5, 0, -0.5, 0.866025, 0, 0, 0, 1, 0, 0, 0)
+gravity_scale = 10.0
+center_of_mass_mode = 1
+center_of_mass = Vector3(0, -6.02, 0)
+
+[node name="P15" parent="Pendlums/RigidBody3D_P15" instance=ExtResource("2_ty2xf")]
+
+[node name="RigidBody3D_P14" type="RigidBody3D" parent="Pendlums"]
+transform = Transform3D(0.866025, 0.5, 0, -0.5, 0.866025, 0, 0, 0, 1, 0, 0, 0)
+gravity_scale = 10.0
+center_of_mass_mode = 1
+center_of_mass = Vector3(0, -5.79, 0)
+
+[node name="P14" parent="Pendlums/RigidBody3D_P14" instance=ExtResource("3_6ipsd")]
+
+[node name="RigidBody3D_P13" type="RigidBody3D" parent="Pendlums"]
+transform = Transform3D(0.866025, 0.5, 0, -0.5, 0.866025, 0, 0, 0, 1, 0, 0, 0)
+gravity_scale = 10.0
+center_of_mass_mode = 1
+center_of_mass = Vector3(0, -5.58, 0)
+
+[node name="P13" parent="Pendlums/RigidBody3D_P13" instance=ExtResource("4_xdn1t")]
+
+[node name="RigidBody3D_P12" type="RigidBody3D" parent="Pendlums"]
+transform = Transform3D(0.866025, 0.5, 0, -0.5, 0.866025, 0, 0, 0, 1, 0, 0, 0)
+gravity_scale = 10.0
+center_of_mass_mode = 1
+center_of_mass = Vector3(0, -5.37, 0)
+
+[node name="P12" parent="Pendlums/RigidBody3D_P12" instance=ExtResource("5_1pces")]
+
+[node name="RigidBody3D_P11" type="RigidBody3D" parent="Pendlums"]
+transform = Transform3D(0.866025, 0.5, 0, -0.5, 0.866025, 0, 0, 0, 1, 0, 0, 0)
+gravity_scale = 10.0
+center_of_mass_mode = 1
+center_of_mass = Vector3(0, -5.18, 0)
+
+[node name="P11" parent="Pendlums/RigidBody3D_P11" instance=ExtResource("6_3a7nf")]
+
+[node name="RigidBody3D_P10" type="RigidBody3D" parent="Pendlums"]
+transform = Transform3D(0.866025, 0.5, 0, -0.5, 0.866025, 0, 0, 0, 1, 0, 0, 0)
+gravity_scale = 10.0
+center_of_mass_mode = 1
+center_of_mass = Vector3(0, -4.99, 0)
+
+[node name="Pendlums" parent="Pendlums/RigidBody3D_P10" instance=ExtResource("7_6xhl5")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="Rod" parent="StaticBody3D" instance=ExtResource("3_ty2xf")]

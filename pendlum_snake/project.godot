@@ -10,8 +10,8 @@ config_version=5
 
 [application]
 
-config/name="pendlum"
-run/main_scene="res://main.tscn"
+config/name="PendlumSnake"
+run/main_scene="res://pendlum_snake.tscn"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -26,3 +26,7 @@ window/stretch/mode="canvas_items"
 3d/physics_engine="Jolt Physics"
 3d/default_linear_damp=0.0
 3d/default_angular_damp=0.0
+
+[rendering]
+
+anti_aliasing/quality/msaa_3d=2
