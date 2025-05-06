@@ -96,6 +96,8 @@ Created based on [a publicly available IFC BIM model](https://openifcmodel.cs.au
 
 Use W/A/S/D, I/J/K/L and UP/DOWN keys to move or rotate the camera in the scene.
 
+You can see an MPFB character walking on the first floor of the building. 
+
 ## Pendulum Snake simulation in Physics 3D
 
 <img src="docs/pendulum_snake.jpg" width=500>
