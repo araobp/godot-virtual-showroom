@@ -82,24 +82,22 @@ anchors_preset = 11
 anchor_left = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -694.0
+offset_left = -635.0
 grow_horizontal = 0
 grow_vertical = 2
 script = ExtResource("2_0xm2m")
 
 [node name="TextInput" type="TextEdit" parent="Control"]
 layout_mode = 1
-anchors_preset = 12
-anchor_top = 1.0
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -262.0
 grow_horizontal = 2
-grow_vertical = 0
-theme_override_colors/background_color = Color(0.0168346, 0.108464, 0.158083, 1)
+grow_vertical = 2
+theme_override_colors/background_color = Color(0.0586908, 0.224633, 0.309401, 1)
 theme_override_font_sizes/font_size = 36
 theme_override_styles/normal = SubResource("StyleBoxEmpty_0xm2m")
-placeholder_text = "Enter command...
+placeholder_text = "
 "
 wrap_mode = 1
 caret_blink = true

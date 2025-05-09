@@ -9,7 +9,7 @@ const ColorTempToRGB = {
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	set_light_values({"brightness": 0.5, "color_temp": "cool"})
+	set_light_values({"brightness": 5.0, "color_temp": "daylight"})
 	pass # Replace with function body.
 
 

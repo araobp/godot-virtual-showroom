@@ -15,16 +15,21 @@ func _get_environment_variable(filePath):
 func _ready() -> void:
 	if GEMINI_API_KEY == "":
 		GEMINI_API_KEY = _get_environment_variable(GEMINI_API_KEY_FILE_PATH)	
+	
+	$TextInput.insert_text_at_caret("You: ")
+	$TextInput.grab_focus()
 
+var processing = false
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if Input.is_key_pressed(KEY_ENTER) and $TextInput.text != "":
-		var query = $TextInput.text
-		$TextInput.text = ""
-	
-		_chat(query)
-
+	if !processing and Input.is_key_pressed(KEY_ENTER) and $TextInput.text != "":
+		processing = true
+		var text = $TextInput.text
+		var response_text = await _chat(text)
+		$TextInput.insert_text_at_caret("Gemini: " + response_text + "\nYou: ", -1)
+		$TextInput.scroll_vertical = 10000
+		processing = false
 
 const _set_light_values = {
 	"name": "set_light_values",
@@ -47,7 +52,7 @@ const _set_light_values = {
 }
 
 
-func _chat(query):
+func _chat(text):
 	
 	const headers = [
 		"Content-Type: application/json",
@@ -57,7 +62,7 @@ func _chat(query):
 		"system_instruction": {
 			"parts": [
 				{
-					"text": "You are an AI assistant skilled at function calling."
+					"text": "You are an AI assistant skilled at controlling a light."
 				}
 			]
 		},
@@ -66,7 +71,7 @@ func _chat(query):
 				"role": "user",
 				"parts": [
 					{
-						"text": "Turn the lights down to a romantic level"
+						"text": text
 					}
 				]
 			}
@@ -99,14 +104,23 @@ func _chat(query):
 	
 	var json = JSON.parse_string(body.get_string_from_utf8())
 	
-	# print(json)
-	var function_call = json["candidates"][0]["content"]["parts"][0]["functionCall"]
-	var func_name = function_call["name"]
-	var args = function_call["args"]
-	print(func_name, args.values())
+	print(json)
+
+	var part = json["candidates"][0]["content"]["parts"][0]
+
+	var response_text = "OK\n"	
 	
-	var callable = Callable(get_parent(), func_name)
-	
-	callable.call(args)
+	if "text" in part:
+		response_text = part["text"]
+		print(response_text)
+	else:
+		var function_call = part["functionCall"]
+		var func_name = function_call["name"]
+		var args = function_call["args"]
+		print(func_name, args)	
+		var callable = Callable(get_parent(), func_name)
+		callable.call(args)
 
 	self.remove_child(req)
+	
+	return response_text
