@@ -114,11 +114,6 @@ You can see an MPFB character walking on the first floor of the building.
 
 => [Video](docs/function_calling.m4v)
 
-## The Godots project I will develop from now on
-
-- Physics simulations: acceleration, friction, the solar system etc
-- Use Gemini's Function Calling to control robot animations
-
 ## Other projects
 
 ### Visual Shader Editor test
