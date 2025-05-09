@@ -108,7 +108,11 @@ You can see an MPFB character walking on the first floor of the building.
 
 ## Function calling by Gemini (Work in Progress)
 
+<img src="docs/function_calling.jpg" width=500>
+
 => [Code](/function_calling)
+
+=> [Video](docs/function_calling.m4v)
 
 ## The Godots project I will develop from now on
 
