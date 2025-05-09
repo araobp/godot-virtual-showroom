@@ -102,9 +102,13 @@ You can see an MPFB character walking on the first floor of the building.
 
 <img src="docs/pendulum_snake.jpg" width=500>
 
-=> [Code](pendulum_snake)
+=> [Code](/pendulum_snake)
 
 => [YouTube](https://youtu.be/sQtlIRY0ktM)
+
+## Function calling by Gemini (Work in Progress)
+
+=> [Code](/function_calling)
 
 ## The Godots project I will develop from now on
 
