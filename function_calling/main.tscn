@@ -1,0 +1,105 @@
+[gd_scene load_steps=12 format=3 uid="uid://bq27dc6rcgdtr"]
+
+[ext_resource type="Script" uid="uid://cm2f5eoycwsgl" path="res://main.gd" id="1_ig7tw"]
+[ext_resource type="Script" uid="uid://xoemyrjlxba6" path="res://control.gd" id="2_0xm2m"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7dm0k"]
+sky_top_color = Color(0.0134618, 0.0201416, 0.0321371, 1)
+sky_horizon_color = Color(0.926871, 0.5724, 0.316206, 1)
+ground_bottom_color = Color(0, 0, 0, 1)
+ground_horizon_color = Color(0.602024, 0.367639, 0.221183, 1)
+
+[sub_resource type="Sky" id="Sky_ig7tw"]
+sky_material = SubResource("ProceduralSkyMaterial_7dm0k")
+
+[sub_resource type="Environment" id="Environment_0xm2m"]
+background_mode = 2
+sky = SubResource("Sky_ig7tw")
+ssr_enabled = true
+ssao_enabled = true
+glow_enabled = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_lquwl"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h2yge"]
+roughness = 0.2
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 0.5
+
+[sub_resource type="SphereMesh" id="SphereMesh_1bvp3"]
+material = SubResource("StandardMaterial3D_h2yge")
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_7dm0k"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ig7tw"]
+albedo_color = Color(0.593134, 0.593134, 0.593134, 1)
+metallic = 0.8
+roughness = 0.2
+emission = Color(0.286684, 0.286684, 0.286684, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0xm2m"]
+content_margin_left = 10.0
+content_margin_top = 8.0
+
+[node name="Main" type="Node3D"]
+script = ExtResource("1_ig7tw")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_0xm2m")
+
+[node name="Building" type="CSGMesh3D" parent="."]
+calculate_tangents = false
+mesh = SubResource("BoxMesh_lquwl")
+
+[node name="CSGMesh3D3" type="CSGMesh3D" parent="Building"]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 1, 0, 0, 0.1)
+operation = 2
+mesh = SubResource("BoxMesh_lquwl")
+
+[node name="CSGMesh3D4" type="CSGMesh3D" parent="Building"]
+transform = Transform3D(0.605601, 0, 0, 0, 0.0974174, 0, 0, 0, 0.5, 0, 0.285728, -0.516716)
+operation = 2
+mesh = SubResource("BoxMesh_lquwl")
+
+[node name="Light" type="CSGMesh3D" parent="Building"]
+transform = Transform3D(0.281766, 0, 0.102995, 0, 0.3, 0, -0.102995, 0, 0.281766, 0, 0, 0)
+mesh = SubResource("SphereMesh_1bvp3")
+metadata/_edit_group_ = true
+
+[node name="Camera3D" type="Camera3D" parent="Building/Light"]
+transform = Transform3D(3.3029, 0, -0.449388, 0, 3.33333, 0, 0.449388, 0, 3.3029, 0.106867, 0, 7.25522)
+fov = 40.0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Building/Light"]
+transform = Transform3D(0.100114, 0, 0, 0, 0.519209, 0, -3.72529e-09, 0, 0.0222274, 0, 0.925434, 0)
+mesh = SubResource("CylinderMesh_7dm0k")
+surface_material_override/0 = SubResource("StandardMaterial3D_ig7tw")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -694.0
+grow_horizontal = 0
+grow_vertical = 2
+script = ExtResource("2_0xm2m")
+
+[node name="TextInput" type="TextEdit" parent="Control"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -262.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/background_color = Color(0.0168346, 0.108464, 0.158083, 1)
+theme_override_font_sizes/font_size = 36
+theme_override_styles/normal = SubResource("StyleBoxEmpty_0xm2m")
+placeholder_text = "Enter command...
+"
+wrap_mode = 1
+caret_blink = true
