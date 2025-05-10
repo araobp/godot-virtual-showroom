@@ -1,19 +1,19 @@
 [gd_scene load_steps=23 format=3 uid="uid://c5h33u2gfmlcu"]
 
-[ext_resource type="Script" uid="uid://6usbr220nxx6" path="res://main.gd" id="1_efxa6"]
-[ext_resource type="Script" uid="uid://eps6uwmygjly" path="res://cameras.gd" id="2_dg77c"]
-[ext_resource type="PackedScene" uid="uid://botlqcpy5y61v" path="res://robot/robot.tscn" id="3_ycdy4"]
-[ext_resource type="PackedScene" uid="uid://haywivn3kl27" path="res://display/large_display.tscn" id="4_w48qg"]
-[ext_resource type="Texture2D" uid="uid://bpqsqwhwvj3q7" path="res://Garden/Garden_Ground_Concrete033_1K_Color.jpg" id="5_vivmo"]
-[ext_resource type="Texture2D" uid="uid://br53qalfvv2wg" path="res://Garden/Garden_Ground_Concrete033_1K_NormalGL.jpg" id="6_2cqfq"]
-[ext_resource type="Texture2D" uid="uid://bmg7ies2gd1fa" path="res://Garden/Garden_Ground_Concrete033_1K_Roughness.png" id="7_yaehf"]
-[ext_resource type="PackedScene" uid="uid://cvp2qgso64ghr" path="res://Garden/Garden_Trees.glb" id="8_074og"]
-[ext_resource type="PackedScene" uid="uid://cyiusm55u2luo" path="res://Garden/Garden_Wall.glb" id="9_cegan"]
-[ext_resource type="Texture2D" uid="uid://diu1ss6k5nvff" path="res://Icons/ArrowRightButton.png" id="10_82xsv"]
-[ext_resource type="Script" uid="uid://iu4k7nucaphp" path="res://ui.gd" id="10_w48qg"]
-[ext_resource type="Texture2D" uid="uid://yabsflhhu1iq" path="res://Icons/ArrowLeftButton.png" id="11_getpj"]
-[ext_resource type="AudioStream" uid="uid://chbrg5sgv8vgs" path="res://audio/Bach,_BWV_147,_10._Jesus_bleibet_meine_Freude.ogg" id="12_dg77c"]
-[ext_resource type="Texture2D" uid="uid://drrqxgqua1gqf" path="res://Icons/ChatToggleButton.png" id="12_ycdy4"]
+[ext_resource type="Script" uid="uid://6usbr220nxx6" path="res://SceneRecognition/recognition.gd" id="1_rn62g"]
+[ext_resource type="PackedScene" uid="uid://botlqcpy5y61v" path="res://Robot/robot.tscn" id="2_pt5ji"]
+[ext_resource type="Script" uid="uid://eps6uwmygjly" path="res://SceneRecognition/cameras.gd" id="3_0b1wu"]
+[ext_resource type="PackedScene" uid="uid://haywivn3kl27" path="res://Display/large_display.tscn" id="4_4j28a"]
+[ext_resource type="Texture2D" uid="uid://bpqsqwhwvj3q7" path="res://Garden/Garden_Ground_Concrete033_1K_Color.jpg" id="5_b5i1u"]
+[ext_resource type="Texture2D" uid="uid://br53qalfvv2wg" path="res://Garden/Garden_Ground_Concrete033_1K_NormalGL.jpg" id="6_ypjd4"]
+[ext_resource type="Texture2D" uid="uid://bmg7ies2gd1fa" path="res://Garden/Garden_Ground_Concrete033_1K_Roughness.png" id="7_7g2ra"]
+[ext_resource type="PackedScene" uid="uid://cvp2qgso64ghr" path="res://Garden/Garden_Trees.glb" id="8_kcsvi"]
+[ext_resource type="PackedScene" uid="uid://cyiusm55u2luo" path="res://Garden/Garden_Wall.glb" id="9_pm3eh"]
+[ext_resource type="Script" uid="uid://iu4k7nucaphp" path="res://SceneRecognition/ui.gd" id="10_g4b7p"]
+[ext_resource type="Texture2D" uid="uid://diu1ss6k5nvff" path="res://Icons/ArrowRightButton.png" id="11_i7pne"]
+[ext_resource type="Texture2D" uid="uid://yabsflhhu1iq" path="res://Icons/ArrowLeftButton.png" id="12_ogefa"]
+[ext_resource type="Texture2D" uid="uid://drrqxgqua1gqf" path="res://Icons/ChatToggleButton.png" id="13_equvi"]
+[ext_resource type="AudioStream" uid="uid://chbrg5sgv8vgs" path="res://Audio/Bach,_BWV_147,_10._Jesus_bleibet_meine_Freude.ogg" id="14_abia7"]
 
 [sub_resource type="Gradient" id="Gradient_efxa6"]
 offsets = PackedFloat32Array(0.265385, 0.826923)
@@ -47,16 +47,16 @@ fog_mode = 1
 fog_density = 1.0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hcqge"]
-albedo_texture = ExtResource("5_vivmo")
-roughness_texture = ExtResource("7_yaehf")
+albedo_texture = ExtResource("5_b5i1u")
+roughness_texture = ExtResource("7_7g2ra")
 normal_enabled = true
-normal_texture = ExtResource("6_2cqfq")
+normal_texture = ExtResource("6_ypjd4")
 uv1_scale = Vector3(10000, 10000, 10000)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_fcfh8"]
 
 [node name="Scene" type="Node3D"]
-script = ExtResource("1_efxa6")
+script = ExtResource("1_rn62g")
 
 [node name="SubViewportContainer_Robot" type="SubViewportContainer" parent="."]
 anchors_preset = 15
@@ -71,7 +71,7 @@ msaa_3d = 1
 size = Vector2i(960, 540)
 render_target_update_mode = 4
 
-[node name="Robot" parent="SubViewportContainer_Robot/SubViewport_Robot" instance=ExtResource("3_ycdy4")]
+[node name="Robot" parent="SubViewportContainer_Robot/SubViewport_Robot" instance=ExtResource("2_pt5ji")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0, 0)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
@@ -96,7 +96,7 @@ size = Vector2i(1920, 1080)
 render_target_update_mode = 4
 
 [node name="Cameras" type="Node3D" parent="SubViewportContainer/SubViewport"]
-script = ExtResource("2_dg77c")
+script = ExtResource("3_0b1wu")
 
 [node name="Camera1" type="Camera3D" parent="SubViewportContainer/SubViewport/Cameras"]
 transform = Transform3D(0.987554, 0, 0.157279, 0, 1, 0, -0.157279, 0, 0.987554, 1.04068, 1.28255, 2.41048)
@@ -122,7 +122,11 @@ fov = 45.0
 transform = Transform3D(1, 0, 0, 0, 0.845588, -0.533836, 0, 0.533836, 0.845588, -2.86008, 0.226557, -4.79819)
 fov = 40.0
 
-[node name="LargeDisplay" parent="." instance=ExtResource("4_w48qg")]
+[node name="Camera7" type="Camera3D" parent="SubViewportContainer/SubViewport/Cameras"]
+transform = Transform3D(-0.717105, 0, 0.696965, 0, 1, 0, -0.696965, 0, -0.717105, 7.69446, 1.26421, -11.8125)
+fov = 36.0
+
+[node name="LargeDisplay" parent="." instance=ExtResource("4_4j28a")]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_qftih")
@@ -135,17 +139,17 @@ mesh = SubResource("PlaneMesh_fcfh8")
 [node name="Garden" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.085)
 
-[node name="Garden_Trees" parent="Garden" instance=ExtResource("8_074og")]
+[node name="Garden_Trees" parent="Garden" instance=ExtResource("8_kcsvi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.173895)
 
-[node name="Garden_Trees2" parent="Garden" instance=ExtResource("8_074og")]
+[node name="Garden_Trees2" parent="Garden" instance=ExtResource("8_kcsvi")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -6.308e-07, 0, -0.215515)
 
-[node name="Garden_Wall" parent="Garden" instance=ExtResource("9_cegan")]
+[node name="Garden_Wall" parent="Garden" instance=ExtResource("9_pm3eh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.205)
 
 [node name="UI" type="CanvasLayer" parent="."]
-script = ExtResource("10_w48qg")
+script = ExtResource("10_g4b7p")
 
 [node name="Control" type="Control" parent="UI"]
 layout_mode = 3
@@ -159,7 +163,7 @@ offset_left = 1800.0
 offset_top = 88.0
 offset_right = 1896.0
 offset_bottom = 184.0
-texture_normal = ExtResource("10_82xsv")
+texture_normal = ExtResource("11_i7pne")
 ignore_texture_size = true
 stretch_mode = 0
 
@@ -169,7 +173,7 @@ offset_left = 1688.0
 offset_top = 88.0
 offset_right = 1784.0
 offset_bottom = 184.0
-texture_normal = ExtResource("11_getpj")
+texture_normal = ExtResource("12_ogefa")
 ignore_texture_size = true
 stretch_mode = 0
 
@@ -190,7 +194,7 @@ offset_left = 1800.0
 offset_top = 248.0
 offset_right = 1896.0
 offset_bottom = 344.0
-texture_normal = ExtResource("10_82xsv")
+texture_normal = ExtResource("11_i7pne")
 ignore_texture_size = true
 stretch_mode = 0
 
@@ -200,7 +204,7 @@ offset_left = 1688.0
 offset_top = 248.0
 offset_right = 1784.0
 offset_bottom = 344.0
-texture_normal = ExtResource("11_getpj")
+texture_normal = ExtResource("12_ogefa")
 ignore_texture_size = true
 stretch_mode = 0
 
@@ -221,7 +225,7 @@ offset_left = 704.0
 offset_top = 1056.0
 offset_right = 1216.0
 offset_bottom = 1080.0
-texture_normal = ExtResource("12_ycdy4")
+texture_normal = ExtResource("13_equvi")
 ignore_texture_size = true
 stretch_mode = 0
 
@@ -251,7 +255,7 @@ theme_override_font_sizes/font_size = 24
 wrap_mode = 1
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("12_dg77c")
+stream = ExtResource("14_abia7")
 volume_db = -25.0
 autoplay = true
 parameters/looping = false

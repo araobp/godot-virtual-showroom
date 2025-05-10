@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c6ra3v1h2gggv"
-path.s3tc="res://.godot/imported/Robot_DiffuseColor_Texture.png-891fb5fb0d94172721400e5c20edff5d.s3tc.ctex"
+path.s3tc="res://.godot/imported/Robot_DiffuseColor_Texture.png-59b17206bb6a2dbdaf2be15575d31d3e.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://robot/Robot_DiffuseColor_Texture.png"
-dest_files=["res://.godot/imported/Robot_DiffuseColor_Texture.png-891fb5fb0d94172721400e5c20edff5d.s3tc.ctex"]
+source_file="res://Robot/Robot_DiffuseColor_Texture.png"
+dest_files=["res://.godot/imported/Robot_DiffuseColor_Texture.png-59b17206bb6a2dbdaf2be15575d31d3e.s3tc.ctex"]
 
 [params]
 

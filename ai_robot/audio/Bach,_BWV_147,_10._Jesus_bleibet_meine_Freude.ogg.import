@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://chbrg5sgv8vgs"
-path="res://.godot/imported/Bach,_BWV_147,_10._Jesus_bleibet_meine_Freude.ogg-4de37b583f9df772eedebecb0d47eaaa.oggvorbisstr"
+path="res://.godot/imported/Bach,_BWV_147,_10._Jesus_bleibet_meine_Freude.ogg-92d0ff784f2984742d98f33a67e587b4.oggvorbisstr"
 
 [deps]
 
-source_file="res://audio/Bach,_BWV_147,_10._Jesus_bleibet_meine_Freude.ogg"
-dest_files=["res://.godot/imported/Bach,_BWV_147,_10._Jesus_bleibet_meine_Freude.ogg-4de37b583f9df772eedebecb0d47eaaa.oggvorbisstr"]
+source_file="res://Audio/Bach,_BWV_147,_10._Jesus_bleibet_meine_Freude.ogg"
+dest_files=["res://.godot/imported/Bach,_BWV_147,_10._Jesus_bleibet_meine_Freude.ogg-92d0ff784f2984742d98f33a67e587b4.oggvorbisstr"]
 
 [params]
 

@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://1xu86gpm62r2"
-path.s3tc="res://.godot/imported/Robot_NormalMap_Texture_2.png-5c3da00e9ee95ad46d9419c831d7e393.s3tc.ctex"
+path.s3tc="res://.godot/imported/Robot_NormalMap_Texture_2.png-81bb13422b6acc502da76e9cc14f13c8.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://robot/Robot_NormalMap_Texture_2.png"
-dest_files=["res://.godot/imported/Robot_NormalMap_Texture_2.png-5c3da00e9ee95ad46d9419c831d7e393.s3tc.ctex"]
+source_file="res://Robot/Robot_NormalMap_Texture_2.png"
+dest_files=["res://.godot/imported/Robot_NormalMap_Texture_2.png-81bb13422b6acc502da76e9cc14f13c8.s3tc.ctex"]
 
 [params]
 

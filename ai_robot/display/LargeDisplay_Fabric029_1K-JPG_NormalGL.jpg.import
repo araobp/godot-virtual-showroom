@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://fmkqw2qia85f"
-path.s3tc="res://.godot/imported/LargeDisplay_Fabric029_1K-JPG_NormalGL.jpg-e9c6ea6da8b584fad0701712e7b7bcd5.s3tc.ctex"
+path.s3tc="res://.godot/imported/LargeDisplay_Fabric029_1K-JPG_NormalGL.jpg-9413e6a58c86408bc7951be94253271e.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://display/LargeDisplay_Fabric029_1K-JPG_NormalGL.jpg"
-dest_files=["res://.godot/imported/LargeDisplay_Fabric029_1K-JPG_NormalGL.jpg-e9c6ea6da8b584fad0701712e7b7bcd5.s3tc.ctex"]
+source_file="res://Display/LargeDisplay_Fabric029_1K-JPG_NormalGL.jpg"
+dest_files=["res://.godot/imported/LargeDisplay_Fabric029_1K-JPG_NormalGL.jpg-9413e6a58c86408bc7951be94253271e.s3tc.ctex"]
 
 [params]
 
