@@ -13,7 +13,7 @@ config_version=5
 config/name="ai-robot"
 run/main_scene="uid://c5h33u2gfmlcu"
 config/features=PackedStringArray("4.4", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="uid://db58ap1rbc021"
 
 [audio]
 
