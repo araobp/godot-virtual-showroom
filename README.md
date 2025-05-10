@@ -47,7 +47,7 @@ I've confirmed that the Gemini API can be used from GDScript.
 
 => [Code](/virtual_showroom)
 
-### AI Robot with Gemini
+### AI Robot with Gemini (Work in Progress)
 
 I modified the robot from [Unity Starter Assets](https://assetstore.unity.com/packages/essentials/starter-assets-thirdperson-updates-in-new-charactercontroller-pa-196526) with Blender and added Mixamo animations.
 
@@ -106,7 +106,7 @@ You can see an MPFB character walking on the first floor of the building.
 
 => [YouTube](https://youtu.be/sQtlIRY0ktM)
 
-## Function calling by Gemini (Work in Progress)
+## Function calling by Gemini
 
 <img src="docs/function_calling.jpg" width=500>
 
