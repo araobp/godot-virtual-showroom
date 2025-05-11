@@ -23,7 +23,7 @@ colors = PackedColorArray(0.126683, 0.671699, 0.950094, 1, 0.847474, 0.847474, 0
 noise_type = 0
 seed = 5
 
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_ycdy4"]
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_rn62g"]
 width = 1024
 height = 1024
 seamless = true
@@ -31,14 +31,14 @@ color_ramp = SubResource("Gradient_efxa6")
 noise = SubResource("FastNoiseLite_dg77c")
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_w48qg"]
-sky_cover = SubResource("NoiseTexture2D_ycdy4")
+sky_cover = SubResource("NoiseTexture2D_rn62g")
 
-[sub_resource type="Sky" id="Sky_ydxjh"]
+[sub_resource type="Sky" id="Sky_pt5ji"]
 sky_material = SubResource("ProceduralSkyMaterial_w48qg")
 
 [sub_resource type="Environment" id="Environment_qftih"]
 background_mode = 2
-sky = SubResource("Sky_ydxjh")
+sky = SubResource("Sky_pt5ji")
 ambient_light_source = 3
 ambient_light_color = Color(0.197937, 0.197937, 0.197937, 1)
 ssao_enabled = true

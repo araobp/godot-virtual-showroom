@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="ai-robot"
-run/main_scene="uid://c5h33u2gfmlcu"
+run/main_scene="uid://drtx0wg2gukpy"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="uid://db58ap1rbc021"
 

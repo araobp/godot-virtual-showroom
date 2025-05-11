@@ -1,0 +1,77 @@
+[gd_scene load_steps=16 format=3 uid="uid://dgrdk2ftydu6w"]
+
+[ext_resource type="Script" uid="uid://bngklnmu2aibp" path="res://SceneControl/control.gd" id="1_1sjsj"]
+[ext_resource type="Texture2D" uid="uid://bpqsqwhwvj3q7" path="res://Garden/Garden_Ground_Concrete033_1K_Color.jpg" id="1_lykbq"]
+[ext_resource type="Texture2D" uid="uid://br53qalfvv2wg" path="res://Garden/Garden_Ground_Concrete033_1K_NormalGL.jpg" id="2_1sjsj"]
+[ext_resource type="Texture2D" uid="uid://bmg7ies2gd1fa" path="res://Garden/Garden_Ground_Concrete033_1K_Roughness.png" id="3_ij1g7"]
+[ext_resource type="PackedScene" uid="uid://cyiusm55u2luo" path="res://Garden/Garden_Wall.glb" id="4_cfn5p"]
+[ext_resource type="PackedScene" uid="uid://cvp2qgso64ghr" path="res://Garden/Garden_Trees.glb" id="5_l0yfh"]
+[ext_resource type="PackedScene" uid="uid://botlqcpy5y61v" path="res://Robot/robot.tscn" id="7_1sjsj"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2u8p6"]
+albedo_texture = ExtResource("1_lykbq")
+roughness_texture = ExtResource("3_ij1g7")
+normal_enabled = true
+normal_texture = ExtResource("2_1sjsj")
+uv1_scale = Vector3(10000, 10000, 10000)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_4q2s1"]
+
+[sub_resource type="Gradient" id="Gradient_1sjsj"]
+offsets = PackedFloat32Array(0.265385, 0.826923)
+colors = PackedColorArray(0.126683, 0.671699, 0.950094, 1, 0.847474, 0.847474, 0.847474, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_ij1g7"]
+noise_type = 0
+seed = 5
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_ycdy4"]
+width = 1024
+height = 1024
+seamless = true
+color_ramp = SubResource("Gradient_1sjsj")
+noise = SubResource("FastNoiseLite_ij1g7")
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_cfn5p"]
+sky_cover = SubResource("NoiseTexture2D_ycdy4")
+
+[sub_resource type="Sky" id="Sky_ydxjh"]
+sky_material = SubResource("ProceduralSkyMaterial_cfn5p")
+
+[sub_resource type="Environment" id="Environment_l0yfh"]
+background_mode = 2
+sky = SubResource("Sky_ydxjh")
+ambient_light_source = 3
+ambient_light_color = Color(0.197937, 0.197937, 0.197937, 1)
+ssao_enabled = true
+ssao_intensity = 2.8
+fog_mode = 1
+fog_density = 1.0
+
+[node name="Node3D" type="Node3D"]
+script = ExtResource("1_1sjsj")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(13685.2, 0, 0, 0, 4589.3, 0, 0, 0, 10000, 0, -0.0362293, 0)
+material_override = SubResource("StandardMaterial3D_2u8p6")
+mesh = SubResource("PlaneMesh_4q2s1")
+
+[node name="Garden_Wall" parent="." instance=ExtResource("4_cfn5p")]
+
+[node name="Garden_Trees" parent="." instance=ExtResource("5_l0yfh")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.117779, 0, -0.951955)
+
+[node name="Garden_Trees2" parent="." instance=ExtResource("5_l0yfh")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 13.1869, 0, -0.697147)
+
+[node name="Robot" parent="." instance=ExtResource("7_1sjsj")]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.515031, 0.548746, -0.658499, -0.597257, 0.3213, 0.734881, 0.614839, 0.77178, 0.162263, 0, 2.13069, 0)
+light_color = Color(0.89059, 0.89059, 0.89059, 1)
+light_energy = 3.0
+shadow_enabled = true
+shadow_opacity = 0.72
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_l0yfh")
