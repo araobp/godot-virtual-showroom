@@ -12,5 +12,14 @@ func _process(delta: float) -> void:
 		get_tree().change_scene_to_file("res://menu.tscn")
 
 	elif Input.is_key_pressed(KEY_P):
-		var state_machine = $SubViewportContainer/SubViewport/Robot/AnimationTree["parameters/playback"]
-		state_machine.travel("Point")
+		$SubViewportContainer/SubViewport/Robot.point()
+
+	elif Input.is_key_pressed(KEY_D):
+		$SubViewportContainer/SubViewport/Robot.dance()
+
+	elif Input.is_key_pressed(KEY_W):
+		$SubViewportContainer/SubViewport/Robot.walk()
+		
+	elif Input.is_key_pressed(KEY_I):
+		$SubViewportContainer/SubViewport/Robot.idle()
+	
