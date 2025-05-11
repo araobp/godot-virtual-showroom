@@ -51,6 +51,8 @@ I've confirmed that the Gemini API can be used from GDScript.
 
 I modified the robot from [Unity Starter Assets](https://assetstore.unity.com/packages/essentials/starter-assets-thirdperson-updates-in-new-charactercontroller-pa-196526) with Blender and added Mixamo animations.
 
+I operate the robot using natural language instructions via Gemini.
+
 <table>
  <tr>
   <td>
@@ -106,15 +108,7 @@ You can see an MPFB character walking on the first floor of the building.
 
 => [YouTube](https://youtu.be/sQtlIRY0ktM)
 
-## Function calling by Gemini
-
-<img src="docs/function_calling.jpg" width=500>
-
-=> [Code](/function_calling)
-
-=> [Video](docs/function_calling.m4v)
-
-## Other projects
+## Test projects for each function
 
 ### Visual Shader Editor test
 
@@ -153,6 +147,14 @@ It has been confirmed that models created with MPFB can be imported into Godot. 
 <img src="docs/mpfbtest.jpg" width=400>
 
 => [Code](/mpfb_test)
+
+### Testing Function calling by Gemini
+
+<img src="docs/function_calling.jpg" width=500>
+
+=> [Code](/function_calling)
+
+=> [Video](docs/function_calling.m4v)
 
 ## Notes on MPFB
 
