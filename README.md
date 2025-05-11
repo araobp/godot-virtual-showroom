@@ -108,14 +108,6 @@ You can see an MPFB character walking on the first floor of the building.
 
 => [YouTube](https://youtu.be/sQtlIRY0ktM)
 
-## Function calling by Gemini
-
-<img src="docs/function_calling.jpg" width=500>
-
-=> [Code](/function_calling)
-
-=> [Video](docs/function_calling.m4v)
-
 ## Other projects
 
 ### Visual Shader Editor test
@@ -155,6 +147,14 @@ It has been confirmed that models created with MPFB can be imported into Godot. 
 <img src="docs/mpfbtest.jpg" width=400>
 
 => [Code](/mpfb_test)
+
+### Testing Function calling by Gemini
+
+<img src="docs/function_calling.jpg" width=500>
+
+=> [Code](/function_calling)
+
+=> [Video](docs/function_calling.m4v)
 
 ## Notes on MPFB
 
