@@ -108,7 +108,7 @@ You can see an MPFB character walking on the first floor of the building.
 
 => [YouTube](https://youtu.be/sQtlIRY0ktM)
 
-## Other projects
+## Test projects for each function
 
 ### Visual Shader Editor test
 
