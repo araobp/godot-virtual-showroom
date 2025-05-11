@@ -51,6 +51,8 @@ I've confirmed that the Gemini API can be used from GDScript.
 
 I modified the robot from [Unity Starter Assets](https://assetstore.unity.com/packages/essentials/starter-assets-thirdperson-updates-in-new-charactercontroller-pa-196526) with Blender and added Mixamo animations.
 
+I operate the robot using natural language instructions via Gemini.
+
 <table>
  <tr>
   <td>
