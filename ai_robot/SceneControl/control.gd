@@ -1,9 +1,13 @@
 extends Node3D
 
+@export var gemini_api_key = ""
+
+var gemini
+var SYSTEM_INSTRUCTION = "You are an AI assistant good at controlling a robot remotely."
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	gemini = load("res://SceneControl/gemini.gd").new(gemini_api_key, SYSTEM_INSTRUCTION)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
