@@ -24,3 +24,9 @@ func set_light_values(args) -> void:
 	var material = $Building/Light.mesh.material
 	material.emission_energy_multiplier = brightness
 	material.emission = ColorTempToRGB[color_temp]
+	
+func open_door(args) -> void:
+	var rotation = args["rotation"] * PI / 180
+	$Building/HingeLeft.rotation.y = -rotation
+	$Building/HingeRight.rotation.y = rotation
+	

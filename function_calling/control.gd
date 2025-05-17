@@ -51,6 +51,22 @@ const _set_light_values = {
 	}
 }
 
+const _open_door = {
+	"name": "open_door",
+	"description": "Opens or closes the door.",
+	"parameters": {
+		"type": "object",
+		"properties": {
+			"rotation": {
+				"type": "number",
+				"description": "The door's hinge rotation in degrees from 0.0 to 120. Zero is closed, 90 is open and 120 is fully open.",
+			},
+		},
+		"required": ["rotation"],
+	}
+}
+
+
 
 func _chat(text):
 	
@@ -79,7 +95,8 @@ func _chat(text):
 		"tools": [
 			{
 				"functionDeclarations": [
-					_set_light_values
+					_set_light_values,
+					_open_door
 				]
 			}
 		]

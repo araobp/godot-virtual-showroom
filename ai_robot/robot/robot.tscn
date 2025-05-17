@@ -17,8 +17,6 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	#if Input.is_key_pressed(KEY_P):
-	#	point()
 	pass
 
 func idle():
@@ -175,7 +173,7 @@ bones/63/rotation = Quaternion(0.369835, 0.00335706, 0.000122683, 0.929092)
 transform = Transform3D(1, 0.000479549, 0.000148723, -0.00047954, 1, -6.40418e-05, -0.000148752, 6.39754e-05, 1, 0, 0, 0)
 
 [node name="BoneAttachment3D" type="BoneAttachment3D" parent="Armature/Skeleton3D" index="2"]
-transform = Transform3D(0.997781, -0.0600335, -0.0288044, 0.0272586, -0.0264117, 0.999279, -0.060751, -0.997847, -0.0247166, -2.45311, 7.23339, -174.058)
+transform = Transform3D(0.997781, -0.0600336, -0.0288045, 0.0272587, -0.0264113, 0.999279, -0.0607511, -0.997846, -0.0247162, -2.45312, 7.23342, -174.058)
 bone_name = "mixamorig_HeadTop_End"
 bone_idx = 6
 
