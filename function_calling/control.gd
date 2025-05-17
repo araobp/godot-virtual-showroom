@@ -53,13 +53,13 @@ const _set_light_values = {
 
 const _open_door = {
 	"name": "open_door",
-	"description": "Opens or closes the door.",
+	"description": "Opens or closes the door. The door is connected to the building by hinges.",
 	"parameters": {
 		"type": "object",
 		"properties": {
 			"rotation": {
 				"type": "number",
-				"description": "The door's hinge rotation in degrees from 0.0 to 120. Zero is closed, 90 is open and 120 is fully open.",
+				"description": "The door's hinge rotation in degrees from 0 to 120. When asked to close the door, the value is zero. And when asked to open the door, the value is 90.",
 			},
 		},
 		"required": ["rotation"],
@@ -78,7 +78,7 @@ func _chat(text):
 		"system_instruction": {
 			"parts": [
 				{
-					"text": "You are an AI assistant skilled at controlling a light."
+					"text": "You are an AI assistant skilled at controlling the light and opening/closing the door"
 				}
 			]
 		},
@@ -123,20 +123,25 @@ func _chat(text):
 	
 	print(json)
 
-	var part = json["candidates"][0]["content"]["parts"][0]
+	var candidate = json["candidates"][0]
+	var parts = candidate["content"]["parts"]
 
 	var response_text = "OK\n"	
 	
-	if "text" in part:
-		response_text = part["text"]
-		print(response_text)
-	else:
-		var function_call = part["functionCall"]
-		var func_name = function_call["name"]
-		var args = function_call["args"]
-		print(func_name, args)	
-		var callable = Callable(get_parent(), func_name)
-		callable.call(args)
+	for part in parts:
+		if "text" in part:
+			response_text = part["text"]
+			print(response_text)
+		elif "functionCall" in part:
+			var function_call = part["functionCall"]
+			var func_name = function_call["name"]
+			var args = function_call["args"]
+			print(func_name, args)	
+			var callable = Callable(get_parent(), func_name)
+			callable.call(args)
+		
+		if "finishReason" in candidate and candidate["finishReason"] == "STOP":
+			print("STOP")
 
 	self.remove_child(req)
 	
