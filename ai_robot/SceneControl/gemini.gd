@@ -6,6 +6,7 @@ var GEMINI_API_KEY = ""
 
 var SYSTEM_INSTRUCTION
 
+var HTTP_REQUEST
 var CALLABLE_INSTANCE
 
 # Get an environment variable in the file
@@ -15,7 +16,10 @@ func _get_environment_variable(filePath):
 	content = content.strip_edges()
 	return content
 
-func _init(gemini_api_key=null, system_instruction="", callable_instance=null) -> void:
+func _init(http_request, callable_instance, gemini_api_key=null, system_instruction="") -> void:
+
+	HTTP_REQUEST = http_request
+	CALLABLE_INSTANCE = callable_instance
 	
 	if gemini_api_key == null:
 		GEMINI_API_KEY = _get_environment_variable(GEMINI_API_KEY_FILE_PATH)
@@ -24,10 +28,6 @@ func _init(gemini_api_key=null, system_instruction="", callable_instance=null) -
 		
 	SYSTEM_INSTRUCTION = system_instruction
 	
-	if callable_instance:
-		CALLABLE_INSTANCE = self
-	else:
-		CALLABLE_INSTANCE = callable_instance
 
 
 func chat(query, function_declarations=null):
@@ -62,12 +62,8 @@ func chat(query, function_declarations=null):
 				"functionDeclarations": function_declarations
 			}
 		]
-	
-	var req = HTTPRequest.new()
 		
-	self.add_child(req)
-	
-	var err = req.request(
+	var err = HTTP_REQUEST.request(
 		"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=" + GEMINI_API_KEY,
 		headers,
 		HTTPClient.METHOD_POST,
@@ -77,8 +73,9 @@ func chat(query, function_declarations=null):
 	if err != OK:
 		return
 
-	var res = await req.request_completed
+	var res = await HTTP_REQUEST.request_completed
 
+	print(res)
 	var body = res[3]
 	
 	var json = JSON.parse_string(body.get_string_from_utf8())
@@ -104,8 +101,6 @@ func chat(query, function_declarations=null):
 		
 		if "finishReason" in candidate and candidate["finishReason"] == "STOP":
 			print("STOP")
-
-	self.remove_child(req)
 	
 	return response_text
 	
