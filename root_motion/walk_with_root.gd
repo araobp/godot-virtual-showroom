@@ -10,6 +10,5 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	print($AnimationTree.get_root_motion_position())
 	var pos = $AnimationTree.get_root_motion_position()
-	pos = Vector3(pos.x, pos.z, pos.y)
 	$Armature.global_position += pos
 	
