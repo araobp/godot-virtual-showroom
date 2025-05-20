@@ -36,10 +36,10 @@ I've confirmed that the Gemini API can be used from GDScript.
 <table>
  <tr>
   <td>
-   <img src="docs/virtual_showroom1.jpg" width=400>
+   <img src="docs/virtual_showroom1.jpg">
   </td>
   <td>
-   <img src="docs/virtual_showroom2.jpg" width=400>
+   <img src="docs/virtual_showroom2.jpg">
   </td>
  </tr>
 </table>
@@ -47,7 +47,7 @@ I've confirmed that the Gemini API can be used from GDScript.
 
 => [Code](/virtual_showroom)
 
-### AI Robot with Gemini (Work in Progress)
+### AI Robot with Gemini
 
 I modified the robot from [Unity Starter Assets](https://assetstore.unity.com/packages/essentials/starter-assets-thirdperson-updates-in-new-charactercontroller-pa-196526) with Blender and added Mixamo animations.
 
@@ -56,16 +56,18 @@ I operate the robot using natural language instructions via Gemini.
 <table>
  <tr>
   <td>
-   <img src="docs/ai_robot2.jpg" width=400>   
+   <img src="docs/ai_robot2.jpg">   
   </td>
   <td>
-   <img src="docs/ai_robot3.jpg" width=400>   
+   <img src="docs/ai_robot3.jpg">   
+  </td>
+ </tr>
+ <tr>
+  <td>
+   <img src="docs/ai_robot4.jpg">
   </td>
   <td>
-   <img src="docs/ai_robot4.jpg" width=400>
-  </td>
-  <td>
-   <img src="docs/ai_robot5.jpg" width=400>
+   <img src="docs/ai_robot5.jpg">
   </td>  
  </tr>
 </table>
