@@ -47,7 +47,7 @@ I've confirmed that the Gemini API can be used from GDScript.
 
 => [Code](/virtual_showroom)
 
-### AI Robot with Gemini (Work in Progress)
+### AI Robot with Gemini
 
 I modified the robot from [Unity Starter Assets](https://assetstore.unity.com/packages/essentials/starter-assets-thirdperson-updates-in-new-charactercontroller-pa-196526) with Blender and added Mixamo animations.
 
