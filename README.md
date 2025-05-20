@@ -36,10 +36,10 @@ I've confirmed that the Gemini API can be used from GDScript.
 <table>
  <tr>
   <td>
-   <img src="docs/virtual_showroom1.jpg" width=400>
+   <img src="docs/virtual_showroom1.jpg">
   </td>
   <td>
-   <img src="docs/virtual_showroom2.jpg" width=400>
+   <img src="docs/virtual_showroom2.jpg">
   </td>
  </tr>
 </table>
@@ -56,16 +56,18 @@ I operate the robot using natural language instructions via Gemini.
 <table>
  <tr>
   <td>
-   <img src="docs/ai_robot2.jpg" width=400>   
+   <img src="docs/ai_robot2.jpg">   
   </td>
   <td>
-   <img src="docs/ai_robot3.jpg" width=400>   
+   <img src="docs/ai_robot3.jpg">   
+  </td>
+ </tr>
+ <tr>
+  <td>
+   <img src="docs/ai_robot4.jpg">
   </td>
   <td>
-   <img src="docs/ai_robot4.jpg" width=400>
-  </td>
-  <td>
-   <img src="docs/ai_robot5.jpg" width=400>
+   <img src="docs/ai_robot5.jpg">
   </td>  
  </tr>
 </table>
