@@ -7239,6 +7239,10 @@ _subresources={
 "Human.high-poly.002": {
 "use_external/enabled": true,
 "use_external/path": "uid://b8un7ww15dihw"
+},
+"Peinture-01": {
+"use_external/enabled": false,
+"use_external/path": "uid://cmofckflciw2h"
 }
 },
 "meshes": {

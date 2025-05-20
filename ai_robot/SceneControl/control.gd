@@ -3,7 +3,7 @@ extends Node3D
 @export var gemini_api_key = ""
 
 var gemini
-var SYSTEM_INSTRUCTION = "You are an AI assistant good at controlling an AI robot remotely."
+var SYSTEM_INSTRUCTION = "You are an AI robot with Generative AI."
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

@@ -78,13 +78,10 @@ func chat(query, function_declarations=null):
 
 	var res = await HTTP_REQUEST.request_completed
 
-	print(res)
 	var body = res[3]
 	
 	var json = JSON.parse_string(body.get_string_from_utf8())
 	
-	print(json)
-
 	var candidate = json["candidates"][0]
 	var parts = candidate["content"]["parts"]
 
