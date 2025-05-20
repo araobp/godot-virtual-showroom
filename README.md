@@ -64,6 +64,9 @@ I operate the robot using natural language instructions via Gemini.
   <td>
    <img src="docs/ai_robot4.jpg" width=400>
   </td>
+  <td>
+   <img src="docs/ai_robot5.jpg" width=400>
+  </td>  
  </tr>
 </table>
 
