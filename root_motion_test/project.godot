@@ -11,6 +11,6 @@ config_version=5
 [application]
 
 config/name="RootMotion"
-run/main_scene="uid://cfk1d2ahdehvv"
+run/main_scene="res://robot_with_root.tscn"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
