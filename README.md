@@ -167,6 +167,19 @@ It has been confirmed that models created with MPFB can be imported into Godot. 
 
 => [Code](/root_motion_test)
 
+```
+Operation:
+
+    UP
+LEFT RIGHT
+   DOWN
+
+UP: Walk
+DOWN: Idle
+RIGHT: Turn right
+LEFT: Turn left
+```
+
 Note: When adding a root bone in Blender, I had to copy the Y-axis animation from the Hip bone to the Root bone, then delete the Y-axis animation from the Hip bone, and finally scale down the Root bone's animation by -1/100. I want to investigate if there's a better way to do this.
 
 ## Notes on MPFB
