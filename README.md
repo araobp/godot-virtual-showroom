@@ -182,7 +182,7 @@ LEFT: Turn left
 
 Note: When adding a root bone in Blender, I had to copy the Y-axis animation from the Hip bone to the Root bone, then delete the Y-axis animation from the Hip bone, and finally scale down the Root bone's animation by -1/100. I want to investigate if there's a better way to do this.
 
-Note(2025/05/22): Checking Manual Orientation and applying All Transforms to Deltas during FBX import might resolve the issue. I plan to experiment with this soon.
+Note(2025/05/22): Checking Manual Orientation during FBX import and applying "All Transforms to Deltas" to all the objects might resolve the issue. I plan to experiment with this soon.
 
 ## Notes on MPFB
 
