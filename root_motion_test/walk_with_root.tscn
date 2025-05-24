@@ -1,0 +1,84 @@
+[gd_scene load_steps=16 format=3 uid="uid://de8r1qabe50i0"]
+
+[ext_resource type="PackedScene" uid="uid://bjyvqfhp3fit0" path="res://Walk_with_Root.glb" id="1_om8fh"]
+[ext_resource type="Script" uid="uid://qkdwswpwwf2o" path="res://walk_with_root.gd" id="2_ojg4d"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ojg4d"]
+sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+ground_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+
+[sub_resource type="Sky" id="Sky_tutw6"]
+sky_material = SubResource("ProceduralSkyMaterial_ojg4d")
+
+[sub_resource type="Environment" id="Environment_5psd7"]
+background_mode = 2
+sky = SubResource("Sky_tutw6")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ojg4d"]
+animation = &"Idle"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_tutw6"]
+animation = &"Standard Walk"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_5psd7"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_yt05t"]
+xfade_time = 1.0
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_d25yi"]
+xfade_time = 1.0
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_tr0b2"]
+states/Idle/node = SubResource("AnimationNodeAnimation_ojg4d")
+states/Idle/position = Vector2(361, 101.25)
+"states/Standard Walk/node" = SubResource("AnimationNodeAnimation_tutw6")
+"states/Standard Walk/position" = Vector2(569, 117)
+transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_5psd7"), "Idle", "Standard Walk", SubResource("AnimationNodeStateMachineTransition_yt05t"), "Standard Walk", "Idle", SubResource("AnimationNodeStateMachineTransition_d25yi")]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_tutw6"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_5psd7"]
+frequency = 1.0
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_yt05t"]
+noise = SubResource("FastNoiseLite_5psd7")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d25yi"]
+albedo_color = Color(0.151699, 0.298965, 0.319109, 1)
+roughness_texture = SubResource("NoiseTexture2D_yt05t")
+uv1_scale = Vector3(100, 100, 100)
+
+[node name="Walk_with_Root" instance=ExtResource("1_om8fh")]
+script = ExtResource("2_ojg4d")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." index="0"]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." index="1"]
+environment = SubResource("Environment_5psd7")
+
+[node name="AnimationPlayer" parent="." index="3"]
+root_motion_track = NodePath("Armature/Skeleton3D:Root")
+root_motion_local = false
+
+[node name="AnimationTree" type="AnimationTree" parent="." index="4"]
+root_motion_track = NodePath("Armature/Skeleton3D:Root")
+root_motion_local = false
+tree_root = SubResource("AnimationNodeStateMachine_tr0b2")
+anim_player = NodePath("../AnimationPlayer")
+
+[node name="RootMotionView" type="RootMotionView" parent="." index="5"]
+animation_path = NodePath("../AnimationPlayer")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." index="6"]
+transform = Transform3D(10000, 0, 0, 0, 1, 0, 0, 0, 10000, 0, 0, 0)
+mesh = SubResource("PlaneMesh_tutw6")
+surface_material_override/0 = SubResource("StandardMaterial3D_d25yi")
+
+[node name="Camera3D" type="Camera3D" parent="." index="7"]
+transform = Transform3D(-0.0338529, 0, 0.999427, 0, 1, 0, -0.999427, 0, -0.0338529, 7.56755, 0.689714, 3.48992)
+fov = 40.0
