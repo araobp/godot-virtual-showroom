@@ -14,7 +14,6 @@ func _process(delta: float) -> void:
 	# print($AnimationTree.get_root_motion_position())
 	var pos = $AnimationTree.get_root_motion_position()
 	$Armature.global_position += pos.rotated(Vector3.UP, rot_y_accumlator)
-
 	
 	if Input.is_key_pressed(KEY_UP):
 		state_machine.travel("Standard Walk")
