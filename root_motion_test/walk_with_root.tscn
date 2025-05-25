@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://de8r1qabe50i0"]
+[gd_scene load_steps=20 format=3 uid="uid://de8r1qabe50i0"]
 
 [ext_resource type="PackedScene" uid="uid://bjyvqfhp3fit0" path="res://Walk_with_Root.glb" id="1_om8fh"]
 [ext_resource type="Script" uid="uid://qkdwswpwwf2o" path="res://walk_with_root.gd" id="2_ojg4d"]
@@ -19,6 +19,12 @@ glow_enabled = true
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ojg4d"]
 animation = &"Idle"
 
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_5psd7"]
+animation = &"Left Turn 90"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_yt05t"]
+animation = &"Right Turn 90"
+
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_tutw6"]
 animation = &"Standard Walk"
 
@@ -31,12 +37,22 @@ xfade_time = 1.0
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_d25yi"]
 xfade_time = 1.0
 
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_tr0b2"]
+xfade_time = 1.0
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_tgtjs"]
+xfade_time = 1.0
+
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_tr0b2"]
 states/Idle/node = SubResource("AnimationNodeAnimation_ojg4d")
 states/Idle/position = Vector2(361, 101.25)
+"states/Left Turn 90/node" = SubResource("AnimationNodeAnimation_5psd7")
+"states/Left Turn 90/position" = Vector2(522.5, 205.75)
+"states/Right Turn 90/node" = SubResource("AnimationNodeAnimation_yt05t")
+"states/Right Turn 90/position" = Vector2(200.375, 211.625)
 "states/Standard Walk/node" = SubResource("AnimationNodeAnimation_tutw6")
 "states/Standard Walk/position" = Vector2(569, 117)
-transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_5psd7"), "Idle", "Standard Walk", SubResource("AnimationNodeStateMachineTransition_yt05t"), "Standard Walk", "Idle", SubResource("AnimationNodeStateMachineTransition_d25yi")]
+transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_5psd7"), "Idle", "Standard Walk", SubResource("AnimationNodeStateMachineTransition_yt05t"), "Standard Walk", "Idle", SubResource("AnimationNodeStateMachineTransition_d25yi"), "Idle", "Right Turn 90", SubResource("AnimationNodeStateMachineTransition_tr0b2"), "Idle", "Left Turn 90", SubResource("AnimationNodeStateMachineTransition_tgtjs")]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_tutw6"]
 
