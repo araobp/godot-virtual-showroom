@@ -103,22 +103,3 @@ func chat(query, function_declarations=null):
 			print("STOP")
 	
 	return response_text
-	
-	
-	{ "system_instruction": {
-		"parts": [
-			{ "text": "You are an AI assistant good at controlling an AI robot remotely." }
-		]
-	}, 
-	"contents": [
-		{ "role": "user", "parts":
-			[
-				{ "text": "You: Dance\n" }
-			]
-		}
-	],
-	"tools": [
-		{ "functionDeclarations":
-			{ "name": "start_animation",
-			"description": "The AI robot makes an action.",
-			"parameters": { "type": "object", "properties": { "action": { "type": "string", "enum": ["point", "dance", "jump", "idle"], "description": "A list of actions of the AI robot:\n\t\t\t\t- point: the AI robot points forward with its right arm.\n\t\t\t\t- dance: the AI robot dances.\n\t\t\t\t- jump: the AI robot jumps.\n\t\t\t\t- idle: the AI robot becomes idle." } }, "required": ["brightness", "color_temp"] } } }] }
