@@ -35,8 +35,8 @@ func _process(delta: float) -> void:
 	elif Input.is_key_pressed(KEY_J):
 		start_animation({"action": "jump"})
 		
-	elif Input.is_key_pressed(KEY_I):
-		start_animation({"action": "idle"})
+	elif Input.is_key_pressed(KEY_S):
+		start_animation({"action": "stop"})
 	"""
 	
 	if !processing and Input.is_key_pressed(KEY_ENTER) and $Control/Input.text != "":
@@ -57,7 +57,7 @@ func start_animation(arg):
 		"point": robot.point()
 		"dance": robot.dance()
 		"jump": robot.jump()
-		"idle": robot.idle()
+		"stop": robot.stop()
 		
 const function_declarations = [
 	start_animation_description,
@@ -65,18 +65,24 @@ const function_declarations = [
 		
 const start_animation_description = {
 	"name": "start_animation",
-	"description": "The AI robot makes an action.",
+	"description": """
+	A function to make the AI robot start one of the following actions:
+		- "point": the AI robot points forward with its right arm.
+		- "dance": the AI robot dances.
+		- "jump": the AI robot jumps.
+		- "stop": the AI robot stops the other action and becomes idle.		
+	""",
 	"parameters": {
 		"type": "object",
 		"properties": {
 			"action": {
 				"type": "string",
-				"enum": ["point", "dance", "jump", "idle"],
+				"enum": ["point", "dance", "jump", "stop"],
 				"description": "A list of actions of the AI robot:
 				- point: the AI robot points forward with its right arm.
 				- dance: the AI robot dances.
 				- jump: the AI robot jumps.
-				- idle: the AI robot becomes idle."
+				- stop: the AI robot stops the other action and becomes idle."
 			},
 		},
 		"required": ["action"],

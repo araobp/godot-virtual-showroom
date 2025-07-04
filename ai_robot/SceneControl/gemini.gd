@@ -1,5 +1,7 @@
 extends Node
 
+var GEMINI_API = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent"
+
 # Gemini API Key
 var GEMINI_API_KEY_FILE_PATH = "res://gemini_api_key_env.txt"
 var GEMINI_API_KEY = ""
@@ -67,7 +69,7 @@ func chat(query, function_declarations=null):
 	print(payload)
 		
 	var err = HTTP_REQUEST.request(
-		"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=" + GEMINI_API_KEY,
+		GEMINI_API + "?key=" + GEMINI_API_KEY,
 		headers,
 		HTTPClient.METHOD_POST,
 		JSON.stringify(payload)
@@ -84,6 +86,8 @@ func chat(query, function_declarations=null):
 	
 	var candidate = json["candidates"][0]
 	var parts = candidate["content"]["parts"]
+
+	print(json)
 
 	var response_text = "OK\n"	
 	
