@@ -60,8 +60,13 @@ func start_animation(arg):
 		"jump": robot.jump()
 		"stop": robot.stop()
 		
+func wait_for_a_while(arg):
+	var seconds = arg["seconds"]
+	await get_tree().create_timer(seconds).timeout
+		
 const function_declarations = [
 	start_animation_description,
+	wait_for_a_while_description
 ]
 		
 const start_animation_description = {
@@ -87,5 +92,22 @@ const start_animation_description = {
 			},
 		},
 		"required": ["action"],
+	}
+}
+
+const wait_for_a_while_description = {
+	"name": "wait_for_a_while",
+	"description": """
+	A function to wait for a while.
+	""",
+	"parameters": {
+		"type": "object",
+		"properties": {
+			"seconds": {
+				"type": "integer",
+				"description": "A timeout value from 1 to 60 in seconds for the timer to wait for a while."
+			},
+		},
+		"required": ["seconds"],
 	}
 }

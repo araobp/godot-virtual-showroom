@@ -132,7 +132,7 @@ If there's nothing else to do after this, say somthing and add this text after t
 			var args = function_call["args"]
 			print(func_name, args)	
 			var callable = Callable(CALLABLE_INSTANCE, func_name)
-			callable.call(args)
+			await callable.call(args)
 		
 		if enable_history:
 			if _first_in_session:
