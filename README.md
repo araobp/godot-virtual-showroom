@@ -53,6 +53,15 @@ I modified the robot from [Unity Starter Assets](https://assetstore.unity.com/pa
 
 I operate the robot using natural language instructions via Gemini.
 
+A simple AI Agent implementation with Gemini. The agent can recognize what it sees and can be controlled by natural language.
+
+The `ai_robot` project has two main scenes:
+
+*   **Recognition:** The robot sees a picture and can answer questions about it.
+*   **Control:** The robot can be controlled by natural language. It can point, dance, jump, and stop.
+
+The `control` scene uses the function calling feature of the Gemini API to control the robot's actions.
+
 <table>
  <tr>
   <td>
