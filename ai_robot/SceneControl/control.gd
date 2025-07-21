@@ -45,6 +45,7 @@ func _process(delta: float) -> void:
 		var response_text = await gemini.chat(
 			text,
 			function_declarations,
+			true
 			)
 		$Control/Input.insert_text_at_caret("Gemini: " + response_text + "\nYou: ", -1)
 		$Control/Input.scroll_vertical = 10000
