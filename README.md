@@ -33,14 +33,10 @@ or create "gemini_api_key_env.txt" file with your Gemini API key value. The file
 
 I modified the robot from [Unity Starter Assets](https://assetstore.unity.com/packages/essentials/starter-assets-thirdperson-updates-in-new-charactercontroller-pa-196526) with Blender and added Mixamo animations.
 
-I operate the robot using natural language instructions via Gemini.
-
-A simple AI Agent implementation with Gemini. The agent can recognize what it sees and can be controlled by natural language.
-
 The `ai_robot` project has two main scenes:
 
 *   **Recognition:** The robot sees a picture and can answer questions about it.
-*   **Control:** The robot can be controlled by natural language. It can point, dance, jump, and stop.
+*   **Control:** This is a simple AI Agent implementation with Gemini. The robot can be controlled by natural language. It can point, dance, jump, and stop. 
 
 The `control` scene uses the function calling feature of the Gemini API to control the robot's actions.
 
