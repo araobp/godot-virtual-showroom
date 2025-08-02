@@ -29,24 +29,6 @@ To set your Gemini API key, enter your key in the following property editor:
 
 or create "gemini_api_key_env.txt" file with your Gemini API key value. The file is ignored by .gitignore.
 
-### Virtual Showroom with Gemini
-
-I've confirmed that the Gemini API can be used from GDScript.
-
-<table>
- <tr>
-  <td>
-   <img src="docs/virtual_showroom1.jpg">
-  </td>
-  <td>
-   <img src="docs/virtual_showroom2.jpg">
-  </td>
- </tr>
-</table>
-
-
-=> [Code](/virtual_showroom)
-
 ### AI Robot with Gemini
 
 I modified the robot from [Unity Starter Assets](https://assetstore.unity.com/packages/essentials/starter-assets-thirdperson-updates-in-new-charactercontroller-pa-196526) with Blender and added Mixamo animations.
@@ -82,6 +64,24 @@ The `control` scene uses the function calling feature of the Gemini API to contr
 </table>
 
 => [Code](/ai_robot)
+
+### Virtual Showroom with Gemini
+
+I've confirmed that the Gemini API can be used from GDScript.
+
+<table>
+ <tr>
+  <td>
+   <img src="docs/virtual_showroom1.jpg">
+  </td>
+  <td>
+   <img src="docs/virtual_showroom2.jpg">
+  </td>
+ </tr>
+</table>
+
+
+=> [Code](/virtual_showroom)
 
 ## Azuma House
 
