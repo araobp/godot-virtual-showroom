@@ -3,7 +3,7 @@ extends Node3D
 @export var gemini_api_key = ""
 
 var gemini
-var SYSTEM_INSTRUCTION = "You are an AI robot with Generative AI."
+var SYSTEM_INSTRUCTION = "You are an AI robot with Generative AI. You can express your emotions by calling one of the functions provided in the request and continue it for a while."
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -44,10 +44,9 @@ func _process(delta: float) -> void:
 		var text = $Control/Input.text
 		var response_text = await gemini.chat(
 			text,
-			function_declarations,
-			true
+			function_declarations
 			)
-		$Control/Input.insert_text_at_caret("Gemini: " + response_text + "\nYou: ", -1)
+		$Control/Input.insert_text_at_caret("Robot: {response_text}\nYou: ".format({"response_text": response_text}), -1)
 		$Control/Input.scroll_vertical = 10000
 		processing = false
 
@@ -59,10 +58,12 @@ func start_animation(arg):
 		"dance": robot.dance()
 		"jump": robot.jump()
 		"stop": robot.stop()
+	return arg["action"] + " action completed"
 		
 func wait_for_a_while(arg):
 	var seconds = arg["seconds"]
 	await get_tree().create_timer(seconds).timeout
+	return "wait action completed"
 		
 const function_declarations = [
 	start_animation_description,

@@ -29,63 +29,27 @@ func _init(http_request, callable_instance, gemini_api_key=null, system_instruct
 		GEMINI_API_KEY =gemini_api_key
 		
 	SYSTEM_INSTRUCTION = system_instruction
-	
 
-var history = []
-var session_id = 0
-var req_num
-const N = 10
-const FINISHED = "---FINISHED---"
-
-func chat(query, function_declarations=null, enable_history=false, _first_in_session=true):
-	var query_original = query
-	if _first_in_session:
-		req_num = 0
-		session_id += 1
-	
-	if enable_history:
-		query = """Determine the next action by referring to response_from_gemini in the history of this chat session with session_id {session_id}.
-
-The history of this chat session is comprised of entries where the session_id is {session_id}.
-If you do not see the session_id {session_id} in the history, this request is the first one in the chat session.
-
-If there's nothing else to do after this, say somthing and add this text after that without any extra characters: "{finished}"
-
-# query
-
-{query}
-
-# history
-
-{history}
-
-""".format({"session_id": session_id, "finished": FINISHED, "query": query, "history": history})
-	
-	# print(query)
+func chat(query, function_declarations=null):
 	
 	const headers = [
 		"Content-Type: application/json",
 		"Accept-Encoding: identity"
 	]
-	
-	var payload = {
-		"system_instruction": {
+
+	var contents = [
+  		{
+			"role": "user",
 			"parts": [
-				{
-					"text": SYSTEM_INSTRUCTION
-				}
-			]
-		},
-		"contents": [
-			{
-				"role": "user",
-				"parts": [
-					{
-						"text": query
-					}
-				]
-			}
-		]
+	  			{
+					"text": query,
+	  			},
+			],
+  		}
+	]
+
+	var payload = {
+		"contents": contents
 	}
 	
 	if function_declarations:
@@ -94,71 +58,80 @@ If there's nothing else to do after this, say somthing and add this text after t
 				"functionDeclarations": function_declarations
 			}
 		]
-		
-	# print(payload)
-		
-	var err = HTTP_REQUEST.request(
-		GEMINI_API + "?key=" + GEMINI_API_KEY,
-		headers,
-		HTTPClient.METHOD_POST,
-		JSON.stringify(payload)
-	)
 	
-	if err != OK:
-		return
-
-	var res = await HTTP_REQUEST.request_completed
-
-	var body = res[3]
-	
-	var json = JSON.parse_string(body.get_string_from_utf8())
-	
-	var candidate = json["candidates"][0]
-	var parts = candidate["content"]["parts"]
-
-	# print(json)
-
 	var response_text = null
-	var function_call = null
-		
-	for part in parts:
-		if "text" in part:
-			response_text = part["text"]
-			print(response_text)
 
-		elif "functionCall" in part:
-			function_call = part["functionCall"]
-			var func_name = function_call["name"]
-			var args = function_call["args"]
-			print(func_name, args)	
-			var callable = Callable(CALLABLE_INSTANCE, func_name)
-			await callable.call(args)
+	while true:
 		
-		if enable_history:
-			if _first_in_session:
-				_first_in_session = false
-							
-			req_num += 1
-			var h = {
-				"session_id": session_id,
-				"request_number_in_session": req_num,
-				"query_to_gemini": query_original,
-				"response_from_gemini": {
-					"text_from_gemini": null,
-					"function_call_from_gemini": function_call
+		print(payload)
+		
+		var err = HTTP_REQUEST.request(
+			GEMINI_API + "?key=" + GEMINI_API_KEY,
+			headers,
+			HTTPClient.METHOD_POST,
+			JSON.stringify(payload)
+		)
+		
+		if err != OK:
+			return
+
+		var res = await HTTP_REQUEST.request_completed
+
+		var body = res[3]
+		
+		var json = JSON.parse_string(body.get_string_from_utf8())
+		
+		var candidate = json["candidates"][0]
+		var parts = candidate["content"]["parts"]
+
+		var functionCalled = false
+				
+		for part in parts:
+			if "text" in part:
+				response_text = part["text"]
+				print(response_text)
+				
+			if "functionCall" in part:
+				var functionCall = part["functionCall"]
+				var func_name = functionCall["name"]
+				var args = functionCall["args"]
+				print(func_name, args)	
+				
+				var callable = Callable(CALLABLE_INSTANCE, func_name)
+				var result = await callable.call(args)
+				
+				var functionResponsePart = {
+					"name": func_name,
+					"response": {
+						"result": result
+					}
 				}
-			}
-			history.append(h)
-			print(h)
-		
-	
-	if function_declarations and enable_history:
-		if function_call or response_text and FINISHED not in response_text:
-			chat(query_original, function_declarations, true, _first_in_session)
-	
-	if response_text == null or response_text == "":
-		response_text = "OK"
-	elif FINISHED in response_text:
-		response_text = response_text.replace(FINISHED, "")
-		
+				
+				contents.append(
+					{
+						"role": "model",
+						"parts": [
+							{
+								"functionCall": functionCall
+							}
+						]
+					}
+				)
+				
+				contents.append(
+					{
+						"role": "user",
+						"parts": [
+							{
+								"functionResponse": functionResponsePart,
+							}
+						]
+					}
+				)
+				
+				functionCalled = true
+					
+		if not functionCalled:
+			break
+			
 	return response_text
